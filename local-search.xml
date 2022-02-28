@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search>
+  
+  
+  
+  <entry>
+    <title>阳台改造方案</title>
+    <link href="/2022/02/28/%E9%98%B3%E5%8F%B0%E6%94%B9%E9%80%A0%E6%96%B9%E6%A1%88/"/>
+    <url>/2022/02/28/%E9%98%B3%E5%8F%B0%E6%94%B9%E9%80%A0%E6%96%B9%E6%A1%88/</url>
+    
+    <content type="html"><![CDATA[<h3 id="一、改造目的"><a href="#一、改造目的" class="headerlink" title="一、改造目的"></a>一、改造目的</h3><p>利用闲置的阳台一角，搭建一个简易的家庭图书角</p><h3 id="二、改造内容"><a href="#二、改造内容" class="headerlink" title="二、改造内容"></a>二、改造内容</h3><ul><li>翻新墙面</li><li>增加物品<ol><li>书架+射灯</li><li>落地台灯</li><li>单人沙发</li><li>小茶几</li><li>氛围灯带</li><li>地毯</li></ol></li></ul><h3 id="三、配色方案"><a href="#三、配色方案" class="headerlink" title="三、配色方案"></a>三、配色方案</h3><ul><li>基础色</li><li>主配色</li><li>点缀色</li></ul><table><thead><tr><th>物品</th><th>色调</th></tr></thead><tbody><tr><td>墙面</td><td>浅蓝+花白 &#x2F; 少白</td></tr><tr><td>书架</td><td>原木色</td></tr><tr><td>茶几</td><td>白色+实木色</td></tr><tr><td>沙发榻榻米</td><td>玉米黄</td></tr><tr><td>地毯(PUD材料)</td><td>橙黄色调</td></tr><tr><td>落地台灯</td><td>白色</td></tr><tr><td>氛围灯带（灯光）</td><td>暖白色</td></tr></tbody></table><h3 id="四、成本计算"><a href="#四、成本计算" class="headerlink" title="四、成本计算"></a>四、成本计算</h3><table><thead><tr><th>物品</th><th>成本</th></tr></thead><tbody><tr><td>北欧简约书架</td><td>166</td></tr><tr><td>简约茶几（双层）</td><td>54</td></tr><tr><td>三棵树内墙乳胶漆</td><td>146</td></tr><tr><td>落地台灯</td><td>141</td></tr><tr><td>沙发椅</td><td>273</td></tr><tr><td>氛围灯带+射灯</td><td>82</td></tr><tr><td>地毯</td><td>149</td></tr><tr><td></td><td></td></tr><tr><td>滚筒刷（3把）+延长杆</td><td>26</td></tr><tr><td>插座</td><td>36</td></tr><tr><td>走线卡扣</td><td>7</td></tr></tbody></table><ul><li>材料总成本：1080</li></ul><h3 id="感想："><a href="#感想：" class="headerlink" title="感想："></a>感想：</h3><p>​ 临近过年回家前，突然起了一个改造阳台的想法。边复习边做计划，在网上购买装修物品，回家之后马上开始动手，刷墙、接线、搭书架、铺地毯，连续干了两天多，一步一步把脑海中的想法实现出来，利用原来闲置的阳台一角，搭出了一个简易的图书角。明亮的灯光、整洁的墙面地面，营造出了一种温馨的环境氛围。 ——2022年2月1日</p>]]></content>
+    
+    
+    <categories>
+      
+      <category>日常文章</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>日常</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>Hello World</title>
+    <link href="/2022/02/25/hello-world/"/>
+    <url>/2022/02/25/hello-world/</url>
+    
+    <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p><h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><div class="code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><pre><code class="hljs bash">$ hexo new <span class="hljs-string">&quot;My New Post&quot;</span><br></code></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p><h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">$ hexo server<br></code></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p><h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">$ hexo generate<br></code></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p><h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">$ hexo deploy<br></code></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>]]></content>
+    
+    
+    
+  </entry>
+  
+  
+  
+  
+</search>
