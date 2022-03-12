@@ -16,23 +16,23 @@
   <meta name="author" content="Time gogo">
   <meta name="keywords" content="">
   
-    <meta name="description" content="通过apache在阿里云服务器上发布本地制作的网页">
+    <meta name="description" content="Hexo常用命令">
 <meta property="og:type" content="article">
-<meta property="og:title" content="阿里云发布网页Apache">
-<meta property="og:url" content="https://qiuzcc.github.io/2022/03/12/%E9%98%BF%E9%87%8C%E4%BA%91%E5%8F%91%E5%B8%83%E7%BD%91%E9%A1%B5Apache/index.html">
+<meta property="og:title" content="Hexo常用命令">
+<meta property="og:url" content="https://qiuzcc.github.io/2022/03/12/Hexo%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="通过apache在阿里云服务器上发布本地制作的网页">
+<meta property="og:description" content="Hexo常用命令">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://qiuzcc.github.io/img/Apache%E5%8F%91%E5%B8%83%E7%BD%91%E9%A1%B5/apache.png">
-<meta property="article:published_time" content="2022-03-12T12:16:05.000Z">
-<meta property="article:modified_time" content="2022-03-12T13:12:36.067Z">
+<meta property="og:image" content="https://qiuzcc.github.io/img/bg/%E5%A5%B3%E4%BE%A0.png">
+<meta property="article:published_time" content="2022-03-12T12:50:02.000Z">
+<meta property="article:modified_time" content="2022-03-12T13:17:51.811Z">
 <meta property="article:author" content="Time gogo">
-<meta property="article:tag" content="搭建网站">
+<meta property="article:tag" content="Hexo">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="https://qiuzcc.github.io/img/Apache%E5%8F%91%E5%B8%83%E7%BD%91%E9%A1%B5/apache.png">
+<meta name="twitter:image" content="https://qiuzcc.github.io/img/bg/%E5%A5%B3%E4%BE%A0.png">
   
   
-  <title>阿里云发布网页Apache - Hexo</title>
+  <title>Hexo常用命令 - Hexo</title>
 
   <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4/dist/css/bootstrap.min.css" />
 
@@ -154,7 +154,7 @@
       <div class="full-bg-img">
         <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
           <div class="page-header text-center fade-in-up">
-            <span class="h2" id="subtitle" title="阿里云发布网页Apache">
+            <span class="h2" id="subtitle" title="Hexo常用命令">
               
             </span>
 
@@ -164,7 +164,7 @@
   
     <span class="post-meta">
       <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-      <time datetime="2022-03-12 20:16" pubdate>
+      <time datetime="2022-03-12 20:50" pubdate>
         2022年3月12日 晚上
       </time>
     </span>
@@ -175,7 +175,7 @@
   
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      1.1k 字
+      429 字
     </span>
   
 
@@ -184,7 +184,7 @@
       <i class="iconfont icon-clock-fill"></i>
       
       
-      10 分钟
+      4 分钟
     </span>
   
 
@@ -213,73 +213,74 @@
         <div class="py-5" id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">阿里云发布网页Apache</h1>
+            <h1 style="display: none">Hexo常用命令</h1>
             
             <div class="markdown-body">
-              <p>通过apache在阿里云服务器上发布本地制作的网页</p>
+              <p> Hexo常用命令</p>
 <span id="more"></span>
 
-
-
-<ul>
-<li>服务器：阿里云轻量化云服务器</li>
-<li>系统：CentOS 7</li>
-</ul>
-<h3 id="一、安装Apache"><a href="#一、安装Apache" class="headerlink" title="一、安装Apache"></a>一、安装Apache</h3><h4 id="安装命令"><a href="#安装命令" class="headerlink" title="安装命令"></a>安装命令</h4><ol>
-<li><p>安装apache</p>
-<p>yum install httpd</p>
+<h3 id="一、写作"><a href="#一、写作" class="headerlink" title="一、写作"></a>一、写作</h3><ol>
+<li><p>新建空白文档</p>
+<p>hexo n [-p] 文章名<br>-p  自定义新文章的路径</p>
 </li>
-<li><p>设置服务器开机自动启动Apache</p>
-<p>systemctl enable httpd.service</p>
-</li>
-<li><p>手动启动Apache</p>
-<p>systemctl start httpd.service</p>
-<p>扩展命令</p>
-<p>手动停止Apache  systemctl stop httpd.service<br>手动重启Apache  systemctl restart httpd.service</p>
-</li>
-<li><p>测试Apache启动结果</p>
-<p>systemctl is-enabled httpd.service<br>如果结果为enable，则启动成功</p>
-<p>也可以在浏览器输入ip地址进行访问，如果安装成功，将会出现apache的首页</p>
-</li>
-</ol>
-<h4 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h4><ul>
-<li>apache2 默认的几个配置文件：</li>
-</ul>
+<li><p>Front-matter</p>
 <table>
 <thead>
 <tr>
-<th>文件</th>
-<th>说明</th>
+<th>参数</th>
+<th>描述</th>
+<th>用法</th>
 </tr>
 </thead>
 <tbody><tr>
-<td>&#x2F;etc&#x2F;apache2&#x2F;apache2.conf</td>
-<td>主要配置文件(这个文件的末尾可以看到，include了其它所有的配置文件)</td>
+<td>title</td>
+<td>文章标题、文件名</td>
+<td></td>
 </tr>
 <tr>
-<td>&#x2F;etc&#x2F;apache2&#x2F;ports.conf</td>
-<td>始终包含在主配置文件中。它用于确定传入连接的侦听端口，默认为80，我们一般都会重新配置新的端口</td>
+<td>tags</td>
+<td>标签</td>
+<td>tags: - PS3 - Games</td>
 </tr>
 <tr>
-<td>&#x2F;etc&#x2F;apache2&#x2F;sites-enabled &#x2F;etc&#x2F;apache2&#x2F;conf-enabled &#x2F;etc&#x2F;apache2&#x2F;mods-enabled</td>
-<td>其它配置文件</td>
+<td>categories</td>
+<td>分类</td>
+<td>categories: - Diary</td>
+</tr>
+<tr>
+<td>index_img</td>
+<td>首页的缩略图</td>
+<td>index_img: &#x2F;img&#x2F;yangtai&#x2F;p1.jpg</td>
+</tr>
+<tr>
+<td>banner_img</td>
+<td>详细页的顶部背景大图</td>
+<td>banner_img: &#x2F;img&#x2F;yangtai&#x2F;p2.jpg</td>
+</tr>
+<tr>
+<td>comments</td>
+<td>开关文章的评论功能</td>
+<td>comments: true（默认） &#x2F; false</td>
 </tr>
 </tbody></table>
-<ul>
-<li><p><strong>默认web目录：&#x2F;var&#x2F;www&#x2F;html</strong>，在&#x2F;etc&#x2F;apache2&#x2F;sites-enabled&#x2F;000-default.conf 里可以看到这个 DocumentRoot &#x2F;var&#x2F;www&#x2F;html 配置</p>
 </li>
-<li><p><strong>默认用户是 www-data</strong>，定义在 &#x2F;etc&#x2F;apache2&#x2F;envvars 文件中</p>
+</ol>
+<h3 id="二、发布"><a href="#二、发布" class="headerlink" title="二、发布"></a>二、发布</h3><ol>
+<li><p>生成静态文件</p>
+<figure class="highlight ebnf"><table><tr><td class="gutter"><div class="code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><pre><code class="hljs ebnf"><span class="hljs-attribute">hexo g</span><br></code></pre></td></tr></table></figure>
 </li>
-<li><p><strong>设置默认主页的配置文件：&#x2F;etc&#x2F;apache2&#x2F;mods-enabled&#x2F;dir.conf</strong></p>
+<li><p>本地预览</p>
+<figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs awk">hexo s  启动服务器。默认情况下，访问网址为： http:<span class="hljs-regexp">//</span>localhost:<span class="hljs-number">4000</span>/<br></code></pre></td></tr></table></figure>
 </li>
-</ul>
-<h3 id="二、访问测试"><a href="#二、访问测试" class="headerlink" title="二、访问测试"></a>二、访问测试</h3><p>浏览器访问 localhost:80</p>
-<p><img src="https://raw.githubusercontent.com/Qiuzcc/images/master/imgs/image-20220312174122367.png" srcset="/img/loading.gif" lazyload alt="image-20220312174122367"></p>
-<h3 id="三、上传网页"><a href="#三、上传网页" class="headerlink" title="三、上传网页"></a>三、上传网页</h3><p>Apache安装成功之后，在&#x2F;var下面会多出一个.&#x2F;www文件夹，使用XFtp将html文件和所需的css、js、以及其它资源文件夹一并上传到&#x2F;var&#x2F;www&#x2F;html 文件夹下即可</p>
-<p><img src="https://raw.githubusercontent.com/Qiuzcc/images/master/imgs/image-20220312200709944.png" srcset="/img/loading.gif" lazyload alt="image-20220312200709944"></p>
-<p>上传完成后，在浏览器中输入ip地址即可访问上传的网页</p>
-<p><img src="https://raw.githubusercontent.com/Qiuzcc/images/master/imgs/image-20220312200921295.png" srcset="/img/loading.gif" lazyload alt="image-20220312200921295"></p>
+<li><p>部署网站</p>
+<figure class="highlight ebnf"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs ebnf"><span class="hljs-attribute">hexo d</span><br></code></pre></td></tr></table></figure></li>
+</ol>
+<h3 id="三、修改创建文章的模板"><a href="#三、修改创建文章的模板" class="headerlink" title="三、修改创建文章的模板"></a>三、修改创建文章的模板</h3><p>在hexo的<code>scaffolds</code>目录下有三个<code>md</code>文档，按需修改模板即可</p>
+<img src="https://raw.githubusercontent.com/Qiuzcc/images/master/imgs/image-20220312210202990.png" srcset="/img/loading.gif" lazyload alt="image-20220312210202990" style="zoom:50%;" />
 
+
+
+<h4 id="四、自定义默认banner-img"><a href="#四、自定义默认banner-img" class="headerlink" title="四、自定义默认banner_img"></a>四、自定义默认banner_img</h4>
             </div>
             <hr>
             <div>
@@ -288,7 +289,7 @@
                   <div class="post-meta mr-3">
                     <i class="iconfont icon-category"></i>
                     
-                      <a class="hover-with-bg" href="/categories/%E5%89%8D%E7%AB%AF/">前端</a>
+                      <a class="hover-with-bg" href="/categories/Hexo/">Hexo</a>
                     
                   </div>
                 
@@ -296,7 +297,7 @@
                   <div class="post-meta">
                     <i class="iconfont icon-tags"></i>
                     
-                      <a class="hover-with-bg" href="/tags/%E6%90%AD%E5%BB%BA%E7%BD%91%E7%AB%99/">搭建网站</a>
+                      <a class="hover-with-bg" href="/tags/Hexo/">Hexo</a>
                     
                   </div>
                 
@@ -313,18 +314,12 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2022/03/12/Hexo%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">Hexo常用命令</span>
-                        <span class="visible-mobile">上一篇</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2022/02/28/%E9%98%B3%E5%8F%B0%E6%94%B9%E9%80%A0%E6%96%B9%E6%A1%88/">
-                        <span class="hidden-mobile">阳台改造方案</span>
+                      <a href="/2022/03/12/%E9%98%BF%E9%87%8C%E4%BA%91%E5%8F%91%E5%B8%83%E7%BD%91%E9%A1%B5Apache/">
+                        <span class="hidden-mobile">阿里云发布网页Apache</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
@@ -334,33 +329,6 @@
               
             </div>
 
-            
-              <!-- Comments -->
-              <article class="comments" id="comments" lazyload>
-                
-                  
-                
-                
-  <div class="disqus" style="width:100%">
-    <div id="disqus_thread"></div>
-    
-      <script>
-        Fluid.utils.loadComments('#disqus_thread', function() {
-          Fluid.utils.createCssLink('https://cdn.jsdelivr.net/npm/disqusjs@1/dist/disqusjs.css');
-          Fluid.utils.createScript('https://cdn.jsdelivr.net/npm/disqusjs@1/dist/disqus.js', function() {
-            new DisqusJS({
-              shortname: 'fluid',
-              apikey: '5MdHoHQa7CwzODFw6Sd9B4Mk9AeIE4Gf1VsH7iobV7ETqal8Dn6viYp0y7mm4yCn'
-            });
-          });
-        });
-      </script>
-    
-    <noscript>Please enable JavaScript to view the comments</noscript>
-  </div>
-
-
-              </article>
             
           </article>
         </div>
