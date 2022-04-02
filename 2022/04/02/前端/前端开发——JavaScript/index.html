@@ -1,0 +1,544 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/favicon.png">
+  <link rel="icon" href="/img/favicon.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="Time gogo">
+  <meta name="keywords" content="">
+  
+    <meta name="description" content="JavaScript是异步的">
+<meta property="og:type" content="article">
+<meta property="og:title" content="前端开发——JavaScript">
+<meta property="og:url" content="https://qiuzcc.github.io/2022/04/02/%E5%89%8D%E7%AB%AF/%E5%89%8D%E7%AB%AF%E5%BC%80%E5%8F%91%E2%80%94%E2%80%94JavaScript/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="JavaScript是异步的">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://qiuzcc.github.io/2022/04/02/%E5%89%8D%E7%AB%AF/%E5%89%8D%E7%AB%AF%E5%BC%80%E5%8F%91%E2%80%94%E2%80%94JavaScript/前端开发——JavaScript.assets/image-20220326212616410.png">
+<meta property="article:published_time" content="2022-04-02T10:03:42.000Z">
+<meta property="article:modified_time" content="2022-04-02T10:05:16.983Z">
+<meta property="article:author" content="Time gogo">
+<meta property="article:tag" content="JS">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://qiuzcc.github.io/2022/04/02/%E5%89%8D%E7%AB%AF/%E5%89%8D%E7%AB%AF%E5%BC%80%E5%8F%91%E2%80%94%E2%80%94JavaScript/前端开发——JavaScript.assets/image-20220326212616410.png">
+  
+  
+  <title>前端开发——JavaScript - Hexo</title>
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4/dist/css/bootstrap.min.css" />
+
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/github-markdown-css@4/github-markdown.min.css" />
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hint.css@2/hint.min.css" />
+
+  
+    
+    
+      
+      <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@10/styles/github-gist.min.css" />
+    
+  
+
+  
+    <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3/dist/jquery.fancybox.min.css" />
+  
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_ba1fz6golrf.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_lbnruvf0jn.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+<!-- 自定义样式保持在最底部 -->
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    var CONFIG = {"hostname":"qiuzcc.github.io","root":"/","version":"1.8.14","typing":{"enable":true,"typeSpeed":210,"cursorChar":" ","loop":false},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"copy_btn":true,"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml"};
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+<meta name="generator" content="Hexo 6.0.0"></head>
+
+
+<body>
+  <header style="height: 70vh;">
+    <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>time&#39;go&#39;go</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                首页
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                分类
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                关于
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              &nbsp;<i class="iconfont icon-search"></i>&nbsp;
+            </a>
+          </li>
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">&nbsp;<i
+                class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+    <div class="banner" id="banner" parallax=true
+         style="background: url('/img/bg/sky.jpg') no-repeat center center;
+           background-size: cover;">
+      <div class="full-bg-img">
+        <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+          <div class="page-header text-center fade-in-up">
+            <span class="h2" id="subtitle" title="前端开发——JavaScript">
+              
+            </span>
+
+            
+              <div class="mt-3">
+  
+  
+    <span class="post-meta">
+      <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+      <time datetime="2022-04-02 18:03" pubdate>
+        2022年4月2日 晚上
+      </time>
+    </span>
+  
+</div>
+
+<div class="mt-1">
+  
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-chart"></i>
+      4k 字
+    </span>
+  
+
+  
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-clock-fill"></i>
+      
+      
+      34 分钟
+    </span>
+  
+
+  
+  
+</div>
+
+            
+          </div>
+
+          
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="d-none d-lg-block col-lg-2"></div>
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div class="py-5" id="board">
+          <article class="post-content mx-auto">
+            <!-- SEO header -->
+            <h1 style="display: none">前端开发——JavaScript</h1>
+            
+            <div class="markdown-body">
+              <p>JavaScript是异步的</p>
+<span id="more"></span>
+
+<h3 id="一、Callback-回调机制"><a href="#一、Callback-回调机制" class="headerlink" title="一、Callback(回调机制)"></a>一、Callback(回调机制)</h3><p>JavaScript是异步执行的，看以下例子</p>
+<ul>
+<li>例一，</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><div class="code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></div></td><td class="code"><pre><code class="hljs js"><span class="hljs-keyword">function</span> <span class="hljs-title function_">first</span>(<span class="hljs-params"></span>)&#123;<br>    <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-number">1</span>);<br>&#125;<br><span class="hljs-keyword">function</span> <span class="hljs-title function_">second</span>(<span class="hljs-params"></span>)&#123;<br>    <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-number">2</span>);<br>&#125;<br><span class="hljs-title function_">first</span>();<br><span class="hljs-title function_">second</span>();<br>输出结果为:<span class="hljs-number">1</span> <span class="hljs-number">2</span><br></code></pre></td></tr></table></figure>
+
+<ul>
+<li>例二</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-keyword">function</span> <span class="hljs-title function_">first</span>(<span class="hljs-params"></span>)&#123;<br>	<span class="hljs-built_in">setTimeout</span>(<span class="hljs-keyword">function</span>(<span class="hljs-params"></span>)&#123;<br>        <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-number">1</span>);<br>    &#125;,<span class="hljs-number">500</span>);<br>&#125;<br><span class="hljs-keyword">function</span> <span class="hljs-title function_">second</span>(<span class="hljs-params"></span>)&#123;<br>    <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-number">2</span>);<br>&#125;<br><span class="hljs-title function_">first</span>();<br><span class="hljs-title function_">second</span>();<br>输出结果为:<span class="hljs-number">2</span> <span class="hljs-number">1</span><br></code></pre></td></tr></table></figure>
+
+<p>解释：JavaScript是异步的，所有延迟处理会被放到循环队列里</p>
+<p><strong>简单的定义：</strong>回调就是一个在另外一个函数执行完后要执行的函数</p>
+<p><strong>定义方式：</strong>在函数定义时，加入一个callback参数</p>
+<p><strong>调用方式：</strong>调用函数时，直接在callback参数位置定义回调执行的函数体（例一）；在callback参数位置传入另外一个函数名作为回调函数执行（例二）</p>
+<p>见下面例子：</p>
+<ul>
+<li>例一</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-keyword">function</span> <span class="hljs-title function_">doHomework</span>(<span class="hljs-params">subject,callback</span>)&#123;<br>	<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">&#x27;do $&#123;subject&#125; homework&#x27;</span>);<br>&#125;;<br><br><span class="hljs-title function_">doHomework</span>(<span class="hljs-string">&#x27;math&#x27;</span>,<span class="hljs-keyword">function</span>(<span class="hljs-params"></span>)&#123;<br>    <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">&#x27;finish math homework&#x27;</span>);<br>&#125;);<br></code></pre></td></tr></table></figure>
+
+
+
+<ul>
+<li>例二</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-keyword">function</span> <span class="hljs-title function_">doHomework</span>(<span class="hljs-params">subject,callback</span>)&#123;<br>	conse.<span class="hljs-title function_">log</span>(<span class="hljs-string">&#x27;do $&#123;subject&#125; homework&#x27;</span>);<br>&#125;;<br><br><span class="hljs-keyword">function</span> <span class="hljs-title function_">finishHomework</span>(<span class="hljs-params"></span>)&#123;<br>    <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">&#x27;finish homework&#x27;</span>);<br>&#125;;<br><br><span class="hljs-title function_">doHomework</span>(<span class="hljs-string">&#x27;math&#x27;</span>,finishHomework);<br></code></pre></td></tr></table></figure>
+
+
+
+<h3 id="二、Async"><a href="#二、Async" class="headerlink" title="二、Async"></a>二、Async</h3><h4 id="基础用法"><a href="#基础用法" class="headerlink" title="基础用法"></a>基础用法</h4><p>作为一个关键字放到函数前面，用于表示函数是一个异步函数，异步函数也就意味着该函数的执行不会阻塞后面代码的执行。</p>
+<p>实例：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-keyword">async</span> <span class="hljs-keyword">function</span> <span class="hljs-title function_">timeout</span>(<span class="hljs-params"></span>)&#123;<br>	<span class="hljs-built_in">setTimeout</span>(<span class="hljs-function">()=&gt;</span>&#123;<br>		<span class="hljs-keyword">return</span> <span class="hljs-string">&quot;hello&quot;</span>;<br>	&#125;)<br>&#125;<br><span class="hljs-title function_">timeout</span>().<span class="hljs-title function_">then</span>(<span class="hljs-function"><span class="hljs-params">result</span>=&gt;</span>&#123;<br>    <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(result);<br>&#125;)<br><span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">&#x27;hello2&#x27;</span>)<br>输出结果：<br>hello2<br>hello<br></code></pre></td></tr></table></figure>
+
+<p>async 函数返回的是一个promise 对象，如果要获取到promise 返回值，我们应该用then 方法</p>
+<h4 id="await关键字"><a href="#await关键字" class="headerlink" title="await关键字"></a>await关键字</h4><p><strong>await 关键字只能放到async 函数里面</strong></p>
+<p>await后面可以放任何表达式，更多的是放一个返回promise 对象的表达式，使用await关键字之后，表示等待异步函数执行完成之后，才继续执行后面的代码。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-keyword">function</span> <span class="hljs-title function_">doubleAfter2seconds</span>(<span class="hljs-params">num</span>)&#123;<br>    <span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">Promise</span>(<span class="hljs-function">(<span class="hljs-params">resolve,reject</span>)=&gt;</span>&#123;<br>        <span class="hljs-built_in">setTimeout</span>(<span class="hljs-function">()=&gt;</span>&#123;<br>            <span class="hljs-title function_">resovle</span>(<span class="hljs-number">2</span> * num)<br>        &#125;,<span class="hljs-number">2000</span>);<br>    &#125;)<br>&#125;<br><span class="hljs-keyword">async</span> <span class="hljs-keyword">function</span> <span class="hljs-title function_">testResult</span>(<span class="hljs-params"></span>)&#123;<br>    <span class="hljs-keyword">let</span> result1= <span class="hljs-keyword">await</span> <span class="hljs-title function_">doubleAfter2seconds</span>(<span class="hljs-number">10</span>);<br>    <span class="hljs-keyword">let</span> result2= <span class="hljs-keyword">await</span> <span class="hljs-title function_">doubleAfter2seconds</span>(<span class="hljs-number">20</span>);<br>    <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(result1+result2);<br>&#125;<br><span class="hljs-title function_">testResult</span>();<br><span class="hljs-number">4</span>秒后，输出结果:<br><span class="hljs-number">60</span><br></code></pre></td></tr></table></figure>
+
+<p><strong>捕获错误，使用try-catch的方式</strong></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-keyword">async</span> <span class="hljs-keyword">function</span> <span class="hljs-title function_">testResult</span>(<span class="hljs-params"></span>)&#123;<br>	<span class="hljs-keyword">try</span>&#123;<br>		<span class="hljs-keyword">let</span> result1 = <span class="hljs-keyword">await</span> <span class="hljs-title function_">doubleAfter2seconds</span>(<span class="hljs-number">10</span>);<br>        <span class="hljs-keyword">let</span> result2= <span class="hljs-keyword">await</span> <span class="hljs-title function_">doubleAfter2seconds</span>(<span class="hljs-number">20</span>);<br>        <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(result1+result2);<br>	&#125;<span class="hljs-keyword">catch</span>(err)&#123;<br>        <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">error</span>(err);<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+
+
+<h4 id="解决“回调地狱”问题"><a href="#解决“回调地狱”问题" class="headerlink" title="解决“回调地狱”问题"></a>解决“回调地狱”问题</h4><p>Async.js可将一系列函数粘连起来，既可以是串行，也可以是并行。</p>
+<p>使用之前需要先安装async包，</p>
+<figure class="highlight coffeescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs coffeescript"><span class="hljs-built_in">npm</span> install <span class="hljs-keyword">async</span> —-save<br></code></pre></td></tr></table></figure>
+
+
+
+<p>场景实例：先后读取两个文本数据，按顺序展示文本</p>
+<ul>
+<li>使用callback回调的方式，嵌套读取</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-keyword">var</span> fs  = <span class="hljs-built_in">require</span>(<span class="hljs-string">&#x27;fs&#x27;</span>);<br>fs.<span class="hljs-title function_">readFile</span>(<br>    <span class="hljs-string">&#x27;a-text-file.txt&#x27;</span>,      <span class="hljs-comment">//读取第一个文本</span><br>    <span class="hljs-string">&#x27;utf8&#x27;</span>,                <br>    <span class="hljs-keyword">function</span>(<span class="hljs-params">err,text</span>) &#123;    <span class="hljs-comment">//读取完成，回调</span><br>        <span class="hljs-keyword">if</span> (err) &#123;<br>            <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">error</span>(err);           <br>        &#125; <span class="hljs-keyword">else</span> &#123;<br>            <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">&#x27;First text file:&#x27;</span>,text);    <span class="hljs-comment">//显示第一段文本</span><br>            fs.<span class="hljs-title function_">readFile</span>(<br>                <span class="hljs-string">&#x27;another-text-file.txt&#x27;</span>,  <span class="hljs-comment">//读取第二个文本</span><br>                <span class="hljs-string">&#x27;utf8&#x27;</span>,                   <br>                <span class="hljs-keyword">function</span>(<span class="hljs-params">err,text</span>) &#123;      <span class="hljs-comment">//读取完成，回调</span><br>                    <span class="hljs-keyword">if</span> (err) &#123;<br>                        <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">error</span>(err);                      <br>                    &#125; <span class="hljs-keyword">else</span> &#123;<br>                        <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">&#x27;Second text file:&#x27;</span>,text);    <span class="hljs-comment">//显示第二段文本</span><br>                    &#125;<br>                &#125;<br>            );<br>        &#125;<br>    &#125;<br>); <br></code></pre></td></tr></table></figure>
+
+<p>缺点：嵌套使得可读性、可维护性变差，串行加载，时间效率低</p>
+<ul>
+<li>使用async的方式（简洁、高效）</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-keyword">var</span> fs  = <span class="hljs-built_in">require</span>(<span class="hljs-string">&#x27;fs&#x27;</span>);<br><span class="hljs-keyword">var</span> <span class="hljs-keyword">async</span> = <span class="hljs-built_in">require</span>(<span class="hljs-string">&#x27;async&#x27;</span>);<br><br><span class="hljs-keyword">async</span>.<span class="hljs-title function_">series</span>([<br>	<br>	<span class="hljs-keyword">function</span>(<span class="hljs-params">cb</span>)&#123;<br>		fs.<span class="hljs-title function_">readFile</span>(<span class="hljs-string">&#x27;a-text-file.txt&#x27;</span>,<span class="hljs-string">&#x27;utf8&#x27;</span>,cb);<br>	&#125;,<br>	<br>	<span class="hljs-keyword">function</span>(<span class="hljs-params">cb</span>)&#123;<br>		fs.<span class="hljs-title function_">readFile</span>(<span class="hljs-string">&#x27;another-text-file.txt&#x27;</span>,<span class="hljs-string">&#x27;utf8&#x27;</span>,cb);<br>	&#125;<br>	<br>],<span class="hljs-keyword">function</span>(<span class="hljs-params">err,value</span>)&#123;<br>	<span class="hljs-keyword">if</span>(err) <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">error</span>(err);<br>    <span class="hljs-keyword">else</span>&#123;<br>        <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">&#x27;File 1:&#x27;</span>,values[<span class="hljs-number">0</span>]);<br>        <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">&#x27;File 2:&#x27;</span>,values[<span class="hljs-number">1</span>]);<br>    &#125;<br>&#125;);<br></code></pre></td></tr></table></figure>
+
+<p> async.series取一个函数数组作为参数，并串行执行它们；</p>
+<p>每个函数只能有一个参数，即回调（cb）。cb执行时应该与其他任意回调一样具有相同类型的参数，所以我们将其传入为fs.readFile的参数；</p>
+<p>最后，它们的结果被发送到最后的回调，即async.series的第二个参数。 这些结果被存在一个数组中，它们按async.series第一个参数中的函数的顺序而排列。</p>
+<p>通过async.js，错误处理被简化了，因为如果遇到一个错误，它会返回错误到最后一个回调中，并且不在执行任何其他异步函数。</p>
+<h3 id="三、条件判断"><a href="#三、条件判断" class="headerlink" title="三、条件判断"></a>三、条件判断</h3><p><strong>判等</strong></p>
+<img src="前端开发——JavaScript.assets/image-20220326212616410.png" srcset="/img/loading.gif" lazyload alt="image-20220326212616410" style="zoom:50%;" />
+
+<p><strong>判断空数组</strong></p>
+<p>通过array.length 判断，如果array.length&#x3D;&#x3D;&#x3D;0 ，数组为空</p>
+<p><strong>判断空集合</strong></p>
+<p>通过keys的长度判断，如果Object.keys(obj).length&#x3D;&#x3D;&#x3D;0，集合为空</p>
+<h3 id="四、数组"><a href="#四、数组" class="headerlink" title="四、数组"></a>四、数组</h3><p><strong>插入</strong></p>
+<p>头插入：<code>数组.unshift(元素)</code></p>
+<p>尾插入：<code>数组.push(元素)</code></p>
+<h3 id="五、script设置点击事件"><a href="#五、script设置点击事件" class="headerlink" title="五、script设置点击事件"></a>五、script设置点击事件</h3><p><strong>方式一：通过addEventListener方法添加</strong></p>
+<ul>
+<li>参数一：执行的事件</li>
+<li>参数二：事件发生后的回调方法</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs js">btn.<span class="hljs-title function_">addEventListener</span>(<span class="hljs-string">&quot;click&quot;</span>, <span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) &#123;<br>	<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-number">666</span>);<br>&#125;)<br></code></pre></td></tr></table></figure>
+
+<p>或者把函数体写在外面</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-keyword">function</span> <span class="hljs-title function_">test</span>(<span class="hljs-params"></span>)&#123;<br>	<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-number">666</span>);<br>&#125;<br>btn.<span class="hljs-title function_">addEventListener</span>(<span class="hljs-string">&quot;click&quot;</span>,test);<br></code></pre></td></tr></table></figure>
+
+
+
+<p><strong>方式二：通过元素属性添加</strong></p>
+<figure class="highlight arcade"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs arcade">btn.onclick = <span class="hljs-keyword">function</span>(<span class="hljs-params"></span>)&#123;<span class="hljs-built_in">console</span>.<span class="hljs-built_in">log</span>(<span class="hljs-number">666</span>);&#125;<br>或者<br><span class="hljs-keyword">function</span> <span class="hljs-title function_">test</span>(<span class="hljs-params"></span>)&#123;<br>	<span class="hljs-built_in">console</span>.<span class="hljs-built_in">log</span>(<span class="hljs-number">666</span>);<br>&#125;<br>btn.onclick = test;<br></code></pre></td></tr></table></figure>
+
+
+
+<h3 id="六、script获取控件元素"><a href="#六、script获取控件元素" class="headerlink" title="六、script获取控件元素"></a>六、script获取控件元素</h3><p><strong>方式一：通过document.getElementById(“id”)获取</strong></p>
+<p><strong>方式二：通过css选择器，document.querySelector(#id)获取</strong></p>
+
+            </div>
+            <hr>
+            <div>
+              <div class="post-metas mb-3">
+                
+                  <div class="post-meta mr-3">
+                    <i class="iconfont icon-category"></i>
+                    
+                      <a class="hover-with-bg" href="/categories/%E5%89%8D%E7%AB%AF/">前端</a>
+                    
+                  </div>
+                
+                
+                  <div class="post-meta">
+                    <i class="iconfont icon-tags"></i>
+                    
+                      <a class="hover-with-bg" href="/tags/JS/">JS</a>
+                    
+                  </div>
+                
+              </div>
+              
+                <p class="note note-warning">
+                  
+                    本博客所有文章除特别声明外，均采用 <a target="_blank" href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh" rel="nofollow noopener noopener">CC BY-SA 4.0 协议</a> ，转载请注明出处！
+                  
+                </p>
+              
+              
+                <div class="post-prevnext">
+                  <article class="post-prev col-6">
+                    
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2022/04/02/%E5%89%8D%E7%AB%AF/%E7%AC%94%E8%AE%B0%E2%80%94%E2%80%94bootstrap%E6%A1%86%E6%9E%B6/">
+                        <span class="hidden-mobile">笔记——bootstrap框架</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+              <!-- Comments -->
+              <article class="comments" id="comments" lazyload>
+                
+                  
+                
+                
+  <div class="disqus" style="width:100%">
+    <div id="disqus_thread"></div>
+    
+      <script>
+        Fluid.utils.loadComments('#disqus_thread', function() {
+          Fluid.utils.createCssLink('https://cdn.jsdelivr.net/npm/disqusjs@1/dist/disqusjs.css');
+          Fluid.utils.createScript('https://cdn.jsdelivr.net/npm/disqusjs@1/dist/disqus.js', function() {
+            new DisqusJS({
+              shortname: 'fluid',
+              apikey: '5MdHoHQa7CwzODFw6Sd9B4Mk9AeIE4Gf1VsH7iobV7ETqal8Dn6viYp0y7mm4yCn'
+            });
+          });
+        });
+      </script>
+    
+    <noscript>Please enable JavaScript to view the comments</noscript>
+  </div>
+
+
+              </article>
+            
+          </article>
+        </div>
+      </div>
+    </div>
+    
+      <div class="d-none d-lg-block col-lg-2 toc-container" id="toc-ctn">
+        <div id="toc">
+  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;目录</p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+      </div>
+    
+  </div>
+</div>
+
+<!-- Custom -->
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v"
+                 for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+
+    
+  </main>
+
+  <footer class="text-center mt-5 py-3">
+  <div class="footer-content">
+     <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+  </div>
+  
+
+  
+
+  
+</footer>
+
+
+  <!-- SCRIPTS -->
+  
+  <script  src="https://cdn.jsdelivr.net/npm/nprogress@0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/nprogress@0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js" ></script>
+<script  src="https://cdn.jsdelivr.net/npm/bootstrap@4/dist/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+<!-- Plugins -->
+
+
+  <script  src="/js/local-search.js" ></script>
+
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+  
+
+
+
+  
+    <script  src="https://cdn.jsdelivr.net/npm/tocbot@4/dist/tocbot.min.js" ></script>
+  
+  
+    <script  src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3/dist/jquery.fancybox.min.js" ></script>
+  
+  
+    <script  src="https://cdn.jsdelivr.net/npm/anchor-js@4/anchor.min.js" ></script>
+  
+  
+    <script defer src="https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js" ></script>
+  
+
+
+
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/typed.js@2/lib/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var title = document.getElementById('subtitle').title;
+      
+        typing(title);
+      
+    })(window, document);
+  </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- 主题的启动项 保持在最底部 -->
+<script  src="/js/boot.js" ></script>
+
+
+</body>
+</html>

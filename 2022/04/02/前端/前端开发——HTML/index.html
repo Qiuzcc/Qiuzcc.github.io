@@ -1,0 +1,746 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/favicon.png">
+  <link rel="icon" href="/img/favicon.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="Time gogo">
+  <meta name="keywords" content="">
+  
+    <meta name="description" content="HyperText Markup Language 不是一门编程语言，而是一种用来告知浏览器如何组织页面的标记语言">
+<meta property="og:type" content="article">
+<meta property="og:title" content="前端开发——HTML">
+<meta property="og:url" content="https://qiuzcc.github.io/2022/04/02/%E5%89%8D%E7%AB%AF/%E5%89%8D%E7%AB%AF%E5%BC%80%E5%8F%91%E2%80%94%E2%80%94HTML/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="HyperText Markup Language 不是一门编程语言，而是一种用来告知浏览器如何组织页面的标记语言">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://raw.githubusercontent.com/Qiuzcc/images/master/imgs/image-20220401171641215.png">
+<meta property="article:published_time" content="2022-04-02T09:01:50.000Z">
+<meta property="article:modified_time" content="2022-04-02T09:34:41.416Z">
+<meta property="article:author" content="Time gogo">
+<meta property="article:tag" content="HTML">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://raw.githubusercontent.com/Qiuzcc/images/master/imgs/image-20220401171641215.png">
+  
+  
+  <title>前端开发——HTML - Hexo</title>
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4/dist/css/bootstrap.min.css" />
+
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/github-markdown-css@4/github-markdown.min.css" />
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hint.css@2/hint.min.css" />
+
+  
+    
+    
+      
+      <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@10/styles/github-gist.min.css" />
+    
+  
+
+  
+    <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3/dist/jquery.fancybox.min.css" />
+  
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_ba1fz6golrf.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_lbnruvf0jn.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+<!-- 自定义样式保持在最底部 -->
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    var CONFIG = {"hostname":"qiuzcc.github.io","root":"/","version":"1.8.14","typing":{"enable":true,"typeSpeed":210,"cursorChar":" ","loop":false},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"copy_btn":true,"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml"};
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+<meta name="generator" content="Hexo 6.0.0"></head>
+
+
+<body>
+  <header style="height: 70vh;">
+    <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>time&#39;go&#39;go</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                首页
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                分类
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                关于
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              &nbsp;<i class="iconfont icon-search"></i>&nbsp;
+            </a>
+          </li>
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">&nbsp;<i
+                class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+    <div class="banner" id="banner" parallax=true
+         style="background: url('/img/bg/sky.jpg') no-repeat center center;
+           background-size: cover;">
+      <div class="full-bg-img">
+        <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+          <div class="page-header text-center fade-in-up">
+            <span class="h2" id="subtitle" title="前端开发——HTML">
+              
+            </span>
+
+            
+              <div class="mt-3">
+  
+  
+    <span class="post-meta">
+      <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+      <time datetime="2022-04-02 17:01" pubdate>
+        2022年4月2日 下午
+      </time>
+    </span>
+  
+</div>
+
+<div class="mt-1">
+  
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-chart"></i>
+      4.5k 字
+    </span>
+  
+
+  
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-clock-fill"></i>
+      
+      
+      38 分钟
+    </span>
+  
+
+  
+  
+</div>
+
+            
+          </div>
+
+          
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="d-none d-lg-block col-lg-2"></div>
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div class="py-5" id="board">
+          <article class="post-content mx-auto">
+            <!-- SEO header -->
+            <h1 style="display: none">前端开发——HTML</h1>
+            
+            <div class="markdown-body">
+              <p>HyperText Markup Language 不是一门编程语言，而是一种用来告知浏览器如何组织页面的<strong>标记语言</strong></p>
+<span id="more"></span>
+
+
+
+<h2 id="HTML"><a href="#HTML" class="headerlink" title="HTML"></a>HTML</h2><p>HyperText Markup Language 不是一门编程语言，而是一种用来告知浏览器如何组织页面的<strong>标记语言</strong></p>
+<p><strong>（注：以下所有html标签，都在&lt; 后面增加了一个空格，以避免被编辑器识别为html元素）</strong></p>
+<p><strong>元素（Element）</strong></p>
+<p>标签+内容，组成了元素，HTML就是由一系列元素组成的。<strong>注意：HTML 标签不区分大小写</strong></p>
+<p><strong>属性（Attribute）</strong></p>
+<h3 id="一、剖析元素"><a href="#一、剖析元素" class="headerlink" title="一、剖析元素"></a>一、剖析元素</h3><p><strong>文字样式的元素</strong></p>
+<table>
+<thead>
+<tr>
+<th>标签</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>&lt; i&gt;&lt; &#x2F;i&gt;</td>
+<td>斜体</td>
+</tr>
+<tr>
+<td>&lt; strong&gt;&lt; &#x2F;strong&gt;</td>
+<td>加粗，表示重要性</td>
+</tr>
+<tr>
+<td>&lt; del&gt;&lt; &#x2F;del&gt;</td>
+<td>删除线</td>
+</tr>
+<tr>
+<td>&lt; u&gt;&lt; &#x2F;u&gt;</td>
+<td>下划线</td>
+</tr>
+</tbody></table>
+<p><strong>文字排版的元素</strong></p>
+<table>
+<thead>
+<tr>
+<th>标签</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>&lt; p&gt; &lt; &#x2F;p&gt;</td>
+<td>段落</td>
+</tr>
+<tr>
+<td>&lt; br&gt;</td>
+<td>换行</td>
+</tr>
+</tbody></table>
+<p><strong>块级元素 &amp; 内联元素</strong></p>
+<ul>
+<li><p><strong>块级元素</strong>在页面中以块的形式展现，会换行</p>
+</li>
+<li><p><strong>内联元素</strong>出现在<strong>块级元素</strong>里面，不换行</p>
+<p>常见的内联元素：</p>
+<table>
+<thead>
+<tr>
+<th>标签</th>
+<th>描述</th>
+<th>标签</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>&lt; a&gt;&lt; &#x2F;a&gt;</td>
+<td>超链接</td>
+<td>&lt; br&gt;</td>
+<td>换行符号</td>
+</tr>
+<tr>
+<td>&lt; audio&gt;</td>
+<td>在文档中嵌入音频</td>
+<td>&lt; button&gt;</td>
+<td>按钮</td>
+</tr>
+<tr>
+<td>&lt; canvas&gt;</td>
+<td>被用来通过 JavaScript绘制图形及图形动画</td>
+<td>&lt; code&gt;&lt; &#x2F;code&gt;</td>
+<td>代码块</td>
+</tr>
+<tr>
+<td>&lt; i&gt;&lt; &#x2F;i&gt;</td>
+<td>用于表现因某些原因需要区分普通文本的一系列文本</td>
+<td>&lt; iframe&gt;</td>
+<td><strong>内联框架元素</strong></td>
+</tr>
+<tr>
+<td>……</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody></table>
+</li>
+</ul>
+<p><strong>语义元素</strong></p>
+<p>HTML，有很多标签的原因之一在于，每种标签都有对应的语义，尽管它们在样式上的表现可能相差无几，我想这么做的原因应该是为了方便读取数据，比如爬取数据时，可以通过标签的名字来获取到对应所需要的内容，而且使用对应语义的元素标签也会使得HTML的可读性更强</p>
+<table>
+<thead>
+<tr>
+<th>标签</th>
+<th>描述</th>
+<th>标签</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>&lt; address&gt;</td>
+<td>地址</td>
+<td>&lt; em&gt;</td>
+<td>表示强调或重读</td>
+</tr>
+<tr>
+<td>&lt; article&gt;</td>
+<td>独立的内容项目，如文章、评论等</td>
+<td>&lt; strong&gt;</td>
+<td>表示重要性</td>
+</tr>
+<tr>
+<td>&lt; details&gt;</td>
+<td>创建一个挂件，仅在被切换成展开状态时，它才会显示内含的信息</td>
+<td>&lt; mark&gt;</td>
+<td>表示相关性</td>
+</tr>
+<tr>
+<td>&lt; dialog&gt;</td>
+<td>对话框盒子</td>
+<td>&lt; dfn&gt;</td>
+<td>标记术语的定义实例</td>
+</tr>
+<tr>
+<td>&lt; dl&gt;</td>
+<td>描述列表</td>
+<td>&lt; cite&gt;</td>
+<td>标记著作者</td>
+</tr>
+</tbody></table>
+<p><strong>空元素</strong></p>
+<p>一个元素只有一个标签，没有结束标签的元素，如&lt; img&gt; ，通常用来插入一些东西</p>
+<h3 id="二、剖析HTML文档"><a href="#二、剖析HTML文档" class="headerlink" title="二、剖析HTML文档"></a>二、剖析HTML文档</h3><p><strong>（以下所有的标签，在&lt; 后面都多加了一个空格，以避免被编辑器识别为html文本，实际使用时需要去掉那个空格）</strong></p>
+<p><strong>&lt; !DOCTYPE html&gt;</strong></p>
+<p>是现在是最短有效的文档声明</p>
+<p><strong>&lt; html&gt;&lt; &#x2F;html&gt;</strong></p>
+<p>包裹了整个完整的页面，是一个根元素</p>
+<p><strong><!-- -->注释</strong></p>
+<h4 id="head-元数据"><a href="#head-元数据" class="headerlink" title="head 元数据"></a>head 元数据</h4><p><strong>&lt; head&gt;&lt; &#x2F;head&gt;</strong></p>
+<p>包含了所有你想包含在HTML页面中但不想在HTML页面中显示的内容</p>
+<p>包括你想在搜索结果中出现的关键字和页面描述，CSS样式，字符集声明等等</p>
+<p><strong>&lt; title&gt;&lt; &#x2F;title&gt;</strong></p>
+<p> 设置页面标题，出现在浏览器标签上，当你标记&#x2F;收藏页面时它可用来描述页面</p>
+<p><strong>&lt; meta charset&#x3D;”utf-8”&gt;</strong></p>
+<p>设置文档使用utf-8字符集编码</p>
+<p><strong>meta 添加元数据</strong></p>
+<ul>
+<li><code>name</code> 指定了meta 元素的类型； 说明该元素包含了什么类型的信息。</li>
+<li><code>content</code> 指定了实际的元数据内容</li>
+</ul>
+<p>description也被使用在<strong>搜索引擎显示的结果</strong>页中，如下，content的内容将显示在搜索页面中</p>
+<figure class="highlight routeros"><table><tr><td class="gutter"><div class="code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></div></td><td class="code"><pre><code class="hljs routeros">meta <span class="hljs-attribute">name</span>=<span class="hljs-string">&quot;description&quot;</span> <span class="hljs-attribute">content</span>=<span class="hljs-string">&quot;The MDN Web Docs site</span><br><span class="hljs-string">    provides information about Open Web technologies</span><br><span class="hljs-string">    including HTML, CSS, and APIs for both Web sites and</span><br><span class="hljs-string">    progressive web apps.&quot;</span>&gt;<br></code></pre></td></tr></table></figure>
+
+<p><strong>添加自定义图标</strong>，显示在标签页标题左边的小图标，设置方法，在head中添加如下代码，大多数浏览器都可以支持.gif和.png格式了</p>
+<figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs routeros">&lt;link <span class="hljs-attribute">rel</span>=<span class="hljs-string">&quot;shortcut icon&quot;</span> <span class="hljs-attribute">href</span>=<span class="hljs-string">&quot;favicon.ico&quot;</span> <span class="hljs-attribute">type</span>=<span class="hljs-string">&quot;image/x-icon&quot;</span>&gt;<br></code></pre></td></tr></table></figure>
+
+<p><strong>添加CSS</strong>，属性：<code>rel:&quot;stylesheet&quot; href:文件路径</code></p>
+<h4 id="body-主体"><a href="#body-主体" class="headerlink" title="body 主体"></a>body 主体</h4><p><strong>&lt; body&gt;&lt; &#x2F;body&gt;</strong></p>
+<p>页面上显示的所有元素，script标签可以添加到body内，<strong>事实上，把script放在文档尾部是一个更好的选择</strong>，这样可以确保先解析html内容之后才加载脚本，避免因为脚本找不到某个元素而出错，<strong>script需要开始和结束标签</strong>，因为它既可以引用外部标签，也可以把脚本写在script元素内</p>
+<h3 id="三、实体引用"><a href="#三、实体引用" class="headerlink" title="三、实体引用"></a>三、实体引用</h3><table>
+<thead>
+<tr>
+<th align="left">原义字符</th>
+<th align="left">等价字符引用</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">&lt;</td>
+<td align="left">&amp;lt ;</td>
+</tr>
+<tr>
+<td align="left">&gt;</td>
+<td align="left">&amp;gt ;</td>
+</tr>
+<tr>
+<td align="left">“</td>
+<td align="left">&amp;quot ;</td>
+</tr>
+<tr>
+<td align="left">‘</td>
+<td align="left">&amp;apos ;</td>
+</tr>
+<tr>
+<td align="left">&amp;</td>
+<td align="left">&amp;amp ;</td>
+</tr>
+</tbody></table>
+<p><strong>注：等价字符的字符与分号;之间并没有空格，这里为了能够显示出来，多加了空格</strong></p>
+<p>以上仅列出一些常用的引用，更多可参考<a target="_blank" rel="noopener" href="http://en.wikipedia.org/wiki/List_of_XML_and_HTML_character_entity_references">XML和HTML字符实体引用列表</a></p>
+<h3 id="四、常用元素"><a href="#四、常用元素" class="headerlink" title="四、常用元素"></a>四、常用元素</h3><h4 id="lt-a-gt-链接"><a href="#lt-a-gt-链接" class="headerlink" title="&lt; a&gt; 链接"></a>&lt; a&gt; 链接</h4><table>
+<thead>
+<tr>
+<th>href</th>
+<th>链接地址</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>title</td>
+<td>鼠标悬停时，以工具提示显示的信息</td>
+</tr>
+<tr>
+<td>target</td>
+<td>跳转链接的方式，如”_blank”为打开新标签页</td>
+</tr>
+<tr>
+<td>download</td>
+<td>当链接是下载资源时，使用download属性提供一个默认的保存文件名，仅适用于<strong>同源URL</strong>（host相同）</td>
+</tr>
+</tbody></table>
+<h4 id="iframe内联框架"><a href="#iframe内联框架" class="headerlink" title="iframe内联框架"></a>iframe内联框架</h4><p><strong>HTML 内联框架元素 (<code>&lt;iframe&gt;</code>)</strong> 表示嵌套的<a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-CN/docs/Glossary/Browsing_context">browsing context</a>。它能够将另一个 HTML 页面嵌入到当前页面中。</p>
+<p><img src="https://raw.githubusercontent.com/Qiuzcc/images/master/imgs/image-20220401171641215.png" srcset="/img/loading.gif" lazyload alt="image-20220401171641215"></p>
+<h3 id="五、文字基础"><a href="#五、文字基础" class="headerlink" title="五、文字基础"></a>五、文字基础</h3><p><strong>标题和段落</strong></p>
+<ul>
+<li>您应该最好只对每个页面使用一次&lt; h1&gt; — 这是顶级标题，所有其他标题位于层次结构中的下方</li>
+<li>在可用的六个标题级别中，您应该只在每页使用不超过三个</li>
+</ul>
+<p><strong>语义标签</strong></p>
+<p>我们可以通过css样式让任何一个标签达到我们想要的外形效果，但是在别人阅读这份html时可能很难理解该部分属于哪一个结构。所以使用语义化标签是必要的，也是html存在那么多标签的意义。</p>
+<p>我之前使用类名或id的方式来标注每个标签代表的含义，但是这样仍然不够直观，不能够让人一眼就看出来每个标签所代表的结构内容 </p>
+<p><strong>高级文字排版</strong></p>
+<ol>
+<li><p><strong>引用</strong>，引用会有默认的缩进，<strong>cite属性</strong>可以添加引用的链接，但是要使用JS或者CSS，浏览器才会显示cite的内容</p>
+<p><strong>行内引用 &lt; q&gt;</strong> </p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span> 这是引文：<span class="hljs-tag">&lt;<span class="hljs-name">q</span> <span class="hljs-attr">cite</span>=<span class="hljs-string">&quot;&quot;</span>&gt;</span> 水调歌头——苏轼 <span class="hljs-tag">&lt;/<span class="hljs-name">q</span>&gt;</span> <span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span><br></code></pre></td></tr></table></figure>
+
+<p>这是引文：<q cite=""> 水调歌头——苏轼</q></p>
+
+<p><strong>块引用 &lt; blockquote cite&#x3D;””&gt;</strong> </p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>这是一段引用：<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">blockquote</span> <span class="hljs-attr">cite</span>=<span class="hljs-string">&quot;&quot;</span>&gt;</span>水调歌头——苏轼<span class="hljs-tag">&lt;/<span class="hljs-name">blockquote</span>&gt;</span><br></code></pre></td></tr></table></figure>
+
+<p>这是一段引用：</p>
+
+<blockquote cite="">水调歌头——苏轼</blockquote>
+
+
+</li>
+<li><p><strong>描述列表 &lt; dl&gt;</strong></p>
+<dl>
+    <dt>小标题一</dt>
+    <dd>
+        描述一
+    </dd>
+    <dt>小标题二</dt>
+    <dd>
+        描述二
+    </dd>
+</dl>
+
+</li>
+<li><p><strong>缩略语 &lt; abbr&gt;</strong></p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>我们使用 <span class="hljs-tag">&lt;<span class="hljs-name">abbr</span> <span class="hljs-attr">title</span>=<span class="hljs-string">&quot;超文本标记语言（Hyper text Markup Language）&quot;</span>&gt;</span>HTML<span class="hljs-tag">&lt;/<span class="hljs-name">abbr</span>&gt;</span> 来组织网页文档。<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span><br></code></pre></td></tr></table></figure>
+
+<p>我们使用 <abbr title="超文本标记语言（Hyper text Markup Language）">HTML</abbr> 来组织网页文档。</p>
+
+
+</li>
+<li><p>**上标 &lt; sup&gt;  下标 &lt; sub&gt; **</p>
+<p>x<sup>2</sup>  x<sub>2</sub></p>
+</li>
+<li><p><strong>代码块</strong></p>
+<ul>
+<li>&lt; code&gt;: 用于标记计算机通用代码。</li>
+<li>&lt; pre&gt;: 用于保留空白字符（通常用于代码块）——如果您在文本中使用缩进或多余的空白，浏览器将忽略它，您将不会在呈现的页面上看到它。但是，如果您将文本包含在<code>&lt;pre&gt;&lt;/pre&gt;</code>标签中，那么空白将会以与你在文本编辑器中看到的相同的方式渲染出来。</li>
+<li>&lt; kbd&gt;: 用于标记输入电脑的键盘（或其他类型）输入。</li>
+<li>&lt; samp&gt;: 用于标记计算机程序的输出。</li>
+</ul>
+<p>请不要使用 <code>&lt;font&gt;</code> 、 <code>&lt;center&gt;</code> 等表象元素。</p>
+
+<p>在上述的 JavaScript 示例中，<var>para</var> 表示一个段落元素。</p>
+
+
+<p>按 <kbd>Ctrl</kbd>/<kbd>Cmd</kbd> + <kbd>A</kbd> 选择全部内容。</p>
+
+<div class="code-wrapper"><pre>$ <kbd>ping mozilla.org</kbd>
+<samp>PING mozilla.org (63.245.215.20): 56 data bytes
+64 bytes from 63.245.215.20: icmp_seq=0 ttl=40 time=158.233 ms</samp></pre></div>
+
+
+
+</li>
+<li><p><strong>时间和日期 &lt; time datetime&#x3D;””&gt;</strong></p>
+<figure class="highlight apache"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs apache"><span class="hljs-section">&lt;time datetime=<span class="hljs-string">&quot;2016-01-20&quot;</span>&gt;</span><span class="hljs-attribute">2016</span>年<span class="hljs-number">1</span>月<span class="hljs-number">20</span>日&lt;/time&gt;<br></code></pre></td></tr></table></figure>
+
+<p><time datetime="2016-01-20">2016年1月20日</time></p>
+</li>
+</ol>
+<h3 id="六、网页架构"><a href="#六、网页架构" class="headerlink" title="六、网页架构"></a>六、网页架构</h3><p>一般都网页布局包含了以下5个部分</p>
+<p><strong>导航栏</strong>，指向各个子页面的链接，以及网站标题，导航栏应该始终保持一致</p>
+<p><strong>页眉</strong>，通常横跨于页面顶部的大标题、大图、大标志，是网站的主要信息</p>
+<p><strong>主内容</strong>，位于页面的中心部分，放置重要的内容</p>
+<p><strong>侧边栏</strong>，一些少量的信息，如介绍、子导航、引用等</p>
+<p><strong>页脚</strong>，横跨页面底部的狭长区域，一般放置一些公共信息，如版权声明、联系方式。有一些网站也习惯将链接导航放置到页脚</p>
+<p>对应的，HTML提供了相关的语义标签</p>
+<p><strong>&lt; nav&gt; 导航栏</strong>，其中不应包含二级链接等内容</p>
+<p><strong>&lt; header&gt; 页眉</strong></p>
+<p><strong>&lt; main&gt; 主内容</strong>，每个页面上只能用一次 <code>&lt;main&gt;</code>，且直接位于 <a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/body">&#96;&#96;</a> 中。最好不要把它嵌套进其它元素</p>
+<p><strong>&lt; aside&gt; 侧边栏</strong></p>
+<p><strong>&lt; footer&gt; 页脚</strong></p>
+<p>还有其它一些<strong>常用的语义标签</strong></p>
+<p><strong>&lt; article&gt; ，</strong>包围的内容即一篇文章，与页面其它部分无关（比如一篇博文）</p>
+<p><strong>&lt; section&gt; ，</strong>适用于组织页面使其按功能（比如迷你地图、一组文章标题和摘要）分块</p>
+<p>一般的<strong>最佳用法</strong>是：以 <a target="_blank" rel="noopener" href="https://developer.mozilla.org/en-US/Learn/HTML/Howto/Set_up_a_proper_title_hierarchy">标题</a> 作为开头；把一篇 <code>&lt;article&gt;</code> 分成若干部分并分别置于不同的 <code>&lt;section&gt;</code> 中</p>
+<p><strong>无语义标签</strong></p>
+<p><strong>&lt; div&gt; ，</strong>一般用于没有特殊语义，或者找不到想要的语义标签，但是又要实现特殊的CSS样式或JS脚本</p>
+<p><strong>&lt; span&gt; ，</strong>内联的（inline）无语义元素，最好用于没有特定语义的情况</p>
+<p><strong>换行和水平分割线</strong></p>
+<p><strong>&lt; br&gt;，换行</strong></p>
+<p><strong>&lt; hr&gt;，水平分割线</strong></p>
+<h3 id="七、验证错误"><a href="#七、验证错误" class="headerlink" title="七、验证错误"></a>七、验证错误</h3><p>验证服务网站 <a target="_blank" rel="noopener" href="https://validator.w3.org/">Markup Validation Service</a>，由W3C组织提供的标记验证服务</p>
+
+            </div>
+            <hr>
+            <div>
+              <div class="post-metas mb-3">
+                
+                  <div class="post-meta mr-3">
+                    <i class="iconfont icon-category"></i>
+                    
+                      <a class="hover-with-bg" href="/categories/%E5%89%8D%E7%AB%AF/">前端</a>
+                    
+                  </div>
+                
+                
+                  <div class="post-meta">
+                    <i class="iconfont icon-tags"></i>
+                    
+                      <a class="hover-with-bg" href="/tags/HTML/">HTML</a>
+                    
+                  </div>
+                
+              </div>
+              
+                <p class="note note-warning">
+                  
+                    本博客所有文章除特别声明外，均采用 <a target="_blank" href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh" rel="nofollow noopener noopener">CC BY-SA 4.0 协议</a> ，转载请注明出处！
+                  
+                </p>
+              
+              
+                <div class="post-prevnext">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/2022/04/02/%E5%89%8D%E7%AB%AF/%E5%89%8D%E7%AB%AF%E5%BC%80%E5%8F%91%E2%80%94%E2%80%94CSS/">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">前端开发——CSS</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2022/04/02/%E5%89%8D%E7%AB%AF/%E5%89%8D%E7%AB%AF%E5%BC%80%E5%8F%91%E2%80%94%E2%80%94Web%E5%BC%80%E5%8F%91%E5%9F%BA%E7%A1%80/">
+                        <span class="hidden-mobile">前端开发——Web开发概述</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+          </article>
+        </div>
+      </div>
+    </div>
+    
+      <div class="d-none d-lg-block col-lg-2 toc-container" id="toc-ctn">
+        <div id="toc">
+  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;目录</p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+      </div>
+    
+  </div>
+</div>
+
+<!-- Custom -->
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v"
+                 for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+
+    
+  </main>
+
+  <footer class="text-center mt-5 py-3">
+  <div class="footer-content">
+     <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+  </div>
+  
+
+  
+
+  
+</footer>
+
+
+  <!-- SCRIPTS -->
+  
+  <script  src="https://cdn.jsdelivr.net/npm/nprogress@0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/nprogress@0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js" ></script>
+<script  src="https://cdn.jsdelivr.net/npm/bootstrap@4/dist/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+<!-- Plugins -->
+
+
+  <script  src="/js/local-search.js" ></script>
+
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+  
+
+
+
+  
+    <script  src="https://cdn.jsdelivr.net/npm/tocbot@4/dist/tocbot.min.js" ></script>
+  
+  
+    <script  src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3/dist/jquery.fancybox.min.js" ></script>
+  
+  
+    <script  src="https://cdn.jsdelivr.net/npm/anchor-js@4/anchor.min.js" ></script>
+  
+  
+    <script defer src="https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js" ></script>
+  
+
+
+
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/typed.js@2/lib/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var title = document.getElementById('subtitle').title;
+      
+        typing(title);
+      
+    })(window, document);
+  </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- 主题的启动项 保持在最底部 -->
+<script  src="/js/boot.js" ></script>
+
+
+</body>
+</html>

@@ -25,7 +25,7 @@
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://qiuzcc.github.io/img/bg/%E5%A5%B3%E4%BE%A0.png">
 <meta property="article:published_time" content="2022-03-12T12:50:02.000Z">
-<meta property="article:modified_time" content="2022-03-12T13:17:51.811Z">
+<meta property="article:modified_time" content="2022-04-02T09:35:43.504Z">
 <meta property="article:author" content="Time gogo">
 <meta property="article:tag" content="Hexo">
 <meta name="twitter:card" content="summary_large_image">
@@ -175,7 +175,7 @@
   
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      429 字
+      1.6k 字
     </span>
   
 
@@ -184,7 +184,7 @@
       <i class="iconfont icon-clock-fill"></i>
       
       
-      4 分钟
+      14 分钟
     </span>
   
 
@@ -216,14 +216,40 @@
             <h1 style="display: none">Hexo常用命令</h1>
             
             <div class="markdown-body">
-              <p> Hexo常用命令</p>
+              <p>Hexo常用命令</p>
 <span id="more"></span>
 
 <h3 id="一、写作"><a href="#一、写作" class="headerlink" title="一、写作"></a>一、写作</h3><ol>
-<li><p>新建空白文档</p>
-<p>hexo n [-p] 文章名<br>-p  自定义新文章的路径</p>
+<li><p><strong>新建空白文档</strong></p>
+<figure class="highlight xml"><table><tr><td class="gutter"><div class="code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><pre><code class="hljs xml">hexo n [layout] <span class="hljs-tag">&lt;<span class="hljs-name">title</span>&gt;</span><br></code></pre></td></tr></table></figure>
+
+<p><strong>layout分为：post、page、draft，默认为post</strong></p>
+<table>
+<thead>
+<tr>
+<th align="left">参数</th>
+<th align="left">描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left"><code>-p</code>, <code>--path</code></td>
+<td align="left">自定义新文章的路径</td>
+</tr>
+<tr>
+<td align="left"><code>-r</code>, <code>--replace</code></td>
+<td align="left">如果存在同名文章，将其替换</td>
+</tr>
+<tr>
+<td align="left"><code>-s</code>, <code>--slug</code></td>
+<td align="left">文章的 Slug，作为新文章的文件名和发布后的 URL</td>
+</tr>
+</tbody></table>
+<p><strong>用法实例：</strong></p>
+<figure class="highlight haxe"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs haxe">hexo <span class="hljs-keyword">new</span> <span class="hljs-type">post</span> --path 前端开发/前端开发——Web开发基础 <span class="hljs-string">&quot;前端开发——Web开发概述&quot;</span><br>如果没有最后<span class="hljs-string">&quot;&quot;</span>里面的标题，只会创建文件名为“前端开发——Web开发基础”的文件，title为模板默认值。如果指定的文件目录不存在，则会新建文件目录<br></code></pre></td></tr></table></figure>
+
+
 </li>
-<li><p>Front-matter</p>
+<li><p><strong>Front-matter</strong></p>
 <table>
 <thead>
 <tr>
@@ -267,7 +293,7 @@
 </ol>
 <h3 id="二、发布"><a href="#二、发布" class="headerlink" title="二、发布"></a>二、发布</h3><ol>
 <li><p>生成静态文件</p>
-<figure class="highlight ebnf"><table><tr><td class="gutter"><div class="code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><pre><code class="hljs ebnf"><span class="hljs-attribute">hexo g</span><br></code></pre></td></tr></table></figure>
+<figure class="highlight ebnf"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs ebnf"><span class="hljs-attribute">hexo g</span><br></code></pre></td></tr></table></figure>
 </li>
 <li><p>本地预览</p>
 <figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs awk">hexo s  启动服务器。默认情况下，访问网址为： http:<span class="hljs-regexp">//</span>localhost:<span class="hljs-number">4000</span>/<br></code></pre></td></tr></table></figure>
@@ -275,12 +301,34 @@
 <li><p>部署网站</p>
 <figure class="highlight ebnf"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs ebnf"><span class="hljs-attribute">hexo d</span><br></code></pre></td></tr></table></figure></li>
 </ol>
-<h3 id="三、修改创建文章的模板"><a href="#三、修改创建文章的模板" class="headerlink" title="三、修改创建文章的模板"></a>三、修改创建文章的模板</h3><p>在hexo的<code>scaffolds</code>目录下有三个<code>md</code>文档，按需修改模板即可</p>
+<h3 id="三、自定义"><a href="#三、自定义" class="headerlink" title="三、自定义"></a>三、自定义</h3><h4 id="自定义模板"><a href="#自定义模板" class="headerlink" title="自定义模板"></a>自定义模板</h4><p>在hexo的<code>scaffolds</code>目录下有三个<code>md</code>文档，按需修改模板即可</p>
 <img src="https://raw.githubusercontent.com/Qiuzcc/images/master/imgs/image-20220312210202990.png" srcset="/img/loading.gif" lazyload alt="image-20220312210202990" style="zoom:50%;" />
 
 
 
-<h4 id="四、自定义默认banner-img"><a href="#四、自定义默认banner-img" class="headerlink" title="四、自定义默认banner_img"></a>四、自定义默认banner_img</h4>
+<h4 id="自定义默认背景图片"><a href="#自定义默认背景图片" class="headerlink" title="自定义默认背景图片"></a>自定义默认背景图片</h4><p>修改主题配置_config.fluid中的post.banner_img</p>
+<img src="https://raw.githubusercontent.com/Qiuzcc/images/master/imgs/image-20220312212321936.png" srcset="/img/loading.gif" lazyload alt="image-20220312212321936" style="zoom:50%;" />
+
+
+
+<h3 id="四、资源文件夹"><a href="#四、资源文件夹" class="headerlink" title="四、资源文件夹"></a>四、资源文件夹</h3><p>资源，指除了文章文本之外的所有文件，诸如：图片（包括文章里的配图）、CSS、JS文件等。</p>
+<p>如果这些资源存放在本地，那么只能在本地服务器上正常浏览使用它们，通过网站浏览时将无法加载。</p>
+<p>针对图片的一种做法是，设置Toypra等markdown编辑器的 <strong>图片上传</strong>功能，接着类似于github提供的<strong>图床</strong>服务，使网站上的在线文档能够正常加载图片。</p>
+<p>另外一种，也就是这里推荐的做法是，使用Hexo的 <strong>相对路径引用的标签插件</strong>。介绍如下：</p>
+<p>通过常规的 markdown 语法和相对路径来引用图片和其它资源可能会导致它们在存档页或者主页上显示不正确。在Hexo 2时代，社区创建了很多插件来解决这个问题。但是，随着Hexo 3 的发布，许多新的<a target="_blank" rel="noopener" href="https://hexo.io/docs/tag-plugins#Include-Assets">标签插件</a>被加入到了核心代码中。这使得你可以更简单地在文章中引用你的资源。</p>
+<figure class="highlight django"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs django"><span class="hljs-template-tag">&#123;% <span class="hljs-name">asset_path</span> slug %&#125;</span><span class="language-xml"></span><br><span class="language-xml"></span><span class="hljs-template-tag">&#123;% <span class="hljs-name">asset_img</span> slug [title] %&#125;</span><span class="language-xml"></span><br><span class="language-xml"></span><span class="hljs-template-tag">&#123;% <span class="hljs-name">asset_link</span> slug [title] %&#125;</span><br></code></pre></td></tr></table></figure>
+
+<p>正确的引用图片方式是使用下列的标签插件而不是 markdown ：</p>
+<figure class="highlight maxima"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs maxima">&#123;<span class="hljs-symbol">%</span> asset_img <span class="hljs-built_in">example</span>.jpg This <span class="hljs-built_in">is</span> an <span class="hljs-built_in">example</span> <span class="hljs-built_in">image</span> <span class="hljs-symbol">%</span>&#125;<br></code></pre></td></tr></table></figure>
+
+<p>通过这种方式，图片将会同时出现在文章和主页以及归档页中。</p>
+<p>使用这个<strong>便签插件</strong>，首先要调整config.yml的设置，将post_asset_folder设置为true，</p>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs yaml"><span class="hljs-attr">post_asset_folder:</span> <span class="hljs-literal">true</span><br></code></pre></td></tr></table></figure>
+
+<p>之后，Hexo将会在你每一次通过 <code>hexo new [layout] &lt;title&gt;</code> 命令创建新文章时自动创建一个文件夹。<strong>这个资源文件夹将会有与这个文章文件一样的名字</strong>。将所有与你的文章有关的资源放在这个关联文件夹中之后，你可以通过相对路径来引用它们</p>
+<p><strong>重点！！实际尝试发现，这种方式体验很差，因为使用标签插件的时候Typora就无法预览到图片</strong></p>
+<p>所以还是放弃这种方式，改为使用github图床吧，这样虽然加载慢一点，但是起码三个地方都可以访问到</p>
+
             </div>
             <hr>
             <div>
@@ -313,6 +361,12 @@
                 <div class="post-prevnext">
                   <article class="post-prev col-6">
                     
+                    
+                      <a href="/2022/04/02/%E5%89%8D%E7%AB%AF/%E5%89%8D%E7%AB%AF%E5%BC%80%E5%8F%91%E2%80%94%E2%80%94Web%E5%BC%80%E5%8F%91%E5%9F%BA%E7%A1%80/">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">前端开发——Web开发概述</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
                     
                   </article>
                   <article class="post-next col-6">
