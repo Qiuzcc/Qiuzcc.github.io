@@ -25,7 +25,7 @@
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://raw.githubusercontent.com/Qiuzcc/images/master/imgs/image-20220401171641215.png">
 <meta property="article:published_time" content="2022-04-02T09:01:50.000Z">
-<meta property="article:modified_time" content="2022-04-02T09:34:41.416Z">
+<meta property="article:modified_time" content="2022-04-06T12:21:20.334Z">
 <meta property="article:author" content="Time gogo">
 <meta property="article:tag" content="HTML">
 <meta name="twitter:card" content="summary_large_image">
@@ -175,7 +175,7 @@
   
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      4.5k 字
+      10k 字
     </span>
   
 
@@ -184,7 +184,7 @@
       <i class="iconfont icon-clock-fill"></i>
       
       
-      38 分钟
+      87 分钟
     </span>
   
 
@@ -236,7 +236,7 @@
 </thead>
 <tbody><tr>
 <td>&lt; i&gt;&lt; &#x2F;i&gt;</td>
-<td>斜体</td>
+<td>斜体，行内元素</td>
 </tr>
 <tr>
 <td>&lt; strong&gt;&lt; &#x2F;strong&gt;</td>
@@ -266,6 +266,10 @@
 <tr>
 <td>&lt; br&gt;</td>
 <td>换行</td>
+</tr>
+<tr>
+<td>&lt; hr&gt;</td>
+<td>水平线</td>
 </tr>
 </tbody></table>
 <p><strong>块级元素 &amp; 内联元素</strong></p>
@@ -316,63 +320,117 @@
 </tbody></table>
 </li>
 </ul>
-<p><strong>语义元素</strong></p>
-<p>HTML，有很多标签的原因之一在于，每种标签都有对应的语义，尽管它们在样式上的表现可能相差无几，我想这么做的原因应该是为了方便读取数据，比如爬取数据时，可以通过标签的名字来获取到对应所需要的内容，而且使用对应语义的元素标签也会使得HTML的可读性更强</p>
+<h4 id="语义元素"><a href="#语义元素" class="headerlink" title="语义元素"></a><strong>语义元素</strong></h4><p>HTML，有很多标签的原因之一在于，每种标签都有对应的语义，尽管它们在样式上的表现可能相差无几，我想这么做的原因应该是为了方便读取数据，比如爬取数据时，可以通过标签的名字来获取到对应所需要的内容，而且使用对应语义的元素标签也会使得HTML的可读性更强</p>
 <table>
 <thead>
 <tr>
 <th>标签</th>
-<th>描述</th>
-<th>标签</th>
-<th>描述</th>
+<th>含义</th>
 </tr>
 </thead>
 <tbody><tr>
-<td>&lt; address&gt;</td>
-<td>地址</td>
-<td>&lt; em&gt;</td>
-<td>表示强调或重读</td>
+<td>&lt; footer&gt;</td>
+<td>定义文档或节的页脚。</td>
+</tr>
+<tr>
+<td>&lt; header&gt;</td>
+<td>规定文档或节的页眉。</td>
+</tr>
+<tr>
+<td>&lt; main&gt;</td>
+<td>规定文档的主内容。</td>
+</tr>
+<tr>
+<td>&lt; nav&gt;</td>
+<td>定义导航链接。</td>
+</tr>
+<tr>
+<td>&lt; aside&gt;</td>
+<td>定义页面内容以外的内容。</td>
 </tr>
 <tr>
 <td>&lt; article&gt;</td>
-<td>独立的内容项目，如文章、评论等</td>
-<td>&lt; strong&gt;</td>
-<td>表示重要性</td>
+<td>定义文章。</td>
 </tr>
 <tr>
-<td>&lt; details&gt;</td>
-<td>创建一个挂件，仅在被切换成展开状态时，它才会显示内含的信息</td>
+<td>&lt; section&gt;</td>
+<td>定义文档中的节。</td>
+</tr>
+<tr>
+<td>&lt; time&gt;</td>
+<td>定义日期&#x2F;时间。</td>
+</tr>
+<tr>
+<td>&lt; figure&gt;</td>
+<td>定义媒介内容的分组，以及它们的标题。</td>
+</tr>
+<tr>
+<td>&lt; figcation&gt;</td>
+<td>定义 figure 元素的标题。</td>
+</tr>
+<tr>
 <td>&lt; mark&gt;</td>
-<td>表示相关性</td>
+<td>定义重要的或强调的文本。</td>
 </tr>
 <tr>
 <td>&lt; dialog&gt;</td>
 <td>对话框盒子</td>
+</tr>
+<tr>
+<td>&lt; address&gt;</td>
+<td>地址</td>
+</tr>
+<tr>
+<td>&lt; cite&gt;</td>
+<td>标记著<strong>作者</strong></td>
+</tr>
+<tr>
 <td>&lt; dfn&gt;</td>
 <td>标记术语的定义实例</td>
 </tr>
 <tr>
-<td>&lt; dl&gt;</td>
-<td>描述列表</td>
-<td>&lt; cite&gt;</td>
-<td>标记著作者</td>
+<td>&lt; abbr&gt;</td>
+<td>定义缩写</td>
+</tr>
+<tr>
+<td>&lt; blockquote&gt;</td>
+<td>定义长的引用。</td>
+</tr>
+<tr>
+<td>&lt; q&gt;</td>
+<td>定义行内引用</td>
 </tr>
 </tbody></table>
+<p>**[点击](<a target="_blank" rel="noopener" href="https://www.w3school.com.cn/tags/html_ref_byfunc.asp">HTML 标签参考手册 - 功能排序 (w3school.com.cn)</a>)**查看更多元素</p>
 <p><strong>空元素</strong></p>
 <p>一个元素只有一个标签，没有结束标签的元素，如&lt; img&gt; ，通常用来插入一些东西</p>
 <h3 id="二、剖析HTML文档"><a href="#二、剖析HTML文档" class="headerlink" title="二、剖析HTML文档"></a>二、剖析HTML文档</h3><p><strong>（以下所有的标签，在&lt; 后面都多加了一个空格，以避免被编辑器识别为html文本，实际使用时需要去掉那个空格）</strong></p>
+<br>
+
 <p><strong>&lt; !DOCTYPE html&gt;</strong></p>
 <p>是现在是最短有效的文档声明</p>
+<br>
+
 <p><strong>&lt; html&gt;&lt; &#x2F;html&gt;</strong></p>
 <p>包裹了整个完整的页面，是一个根元素</p>
+<br>
+
 <p><strong><!-- -->注释</strong></p>
+<br>
+
 <h4 id="head-元数据"><a href="#head-元数据" class="headerlink" title="head 元数据"></a>head 元数据</h4><p><strong>&lt; head&gt;&lt; &#x2F;head&gt;</strong></p>
 <p>包含了所有你想包含在HTML页面中但不想在HTML页面中显示的内容</p>
 <p>包括你想在搜索结果中出现的关键字和页面描述，CSS样式，字符集声明等等</p>
+<br>
+
 <p><strong>&lt; title&gt;&lt; &#x2F;title&gt;</strong></p>
 <p> 设置页面标题，出现在浏览器标签上，当你标记&#x2F;收藏页面时它可用来描述页面</p>
+<br>
+
 <p><strong>&lt; meta charset&#x3D;”utf-8”&gt;</strong></p>
 <p>设置文档使用utf-8字符集编码</p>
+<br>
+
 <p><strong>meta 添加元数据</strong></p>
 <ul>
 <li><code>name</code> 指定了meta 元素的类型； 说明该元素包含了什么类型的信息。</li>
@@ -385,6 +443,8 @@
 <figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs routeros">&lt;link <span class="hljs-attribute">rel</span>=<span class="hljs-string">&quot;shortcut icon&quot;</span> <span class="hljs-attribute">href</span>=<span class="hljs-string">&quot;favicon.ico&quot;</span> <span class="hljs-attribute">type</span>=<span class="hljs-string">&quot;image/x-icon&quot;</span>&gt;<br></code></pre></td></tr></table></figure>
 
 <p><strong>添加CSS</strong>，属性：<code>rel:&quot;stylesheet&quot; href:文件路径</code></p>
+<br>
+
 <h4 id="body-主体"><a href="#body-主体" class="headerlink" title="body 主体"></a>body 主体</h4><p><strong>&lt; body&gt;&lt; &#x2F;body&gt;</strong></p>
 <p>页面上显示的所有元素，script标签可以添加到body内，<strong>事实上，把script放在文档尾部是一个更好的选择</strong>，这样可以确保先解析html内容之后才加载脚本，避免因为脚本找不到某个元素而出错，<strong>script需要开始和结束标签</strong>，因为它既可以引用外部标签，也可以把脚本写在script元素内</p>
 <h3 id="三、实体引用"><a href="#三、实体引用" class="headerlink" title="三、实体引用"></a>三、实体引用</h3><table>
@@ -414,6 +474,10 @@
 <td align="left">&amp;</td>
 <td align="left">&amp;amp ;</td>
 </tr>
+<tr>
+<td align="left">空格</td>
+<td align="left">&amp;nbsp ;</td>
+</tr>
 </tbody></table>
 <p><strong>注：等价字符的字符与分号;之间并没有空格，这里为了能够显示出来，多加了空格</strong></p>
 <p>以上仅列出一些常用的引用，更多可参考<a target="_blank" rel="noopener" href="http://en.wikipedia.org/wiki/List_of_XML_and_HTML_character_entity_references">XML和HTML字符实体引用列表</a></p>
@@ -437,6 +501,8 @@
 <td>当链接是下载资源时，使用download属性提供一个默认的保存文件名，仅适用于<strong>同源URL</strong>（host相同）</td>
 </tr>
 </tbody></table>
+<br>
+
 <h4 id="iframe内联框架"><a href="#iframe内联框架" class="headerlink" title="iframe内联框架"></a>iframe内联框架</h4><p><strong>HTML 内联框架元素 (<code>&lt;iframe&gt;</code>)</strong> 表示嵌套的<a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-CN/docs/Glossary/Browsing_context">browsing context</a>。它能够将另一个 HTML 页面嵌入到当前页面中。</p>
 <p><img src="https://raw.githubusercontent.com/Qiuzcc/images/master/imgs/image-20220401171641215.png" srcset="/img/loading.gif" lazyload alt="image-20220401171641215"></p>
 <h3 id="五、文字基础"><a href="#五、文字基础" class="headerlink" title="五、文字基础"></a>五、文字基础</h3><p><strong>标题和段落</strong></p>
@@ -537,6 +603,196 @@
 <p><strong>&lt; br&gt;，换行</strong></p>
 <p><strong>&lt; hr&gt;，水平分割线</strong></p>
 <h3 id="七、验证错误"><a href="#七、验证错误" class="headerlink" title="七、验证错误"></a>七、验证错误</h3><p>验证服务网站 <a target="_blank" rel="noopener" href="https://validator.w3.org/">Markup Validation Service</a>，由W3C组织提供的标记验证服务</p>
+<h3 id="八、图片"><a href="#八、图片" class="headerlink" title="八、图片"></a>八、图片</h3><p><code>&lt; img src=&quot;&quot; alt=&quot;&quot; title=&quot;&quot;&gt;</code></p>
+<ul>
+<li>src，图片的路径</li>
+<li>alt，图片加载失败时显示的文本</li>
+<li>title，鼠标悬停在图片上时显示的文本</li>
+</ul>
+<p>HTML5，有两个个专门的语义元素**&lt; figure&gt; 和&lt; figcaption&gt;**用来放置图片和对应的文字，结构为</p>
+<ul>
+<li>&lt; figure&gt; <ul>
+<li>&lt; img&gt;</li>
+<li>&lt; figcaption&gt;</li>
+</ul>
+</li>
+</ul>
+<p>样式并没有什么不同，但是便于人和机器读懂html文档。</p>
+<p>CSS也可以通过backgorund-image属性来添加图片，但那并没有语义意义。</p>
+<h3 id="九、音视频"><a href="#九、音视频" class="headerlink" title="九、音视频"></a>九、音视频</h3><h4 id="video元素"><a href="#video元素" class="headerlink" title="video元素"></a>video元素</h4><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">video</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;rabbit320.webm&quot;</span> <span class="hljs-attr">controls</span>&gt;</span><br>  <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>你的浏览器不支持 HTML5 视频。可点击<span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">&quot;rabbit320.mp4&quot;</span>&gt;</span>此链接<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>观看<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">video</span>&gt;</span><br></code></pre></td></tr></table></figure>
+
+<ul>
+<li>src，视频路径</li>
+<li>controls，使用controls来包含浏览器提供的控件界面，布尔属性</li>
+<li>后备内容，开始和结束标签之间的内容，当浏览器不支持video时就会显示出来</li>
+</ul>
+<br>
+
+<p><strong>另外一种写法，为了提供多个视频源</strong></p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">video</span> <span class="hljs-attr">controls</span>&gt;</span><br>  <span class="hljs-tag">&lt;<span class="hljs-name">source</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;rabbit320.mp4&quot;</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;video/mp4&quot;</span>&gt;</span><br>  <span class="hljs-tag">&lt;<span class="hljs-name">source</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;rabbit320.webm&quot;</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;video/webm&quot;</span>&gt;</span><br>  <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>你的浏览器不支持 HTML5 视频。可点击<span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">&quot;rabbit320.mp4&quot;</span>&gt;</span>此链接<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>观看<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">video</span>&gt;</span><br></code></pre></td></tr></table></figure>
+
+<p>video标签会自动从source标签中寻找想匹配的媒体，type属性是有用的，浏览器会优先检查type，寻找匹配的媒体，否则需要一个个尝试加载，这会浪费大量时间。</p>
+<br>
+
+<p><strong>H5提供的新属性</strong></p>
+<figure class="highlight abnf"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs abnf">&lt;video controls width<span class="hljs-operator">=</span><span class="hljs-string">&quot;400&quot;</span> height<span class="hljs-operator">=</span><span class="hljs-string">&quot;400&quot;</span> autoplay loop muted poster<span class="hljs-operator">=</span><span class="hljs-string">&quot;poster.png&quot;</span>&gt; &lt;/video&gt;<br></code></pre></td></tr></table></figure>
+
+<ul>
+<li>width，hegiht控制尺寸，不会改变长宽比，多余空白填充</li>
+<li>autoplay，自动播放</li>
+<li>loop，循环播放</li>
+<li>muted，默认静音</li>
+<li>poster，视频播放前显示的图片</li>
+</ul>
+<h4 id="audio元素"><a href="#audio元素" class="headerlink" title="audio元素"></a>audio元素</h4><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">audio</span> <span class="hljs-attr">controls</span>&gt;</span><br>  <span class="hljs-tag">&lt;<span class="hljs-name">source</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;viper.mp3&quot;</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;audio/mp3&quot;</span>&gt;</span><br>  <span class="hljs-tag">&lt;<span class="hljs-name">source</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;viper.ogg&quot;</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;audio/ogg&quot;</span>&gt;</span><br>  <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>你的浏览器不支持 HTML5 音频，可点击<span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">&quot;viper.mp3&quot;</span>&gt;</span>此链接<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>收听。<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">audio</span>&gt;</span><br></code></pre></td></tr></table></figure>
+
+<p>不支持width，height，poster等视觉属性</p>
+<br>
+
+<p><strong>H5支持了显示音轨文本</strong></p>
+<p>有了 <a target="_blank" rel="noopener" href="https://developer.mozilla.org/en-US/docs/Web/API/WebVTT_API">WebVTT</a> 格式，你可以使用 <strong>track标签</strong></p>
+<p>WebVTT 是一个格式，用来编写文本文件，这个文本文件包含了众多的字符串，这些字符串会带有一些元数据，它们可以用来描述这个字符串将会在<strong>视频中显示的时间</strong>，甚至可以用来描述这些<strong>字符串的样式以及定位信息</strong>。这些字符串叫做 <strong>cues</strong> 。</p>
+<p>一个典型的 WebVTT 文件如下：</p>
+<figure class="highlight dns"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs dns">WEBVTT<br><br><span class="hljs-number">1</span><br><span class="hljs-number">00:00:22.230</span> --&gt; <span class="hljs-number">00</span>:<span class="hljs-number">00:24.606</span><br>第一段字幕<br></code></pre></td></tr></table></figure>
+
+<p><strong>使用方式：</strong></p>
+<figure class="highlight abnf"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs abnf">&lt;video controls&gt;<br>    &lt;source src<span class="hljs-operator">=</span><span class="hljs-string">&quot;example.mp4&quot;</span> type<span class="hljs-operator">=</span><span class="hljs-string">&quot;video/mp4&quot;</span>&gt;<br>    &lt;source src<span class="hljs-operator">=</span><span class="hljs-string">&quot;example.webm&quot;</span> type<span class="hljs-operator">=</span><span class="hljs-string">&quot;video/webm&quot;</span>&gt;<br>    &lt;track kind<span class="hljs-operator">=</span><span class="hljs-string">&quot;subtitles&quot;</span> src<span class="hljs-operator">=</span><span class="hljs-string">&quot;subtitles_en.vtt&quot;</span> srclang<span class="hljs-operator">=</span><span class="hljs-string">&quot;en&quot;</span>&gt;<br>&lt;/video&gt;<br></code></pre></td></tr></table></figure>
+
+<ul>
+<li>kind，指明类型</li>
+<li>src，链接文件</li>
+<li>srclang，说明.vtt文件的编写语言</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>类型</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>subtitles</td>
+<td>通过添加翻译字幕，来帮助那些听不懂外国语言的人们理解音频当中的内容</td>
+</tr>
+<tr>
+<td>captions</td>
+<td>同步翻译对白，或是描述一些有重要信息的声音，来帮助那些不能听音频的人们理解音频中的内容</td>
+</tr>
+<tr>
+<td>timed descriptions</td>
+<td>将文字转换为音频，用于服务那些有视觉障碍的人</td>
+</tr>
+</tbody></table>
+<p>参考链接：<a target="_blank" rel="noopener" href="https://developer.mozilla.org/en-US/docs/Web/Guide/Audio_and_video_delivery/Adding_captions_and_subtitles_to_HTML5_video">Adding captions and subtitles to HTML5 video</a></p>
+<h3 id="十、SVG"><a href="#十、SVG" class="headerlink" title="十、SVG"></a>十、SVG</h3><p><strong>svg是什么</strong></p>
+<p>用于描述矢量图像的<a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-CN/docs/Glossary/XML">XML</a>语言</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">svg</span> <span class="hljs-attr">version</span>=<span class="hljs-string">&quot;1.1&quot;</span></span><br><span class="hljs-tag">     <span class="hljs-attr">baseProfile</span>=<span class="hljs-string">&quot;full&quot;</span></span><br><span class="hljs-tag">     <span class="hljs-attr">width</span>=<span class="hljs-string">&quot;300&quot;</span> <span class="hljs-attr">height</span>=<span class="hljs-string">&quot;200&quot;</span></span><br><span class="hljs-tag">     <span class="hljs-attr">xmlns</span>=<span class="hljs-string">&quot;http://www.w3.org/2000/svg&quot;</span>&gt;</span><br>  <span class="hljs-tag">&lt;<span class="hljs-name">rect</span> <span class="hljs-attr">width</span>=<span class="hljs-string">&quot;100%&quot;</span> <span class="hljs-attr">height</span>=<span class="hljs-string">&quot;100%&quot;</span> <span class="hljs-attr">fill</span>=<span class="hljs-string">&quot;black&quot;</span> /&gt;</span><br>  <span class="hljs-tag">&lt;<span class="hljs-name">circle</span> <span class="hljs-attr">cx</span>=<span class="hljs-string">&quot;150&quot;</span> <span class="hljs-attr">cy</span>=<span class="hljs-string">&quot;100&quot;</span> <span class="hljs-attr">r</span>=<span class="hljs-string">&quot;90&quot;</span> <span class="hljs-attr">fill</span>=<span class="hljs-string">&quot;blue&quot;</span> /&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">svg</span>&gt;</span><br></code></pre></td></tr></table></figure>
+
+
+
+<p><strong>优缺点</strong></p>
+<p>优点：矢量图，放大不变形；可以通过CSS和JS编写样式</p>
+<p>缺点：复杂图像很大；更难创建；旧版浏览器不支持</p>
+<p><strong>跨浏览器支持SVG</strong></p>
+<p>方式一：使用img标签，src引用png文件，srcset引用svg文件，这样会优先加载svg文件，不支持的浏览器会加载png文件</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">img</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;equilateral.png&quot;</span> <span class="hljs-attr">alt</span>=<span class="hljs-string">&quot;triangle with equal sides&quot;</span> <span class="hljs-attr">srcset</span>=<span class="hljs-string">&quot;equilateral.svg&quot;</span>&gt;</span><br></code></pre></td></tr></table></figure>
+
+<p>方式二：作为CSS背景图像，如下代码，新浏览器会加载svg，旧浏览器会加载png</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs xml">background: url(&quot;fallback.png&quot;) no-repeat center;<br>background-image: url(&quot;image.svg&quot;);<br>background-size: contain;<br></code></pre></td></tr></table></figure>
+
+<p>方式三：html内联svg，将svg代码放置在svg开始结束标签内。优点：减少qequest请求，提高加载速度；可以使用CSS修改样式</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">svg</span> <span class="hljs-attr">width</span>=<span class="hljs-string">&quot;300&quot;</span> <span class="hljs-attr">height</span>=<span class="hljs-string">&quot;200&quot;</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">rect</span> <span class="hljs-attr">width</span>=<span class="hljs-string">&quot;100%&quot;</span> <span class="hljs-attr">height</span>=<span class="hljs-string">&quot;100%&quot;</span> <span class="hljs-attr">fill</span>=<span class="hljs-string">&quot;green&quot;</span> /&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">svg</span>&gt;</span><br></code></pre></td></tr></table></figure>
+
+
+
+<h3 id="十一、响应式图片"><a href="#十一、响应式图片" class="headerlink" title="十一、响应式图片"></a>十一、响应式图片</h3><p><strong>分辨率切换问题：</strong>使用相同显示效果但不同分辨率的图片来适配不同尺寸大小的设备</p>
+<p><strong>美术设计问题：</strong>使用不同的图片来适应不同的空间分布</p>
+<p><strong>一个响应式设计的实例：</strong></p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">img</span> <span class="hljs-attr">srcset</span>=<span class="hljs-string">&quot;elva-fairy-320w.jpg 320w,</span></span><br><span class="hljs-string"><span class="hljs-tag">             elva-fairy-480w.jpg 480w,</span></span><br><span class="hljs-string"><span class="hljs-tag">             elva-fairy-800w.jpg 800w&quot;</span></span><br><span class="hljs-tag">     <span class="hljs-attr">sizes</span>=<span class="hljs-string">&quot;(max-width: 320px) 280px,</span></span><br><span class="hljs-string"><span class="hljs-tag">            (max-width: 480px) 440px,</span></span><br><span class="hljs-string"><span class="hljs-tag">            800px&quot;</span></span><br><span class="hljs-tag">     <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;elva-fairy-800w.jpg&quot;</span> <span class="hljs-attr">alt</span>=<span class="hljs-string">&quot;Elva dressed as a fairy&quot;</span>&gt;</span><br></code></pre></td></tr></table></figure>
+
+<ul>
+<li>**srcset ** 定义了浏览器选择的图像集，以及图像大小。w代表真实像素单位</li>
+<li><strong>sizes</strong>  定义了媒体查询，括号内是媒体查询条件，括号外是填充的槽宽度。最后一个没有条件，没有一个为true时它会生效</li>
+<li>浏览器所做的工作：<ul>
+<li>查看设备宽度</li>
+<li>从前往后检查sizes属性，直到第一个true条件，获得槽宽度</li>
+<li>加载srcset中最接近槽宽度的图像</li>
+</ul>
+</li>
+</ul>
+<p><strong>分辨率切换的实例</strong>：srcset和x语法结合</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">img</span> <span class="hljs-attr">srcset</span>=<span class="hljs-string">&quot;elva-fairy-320w.jpg,</span></span><br><span class="hljs-string"><span class="hljs-tag">             elva-fairy-480w.jpg 1.5x,</span></span><br><span class="hljs-string"><span class="hljs-tag">             elva-fairy-640w.jpg 2x&quot;</span></span><br><span class="hljs-tag">     <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;elva-fairy-640w.jpg&quot;</span> <span class="hljs-attr">alt</span>=<span class="hljs-string">&quot;Elva dressed as a fairy&quot;</span>&gt;</span><br></code></pre></td></tr></table></figure>
+
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs xml">img &#123;<br>  width: 320px;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<p>宽度固定在320px，如果页面是低分辨率显示，一个设备像素表示一个CSS像素，320w的图像被加载。如果高分辨率显示，2个设备像素表示一个CSS像素，那640w的图像被加载。实现同尺寸，不同分辨率</p>
+<p><strong>美术设计的实例：</strong></p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">picture</span>&gt;</span><br>  <span class="hljs-tag">&lt;<span class="hljs-name">source</span> <span class="hljs-attr">media</span>=<span class="hljs-string">&quot;(max-width: 799px)&quot;</span> <span class="hljs-attr">srcset</span>=<span class="hljs-string">&quot;elva-480w-close-portrait.jpg&quot;</span>&gt;</span><br>  <span class="hljs-tag">&lt;<span class="hljs-name">source</span> <span class="hljs-attr">media</span>=<span class="hljs-string">&quot;(min-width: 800px)&quot;</span> <span class="hljs-attr">srcset</span>=<span class="hljs-string">&quot;elva-800w.jpg&quot;</span>&gt;</span><br>  <span class="hljs-tag">&lt;<span class="hljs-name">img</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;elva-800w.jpg&quot;</span> <span class="hljs-attr">alt</span>=<span class="hljs-string">&quot;Chris standing up holding his daughter Elva&quot;</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">picture</span>&gt;</span><br></code></pre></td></tr></table></figure>
+
+<p>在任何情况下，你都必须在 <code>&lt;/picture&gt;</code>之前正确提供一个<code>&lt;img&gt;</code>元素以及它的<code>src</code>和<code>alt</code>属性，否则不会有图片显示</p>
+<p><strong>实践发现：</strong>如果不限制img标签（不是picture标签）的大小，图片将按照实际尺寸显示，这将使网页大小变得不可控。</p>
+<h3 id="十二、表格"><a href="#十二、表格" class="headerlink" title="十二、表格"></a>十二、表格</h3><p><strong>定义表格</strong></p>
+<ul>
+<li>table 表格<ul>
+<li>tr 行<ul>
+<li>td 单元格内容  </li>
+<li>th 标题所在的单元格</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p><strong>跨行或跨列</strong></p>
+<p>在th属性里加上<code>rowspan=&quot;x&quot; colspan=&quot;x&quot;</code></p>
+<p><strong>为整行&#x2F;整列应用属性样式 colgroup  rowgroup</strong></p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">colgroup</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">col</span>&gt;</span> 				为第一列设置样式，即使不设置也不能省略，如果想省略需要加span属性，如下<br>    <span class="hljs-tag">&lt;<span class="hljs-name">col</span> <span class="hljs-attr">style</span>=<span class="hljs-string">&quot;xxx&quot;</span>&gt;</span>	为第二列设置样式<br><span class="hljs-tag">&lt;/<span class="hljs-name">colgroup</span>&gt;</span><br><br><span class="hljs-tag">&lt;<span class="hljs-name">colgroup</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">col</span> <span class="hljs-attr">style</span>=<span class="hljs-string">&quot;xxx&quot;</span> <span class="hljs-attr">span</span>=<span class="hljs-string">&quot;2&quot;</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">colgroup</span>&gt;</span><br></code></pre></td></tr></table></figure>
+
+
+
+<p><strong>添加表格标题</strong></p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">table</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">caption</span>&gt;</span>表格标题<span class="hljs-tag">&lt;/<span class="hljs-name">caption</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">caption</span>&gt;</span><br>	...<br><span class="hljs-tag">&lt;/<span class="hljs-name">table</span>&gt;</span><br></code></pre></td></tr></table></figure>
+
+
+
+<p><strong>更严谨的表格结构</strong></p>
+<p><code>thead 、 tfoot 、 tbody结构</code></p>
+<p>好处：结构化更容易控制</p>
+<p>三者的顺序没有硬性要求，但是需要放在colgroup下面（如果有的话）。实际上tbody即使不声明也会隐式出现（自动添加）</p>
+<table>
+    <caption>How I chose to spend my money</caption>
+    <thead>
+        <tr>
+            <th>Purchase</th>
+            <th>Location</th>
+            <th>Date</th>
+            <th>Cost</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>Haircut</td>
+            <td>Hairdresser</td>
+            <td>12/09</td>
+            <td>30</td>
+        </tr>
+        <tr>
+            <td>Shoes</td>
+            <td>Shoeshop</td>
+            <td>13/09</td>
+            <td>65</td>
+        </tr>
+    </tbody>
+    <tfoot>
+        <tr>
+            <td colspan="3">SUM</td>
+            <td>95</td>
+        </tr>
+    </tfoot>
+</table>
+
+<p>代码如下：</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">table</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">caption</span>&gt;</span>How I chose to spend my money<span class="hljs-tag">&lt;/<span class="hljs-name">caption</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">thead</span>&gt;</span><br>        <span class="hljs-tag">&lt;<span class="hljs-name">tr</span>&gt;</span><br>            <span class="hljs-tag">&lt;<span class="hljs-name">th</span>&gt;</span>Purchase<span class="hljs-tag">&lt;/<span class="hljs-name">th</span>&gt;</span><br>            <span class="hljs-tag">&lt;<span class="hljs-name">th</span>&gt;</span>Location<span class="hljs-tag">&lt;/<span class="hljs-name">th</span>&gt;</span><br>            <span class="hljs-tag">&lt;<span class="hljs-name">th</span>&gt;</span>Date<span class="hljs-tag">&lt;/<span class="hljs-name">th</span>&gt;</span><br>            <span class="hljs-tag">&lt;<span class="hljs-name">th</span>&gt;</span>Cost<span class="hljs-tag">&lt;/<span class="hljs-name">th</span>&gt;</span><br>    	<span class="hljs-tag">&lt;/<span class="hljs-name">tr</span>&gt;</span><br>    <span class="hljs-tag">&lt;/<span class="hljs-name">thead</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">tbody</span>&gt;</span><br>        <span class="hljs-tag">&lt;<span class="hljs-name">tr</span>&gt;</span><br>            <span class="hljs-tag">&lt;<span class="hljs-name">td</span>&gt;</span>Haircut<span class="hljs-tag">&lt;/<span class="hljs-name">td</span>&gt;</span><br>            <span class="hljs-tag">&lt;<span class="hljs-name">td</span>&gt;</span>Hairdresser<span class="hljs-tag">&lt;/<span class="hljs-name">td</span>&gt;</span><br>            <span class="hljs-tag">&lt;<span class="hljs-name">td</span>&gt;</span>12/09<span class="hljs-tag">&lt;/<span class="hljs-name">td</span>&gt;</span><br>            <span class="hljs-tag">&lt;<span class="hljs-name">td</span>&gt;</span>30<span class="hljs-tag">&lt;/<span class="hljs-name">td</span>&gt;</span><br>        <span class="hljs-tag">&lt;/<span class="hljs-name">tr</span>&gt;</span><br>        <span class="hljs-tag">&lt;<span class="hljs-name">tr</span>&gt;</span><br>            <span class="hljs-tag">&lt;<span class="hljs-name">td</span>&gt;</span>Shoes<span class="hljs-tag">&lt;/<span class="hljs-name">td</span>&gt;</span><br>            <span class="hljs-tag">&lt;<span class="hljs-name">td</span>&gt;</span>Shoeshop<span class="hljs-tag">&lt;/<span class="hljs-name">td</span>&gt;</span><br>            <span class="hljs-tag">&lt;<span class="hljs-name">td</span>&gt;</span>13/09<span class="hljs-tag">&lt;/<span class="hljs-name">td</span>&gt;</span><br>            <span class="hljs-tag">&lt;<span class="hljs-name">td</span>&gt;</span>65<span class="hljs-tag">&lt;/<span class="hljs-name">td</span>&gt;</span><br>        <span class="hljs-tag">&lt;/<span class="hljs-name">tr</span>&gt;</span><br>    <span class="hljs-tag">&lt;/<span class="hljs-name">tbody</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">tfoot</span>&gt;</span><br>        <span class="hljs-tag">&lt;<span class="hljs-name">tr</span>&gt;</span><br>            <span class="hljs-tag">&lt;<span class="hljs-name">td</span> <span class="hljs-attr">colspan</span>=<span class="hljs-string">&quot;3&quot;</span>&gt;</span>SUM<span class="hljs-tag">&lt;/<span class="hljs-name">td</span>&gt;</span><br>            <span class="hljs-tag">&lt;<span class="hljs-name">td</span>&gt;</span>95<span class="hljs-tag">&lt;/<span class="hljs-name">td</span>&gt;</span><br>        <span class="hljs-tag">&lt;/<span class="hljs-name">tr</span>&gt;</span><br>    <span class="hljs-tag">&lt;/<span class="hljs-name">tfoot</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">table</span>&gt;</span><br></code></pre></td></tr></table></figure>
+
 
             </div>
             <hr>
