@@ -16,21 +16,21 @@
   <meta name="author" content="Time gogo">
   <meta name="keywords" content="">
   
-    <meta name="description" content="STL 栈的常用函数、算法题">
+    <meta name="description" content="前端开发——JavaScript一、概述在HTML中加载JS  方式一，在ＨＴＭＬ中通过script标签，将JS代码包裹在内，推荐在外层包裹一层，确保HTML先加载完毕 1document.addEventListener(&quot;DOMContentLoaded&quot;, function() &amp;#123;...&amp;#125;  方式二，通过script标签引入外部js文件 1&lt;sc">
 <meta property="og:type" content="article">
-<meta property="og:title" content="数据结构——栈">
-<meta property="og:url" content="https://qiuzcc.github.io/2022/04/02/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E2%80%94%E2%80%94%E6%A0%88/index.html">
+<meta property="og:title" content="前端开发——JS">
+<meta property="og:url" content="https://qiuzcc.github.io/2022/04/10/%E5%89%8D%E7%AB%AF/%E5%89%8D%E7%AB%AF%E5%BC%80%E5%8F%91%E2%80%94%E2%80%94JS%EF%BC%88%E4%B8%80%EF%BC%89/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="STL 栈的常用函数、算法题">
+<meta property="og:description" content="前端开发——JavaScript一、概述在HTML中加载JS  方式一，在ＨＴＭＬ中通过script标签，将JS代码包裹在内，推荐在外层包裹一层，确保HTML先加载完毕 1document.addEventListener(&quot;DOMContentLoaded&quot;, function() &amp;#123;...&amp;#125;  方式二，通过script标签引入外部js文件 1&lt;sc">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2022-04-02T09:41:17.000Z">
-<meta property="article:modified_time" content="2022-04-09T02:27:34.525Z">
+<meta property="article:published_time" content="2022-04-10T08:18:36.000Z">
+<meta property="article:modified_time" content="2022-04-10T08:40:39.101Z">
 <meta property="article:author" content="Time gogo">
-<meta property="article:tag" content="栈">
+<meta property="article:tag" content="JavaScript">
 <meta name="twitter:card" content="summary_large_image">
   
   
-  <title>数据结构——栈 - Hexo</title>
+  <title>前端开发——JS - Hexo</title>
 
   <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4/dist/css/bootstrap.min.css" />
 
@@ -152,7 +152,7 @@
       <div class="full-bg-img">
         <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
           <div class="page-header text-center fade-in-up">
-            <span class="h2" id="subtitle" title="数据结构——栈">
+            <span class="h2" id="subtitle" title="前端开发——JS">
               
             </span>
 
@@ -162,8 +162,8 @@
   
     <span class="post-meta">
       <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-      <time datetime="2022-04-02 17:41" pubdate>
-        2022年4月2日 下午
+      <time datetime="2022-04-10 16:18" pubdate>
+        2022年4月10日 下午
       </time>
     </span>
   
@@ -173,7 +173,7 @@
   
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      585 字
+      351 字
     </span>
   
 
@@ -182,7 +182,7 @@
       <i class="iconfont icon-clock-fill"></i>
       
       
-      5 分钟
+      3 分钟
     </span>
   
 
@@ -211,72 +211,21 @@
         <div class="py-5" id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">数据结构——栈</h1>
+            <h1 style="display: none">前端开发——JS</h1>
             
             <div class="markdown-body">
-              <p>STL 栈的常用函数、算法题</p>
-<span id="more"></span>
+              <h2 id="前端开发——JavaScript"><a href="#前端开发——JavaScript" class="headerlink" title="前端开发——JavaScript"></a>前端开发——JavaScript</h2><h3 id="一、概述"><a href="#一、概述" class="headerlink" title="一、概述"></a>一、概述</h3><p><strong>在HTML中加载JS</strong></p>
+<ol>
+<li><p><strong>方式一</strong>，在ＨＴＭＬ中通过script标签，将JS代码包裹在内，推荐在外层包裹一层，确保HTML先加载完毕</p>
+<figure class="highlight nim"><table><tr><td class="gutter"><div class="code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><pre><code class="hljs nim">document.addEventListener(<span class="hljs-string">&quot;DOMContentLoaded&quot;</span>, function() <span class="hljs-meta">&#123;...&#125;</span><br></code></pre></td></tr></table></figure>
+</li>
+<li><p><strong>方式二</strong>，通过script标签引入外部js文件</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;script.js&quot;</span> <span class="hljs-attr">async</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span><br></code></pre></td></tr></table></figure>
 
-
-
-<h1 id="C-Stack（栈）"><a href="#C-Stack（栈）" class="headerlink" title="C++ Stack（栈）"></a>C++ Stack（栈）</h1><h4 id="函数"><a href="#函数" class="headerlink" title="函数"></a>函数</h4><table>
-<thead>
-<tr>
-<th><a target="_blank" rel="noopener" href="https://www.cainiaojc.com/cpp/cpp-stack-empty-function.html">empty</a></th>
-<th>该函数用于测试堆栈是否为空。如果堆栈为空，则该函数返回true，否则返回false。</th>
-</tr>
-</thead>
-<tbody><tr>
-<td><a target="_blank" rel="noopener" href="https://www.cainiaojc.com/cpp/cpp-stack-size-function.html">size</a></td>
-<td>该函数返回堆栈容器的大小，该大小是堆栈中存储的元素数量的度量。</td>
-</tr>
-<tr>
-<td><a target="_blank" rel="noopener" href="https://www.cainiaojc.com/cpp/cpp-stack-top-function.html">top</a></td>
-<td>该函数用于访问堆栈的顶部元素。该元素起着非常重要的作用，因为所有插入和删除操作都是在顶部元素上执行的。</td>
-</tr>
-<tr>
-<td><a target="_blank" rel="noopener" href="https://www.cainiaojc.com/cpp/cpp-stack-push-function.html">push</a></td>
-<td>该函数用于在堆栈顶部插入新元素。</td>
-</tr>
-<tr>
-<td><a target="_blank" rel="noopener" href="https://www.cainiaojc.com/cpp/cpp-stack-pop-function.html">pop</a></td>
-<td>该函数用于删除元素，堆栈中的元素从顶部删除。</td>
-</tr>
-<tr>
-<td>swap</td>
-<td>该函数用于交换引用的两个容器的内容。</td>
-</tr>
-</tbody></table>
-<h4 id="常见问题"><a href="#常见问题" class="headerlink" title="常见问题"></a>常见问题</h4><p>Q1：栈空的时候，使用top访问，或者使用pop会发生什么？</p>
-<p>A1：栈空的时候，使用top和使用pop都会发生访问错误，程序会报错终止。</p>
-<h4 id="leetcode题库"><a href="#leetcode题库" class="headerlink" title="leetcode题库"></a>leetcode题库</h4><table>
-<thead>
-<tr>
-<th>题目</th>
-<th>备注</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>20.有效的括号（简单）</td>
-<td>简单的匹配前后括号(),{},[]</td>
-</tr>
-<tr>
-<td>32.最长的括号（困难）</td>
-<td>计算最长有效括号，分两种情况：()()和(())，巧妙地利用栈和右括号下标</td>
-</tr>
-<tr>
-<td>42.接雨水（困难）</td>
-<td>做了两次，第二次还做了两个小时，把问题想复杂化了，虽然细节很多，但是也没有那么多，没有把握住分析思路。</td>
-</tr>
-<tr>
-<td>71.简化路径（中等）</td>
-<td>标准化输入路径的题目，借鉴编译原理gettoken函数，难点在于需要考虑的情况和细节比较多</td>
-</tr>
-<tr>
-<td>84.柱状图中最大的矩形（困难）</td>
-<td>单调栈+哨兵（边界加一个特殊值，称为“哨兵”），单调栈常用来求左右边界的问题，分为递增、递减栈，具体选哪个取决于详细情况</td>
-</tr>
-</tbody></table>
+<p><strong>async关键字</strong>，如果脚本无需等待页面解析，且无依赖独立运行，那么应使用 <code>async</code></p>
+<p><strong>defer关键字</strong>，如果脚本需要等待页面解析，且依赖于其它脚本，调用这些脚本时应使用 <code>defer</code>，将关联的脚本按所需顺序置于 HTML 中</p>
+</li>
+</ol>
 
             </div>
             <hr>
@@ -286,7 +235,7 @@
                   <div class="post-meta mr-3">
                     <i class="iconfont icon-category"></i>
                     
-                      <a class="hover-with-bg" href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/">数据结构</a>
+                      <a class="hover-with-bg" href="/categories/%E5%89%8D%E7%AB%AF/">前端</a>
                     
                   </div>
                 
@@ -294,7 +243,7 @@
                   <div class="post-meta">
                     <i class="iconfont icon-tags"></i>
                     
-                      <a class="hover-with-bg" href="/tags/%E6%A0%88/">栈</a>
+                      <a class="hover-with-bg" href="/tags/JavaScript/">JavaScript</a>
                     
                   </div>
                 
@@ -311,9 +260,9 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2022/04/02/Git/Git%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">
+                      <a href="/2022/04/10/%E5%8D%9A%E5%AE%A2%E7%BD%91%E7%AB%99demo/">
                         <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">Git学习笔记</span>
+                        <span class="hidden-mobile">博客网站demo</span>
                         <span class="visible-mobile">上一篇</span>
                       </a>
                     
@@ -321,8 +270,8 @@
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2022/04/02/%E5%89%8D%E7%AB%AF/%E5%89%8D%E7%AB%AF%E5%BC%80%E5%8F%91%E2%80%94%E2%80%94CSS/">
-                        <span class="hidden-mobile">前端开发——CSS</span>
+                      <a href="/2022/04/09/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E2%80%94%E2%80%94%E9%98%9F%E5%88%97/">
+                        <span class="hidden-mobile">数据结构——队列</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
@@ -332,33 +281,6 @@
               
             </div>
 
-            
-              <!-- Comments -->
-              <article class="comments" id="comments" lazyload>
-                
-                  
-                
-                
-  <div class="disqus" style="width:100%">
-    <div id="disqus_thread"></div>
-    
-      <script>
-        Fluid.utils.loadComments('#disqus_thread', function() {
-          Fluid.utils.createCssLink('https://cdn.jsdelivr.net/npm/disqusjs@1/dist/disqusjs.css');
-          Fluid.utils.createScript('https://cdn.jsdelivr.net/npm/disqusjs@1/dist/disqus.js', function() {
-            new DisqusJS({
-              shortname: 'fluid',
-              apikey: '5MdHoHQa7CwzODFw6Sd9B4Mk9AeIE4Gf1VsH7iobV7ETqal8Dn6viYp0y7mm4yCn'
-            });
-          });
-        });
-      </script>
-    
-    <noscript>Please enable JavaScript to view the comments</noscript>
-  </div>
-
-
-              </article>
             
           </article>
         </div>

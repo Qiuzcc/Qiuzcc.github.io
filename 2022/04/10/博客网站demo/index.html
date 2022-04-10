@@ -1,0 +1,838 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/favicon.png">
+  <link rel="icon" href="/img/favicon.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="Time gogo">
+  <meta name="keywords" content="">
+  
+    <meta name="description" content="一个使用 Express框架 + bootstrap框架 + mongoDB数据库 搭建的图文博客网站demo，出于个人兴趣的练习项目">
+<meta property="og:type" content="article">
+<meta property="og:title" content="博客网站demo">
+<meta property="og:url" content="https://qiuzcc.github.io/2022/04/10/%E5%8D%9A%E5%AE%A2%E7%BD%91%E7%AB%99demo/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="一个使用 Express框架 + bootstrap框架 + mongoDB数据库 搭建的图文博客网站demo，出于个人兴趣的练习项目">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://qiuzcc.github.io/%E5%8D%9A%E5%AE%A2%E7%BD%91%E7%AB%99demo.assets/image-20220410200144622-16495968830811.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/Qiuzcc/images/master/imgs/image-20220410200248757.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/Qiuzcc/images/master/imgs/image-20220410200335584.png">
+<meta property="og:image" content="https://qiuzcc.github.io/%E5%8D%9A%E5%AE%A2%E7%BD%91%E7%AB%99demo.assets/image-20220410200442015-16495968946153.png">
+<meta property="article:published_time" content="2022-04-10T11:31:31.000Z">
+<meta property="article:modified_time" content="2022-04-10T13:21:47.209Z">
+<meta property="article:author" content="Time gogo">
+<meta property="article:tag" content="项目实践">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://qiuzcc.github.io/%E5%8D%9A%E5%AE%A2%E7%BD%91%E7%AB%99demo.assets/image-20220410200144622-16495968830811.png">
+  
+  
+  <title>博客网站demo - Hexo</title>
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4/dist/css/bootstrap.min.css" />
+
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/github-markdown-css@4/github-markdown.min.css" />
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hint.css@2/hint.min.css" />
+
+  
+    
+    
+      
+      <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@10/styles/github-gist.min.css" />
+    
+  
+
+  
+    <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3/dist/jquery.fancybox.min.css" />
+  
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_ba1fz6golrf.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_lbnruvf0jn.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+<!-- 自定义样式保持在最底部 -->
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    var CONFIG = {"hostname":"qiuzcc.github.io","root":"/","version":"1.8.14","typing":{"enable":true,"typeSpeed":210,"cursorChar":" ","loop":false},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"copy_btn":true,"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml"};
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+<meta name="generator" content="Hexo 6.0.0"></head>
+
+
+<body>
+  <header style="height: 70vh;">
+    <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>time&#39;go&#39;go</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                首页
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                分类
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                关于
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              &nbsp;<i class="iconfont icon-search"></i>&nbsp;
+            </a>
+          </li>
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">&nbsp;<i
+                class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+    <div class="banner" id="banner" parallax=true
+         style="background: url('/img/bg/sky.jpg') no-repeat center center;
+           background-size: cover;">
+      <div class="full-bg-img">
+        <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+          <div class="page-header text-center fade-in-up">
+            <span class="h2" id="subtitle" title="博客网站demo">
+              
+            </span>
+
+            
+              <div class="mt-3">
+  
+  
+    <span class="post-meta">
+      <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+      <time datetime="2022-04-10 19:31" pubdate>
+        2022年4月10日 晚上
+      </time>
+    </span>
+  
+</div>
+
+<div class="mt-1">
+  
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-chart"></i>
+      5k 字
+    </span>
+  
+
+  
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-clock-fill"></i>
+      
+      
+      42 分钟
+    </span>
+  
+
+  
+  
+</div>
+
+            
+          </div>
+
+          
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="d-none d-lg-block col-lg-2"></div>
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div class="py-5" id="board">
+          <article class="post-content mx-auto">
+            <!-- SEO header -->
+            <h1 style="display: none">博客网站demo</h1>
+            
+            <div class="markdown-body">
+              <p>一个使用 Express框架 + bootstrap框架 + mongoDB数据库 搭建的图文博客网站demo，出于个人兴趣的练习项目</p>
+<span id="more"></span>
+
+
+
+<h1 id="个人博客网站"><a href="#个人博客网站" class="headerlink" title="个人博客网站"></a>个人博客网站</h1><h3 id="一、项目简介"><a href="#一、项目简介" class="headerlink" title="一、项目简介"></a>一、项目简介</h3><h4 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h4><p>学习计算机专业多年，从来没有自己做过网站，觉得是一个遗憾。今年开年的学期，没有课程了，所以决定自己动手造一个网站，由于自己平时喜欢拍拍照片、出去游玩，所以就决定造一个图文类的博客网站。但是之前没有学过前端的技术，几乎从零开始，边学边做。前一周学和练HTML和CSS，但是只能做静态网页。后面找到了Express框架，终于可以搭建一个能够和服务端数据库交互的真正意义上的网站（而不只是网页）。话不多说，直接上实现后的界面效果图</p>
+<h4 id="效果图"><a href="#效果图" class="headerlink" title="效果图"></a>效果图</h4><p><strong>主页</strong></p>
+<p><img src="/%E5%8D%9A%E5%AE%A2%E7%BD%91%E7%AB%99demo.assets/image-20220410200144622-16495968830811.png" srcset="/img/loading.gif" lazyload alt="image-20220410200442015"></p>
+<p><strong>分类页</strong></p>
+<p><img src="https://raw.githubusercontent.com/Qiuzcc/images/master/imgs/image-20220410200248757.png" srcset="/img/loading.gif" lazyload alt="image-20220410200248757"></p>
+<p><strong>照片页</strong></p>
+<p><img src="https://raw.githubusercontent.com/Qiuzcc/images/master/imgs/image-20220410200335584.png" srcset="/img/loading.gif" lazyload alt="image-20220410200335584"></p>
+<p><strong>后台管理页</strong></p>
+<p><img src="/%E5%8D%9A%E5%AE%A2%E7%BD%91%E7%AB%99demo.assets/image-20220410200442015-16495968946153.png" srcset="/img/loading.gif" lazyload alt="image-20220410200144622"></p>
+<p><strong>由于一些突发原因，项目没有上线到服务器</strong>，所以目前停留在本地运行的阶段，没有办法提供链接进行访问（只能在本地运行）。</p>
+<h3 id="二、项目规划"><a href="#二、项目规划" class="headerlink" title="二、项目规划"></a>二、项目规划</h3><p>实际项目搭建花了两次，第一次是刚接触Express框架，作为熟悉入门，但是后面文件越建越多的时候，明显感觉到项目极不规范，</p>
+<p>所以这时重头搭建了一次，从项目的全局规划开始，</p>
+<p><strong>第一步</strong>，设计全局的路由规划、数据Model、资源目录的分组、项目文件的分组；</p>
+<p><strong>第二步</strong>，学习git版本管理，按项目进度阶段保存项目的版本（所以也是git管理的练手项目）；</p>
+<p><strong>第三步</strong>，就是分页面进行UI设计、功能实现。</p>
+<p>下面是具体的规划设计（实际项目过程中有一些变动，另外增加了一个Model）</p>
+<h4 id="路由规划"><a href="#路由规划" class="headerlink" title="路由规划"></a><strong>路由规划</strong></h4><table>
+<thead>
+<tr>
+<th>地址</th>
+<th>页面</th>
+<th>控制器、方法</th>
+<th>view</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>&#x2F;</td>
+<td>首页</td>
+<td>homeController.home</td>
+<td>home</td>
+</tr>
+<tr>
+<td>&#x2F;article&#x2F;:id</td>
+<td>文章详情页</td>
+<td>articleController.detail</td>
+<td>article_detail</td>
+</tr>
+<tr>
+<td>&#x2F;article&#x2F;classifier</td>
+<td>文章分类页</td>
+<td>articleController.classifier</td>
+<td>classifier</td>
+</tr>
+<tr>
+<td>&#x2F;article&#x2F;classifier&#x2F;study</td>
+<td>文章分类页（学习笔记）</td>
+<td>articleController.classifier_study</td>
+<td>classifier_study</td>
+</tr>
+<tr>
+<td>&#x2F;article&#x2F;classifier&#x2F;life</td>
+<td>文章分类页（生活感悟）</td>
+<td>articleController.classifier_life</td>
+<td>classifier_life</td>
+</tr>
+<tr>
+<td>&#x2F;article&#x2F;classifier&#x2F;other</td>
+<td>文章分类页（其它）</td>
+<td>articleController.classifier_other</td>
+<td>classifier_other</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>&#x2F;photos</td>
+<td>照片展示页</td>
+<td>photoController.home</td>
+<td>photos</td>
+</tr>
+<tr>
+<td>&#x2F;photos&#x2F;:id</td>
+<td>照片详情页</td>
+<td>photoController.detail</td>
+<td>photo_detail</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>&#x2F;manage&#x2F;article&#x2F;all</td>
+<td>文章管理页（全部分类）<br />后台管理默认页面</td>
+<td>articleController.manage_list</td>
+<td>manage_article</td>
+</tr>
+<tr>
+<td>&#x2F;manage&#x2F;article&#x2F;study</td>
+<td>文章管理页（学习笔记）</td>
+<td>articleController.manage_study</td>
+<td>manage_article_study</td>
+</tr>
+<tr>
+<td>&#x2F;manage&#x2F;article&#x2F;life</td>
+<td>文章管理页（生活感悟）</td>
+<td>articleController.manage_life</td>
+<td>manage_article_life</td>
+</tr>
+<tr>
+<td>&#x2F;manage&#x2F;article&#x2F;other</td>
+<td>文章管理页（其它）</td>
+<td>articleController.manage_other</td>
+<td>manage_article_other</td>
+</tr>
+<tr>
+<td>&#x2F;manage&#x2F;article&#x2F;:id</td>
+<td>文章详情管理页</td>
+<td>articleController.manage_detail</td>
+<td>manage_article_detail</td>
+</tr>
+<tr>
+<td>&#x2F;manage&#x2F;article&#x2F;:id&#x2F;update</td>
+<td>无页面（提交文章修改post）</td>
+<td>articleController.manage_detail_update</td>
+<td>重定向到文章详情页</td>
+</tr>
+<tr>
+<td>&#x2F;manage&#x2F;article&#x2F;:id&#x2F;remove</td>
+<td>无页面（提交文章删除请求）</td>
+<td>articleController.manage_detail_remove</td>
+<td>重定向到文章管理页（全部）</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>&#x2F;manage&#x2F;photos</td>
+<td>照片管理页</td>
+<td>photoController.manage_list</td>
+<td>manage_photos</td>
+</tr>
+<tr>
+<td>&#x2F;manage&#x2F;photos&#x2F;:id</td>
+<td>照片详情管理页</td>
+<td>photoController.manage_detail</td>
+<td>manage_photos_detail</td>
+</tr>
+<tr>
+<td>&#x2F;manage&#x2F;photos&#x2F;:id&#x2F;update</td>
+<td>无（提交照片修改post）</td>
+<td>photoController.manage_detail_update</td>
+<td>重定向到照片详情页</td>
+</tr>
+<tr>
+<td>&#x2F;manage&#x2F;photos&#x2F;:id&#x2F;remove</td>
+<td>无（提交照片remove）</td>
+<td>photoController.manage_detail_remove</td>
+<td>重定向到照片管理页</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>&#x2F;manage&#x2F;people</td>
+<td>个人信息管理页</td>
+<td>peopleController.manage</td>
+<td>manage_people</td>
+</tr>
+<tr>
+<td>&#x2F;manage&#x2F;people&#x2F;update</td>
+<td>无页面（提交修改表单）</td>
+<td>peopleController.update</td>
+<td>重定向到manage_people</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>&#x2F;manage&#x2F;new&#x2F;article</td>
+<td>文章发布页</td>
+<td>articleController.manage_new</td>
+<td>manage_new_article</td>
+</tr>
+<tr>
+<td>&#x2F;manage&#x2F;new&#x2F;article&#x2F;create</td>
+<td>无页面（提交文章新建的post）</td>
+<td>articleController.manage_new_create</td>
+<td>重定向到文章详情页</td>
+</tr>
+<tr>
+<td>&#x2F;manage&#x2F;new&#x2F;photo</td>
+<td>照片上传页</td>
+<td>photoController.manage_new</td>
+<td>manage_new_photo</td>
+</tr>
+<tr>
+<td>&#x2F;manage&#x2F;new&#x2F;photo&#x2F;upload</td>
+<td>无页面（照片上传的post）</td>
+<td>photoController.manage_new_upload</td>
+<td>重定向到照片详情页</td>
+</tr>
+</tbody></table>
+<h4 id="数据Model"><a href="#数据Model" class="headerlink" title="数据Model"></a><strong>数据Model</strong></h4><ul>
+<li>Article</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>字段</th>
+<th>类型</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>title</td>
+<td>String</td>
+<td>文章标题 required:true</td>
+</tr>
+<tr>
+<td>classification</td>
+<td>String</td>
+<td>文章分类 required: true, default: “其它”</td>
+</tr>
+<tr>
+<td>abstract</td>
+<td>String</td>
+<td>文章摘要</td>
+</tr>
+<tr>
+<td>content</td>
+<td>String</td>
+<td>文章内容</td>
+</tr>
+<tr>
+<td>picture</td>
+<td>String</td>
+<td>配图的路径+文件名</td>
+</tr>
+<tr>
+<td>timestamp</td>
+<td>Date</td>
+<td>创建时间 default: Date.now()</td>
+</tr>
+<tr>
+<td>url</td>
+<td>virtual</td>
+<td>&#x2F;article&#x2F;this.id</td>
+</tr>
+<tr>
+<td>date</td>
+<td>virtual</td>
+<td>moment(this.timestamp).format(“YYYY MMMM Do”)</td>
+</tr>
+</tbody></table>
+<ul>
+<li>People</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>字段</th>
+<th>类型</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>name</td>
+<td>String</td>
+<td>昵称</td>
+</tr>
+<tr>
+<td>description</td>
+<td>String</td>
+<td>简介</td>
+</tr>
+<tr>
+<td>photo</td>
+<td>String</td>
+<td>头像的路径+文件名</td>
+</tr>
+<tr>
+<td>github</td>
+<td>String</td>
+<td>github链接（需要添加前缀https:&#x2F;&#x2F;)</td>
+</tr>
+<tr>
+<td>wechat</td>
+<td>String</td>
+<td>微信名片图片的路径+文件名</td>
+</tr>
+<tr>
+<td>weibo</td>
+<td>String</td>
+<td>微博首页链接（需要添加前缀https:&#x2F;&#x2F;)</td>
+</tr>
+</tbody></table>
+<ul>
+<li>Photos</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>字段</th>
+<th>类型</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>title</td>
+<td>String</td>
+<td>照片标题</td>
+</tr>
+<tr>
+<td>description</td>
+<td>String</td>
+<td>照片简介</td>
+</tr>
+<tr>
+<td>file</td>
+<td>String</td>
+<td>照片保存的路径+文件名</td>
+</tr>
+<tr>
+<td>timestamp</td>
+<td>Date</td>
+<td>照片上传的时间 default:Date.now()</td>
+</tr>
+<tr>
+<td>views</td>
+<td>Number</td>
+<td>点击量 default:0</td>
+</tr>
+<tr>
+<td>url</td>
+<td>virtual</td>
+<td>&#x2F;photos&#x2F;this.id</td>
+</tr>
+<tr>
+<td>date</td>
+<td>virtual</td>
+<td>moment(this.timestamp).format(“YYYY MMMM Do”)</td>
+</tr>
+</tbody></table>
+<h4 id="public目录"><a href="#public目录" class="headerlink" title="public目录"></a><strong>public目录</strong></h4><table>
+<thead>
+<tr>
+<th>目录</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>…</td>
+<td>其它自带的目录</td>
+</tr>
+<tr>
+<td>&#x2F;images&#x2F;article</td>
+<td>保存所有的文章配图</td>
+</tr>
+<tr>
+<td>&#x2F;images&#x2F;people</td>
+<td>保存个人头像、微信名片</td>
+</tr>
+<tr>
+<td>&#x2F;images&#x2F;photos</td>
+<td>保存所有上传的照片</td>
+</tr>
+</tbody></table>
+<h3 id="三、项目收获"><a href="#三、项目收获" class="headerlink" title="三、项目收获"></a>三、项目收获</h3><h4 id="项目亮点"><a href="#项目亮点" class="headerlink" title="项目亮点"></a>项目亮点</h4><p>外观设计比较整洁美观，页面做了响应式设计，具有交互性的动效</p>
+<p>功能比较完整，能够在网页上实现增删改的操作</p>
+<h4 id="项目难点"><a href="#项目难点" class="headerlink" title="项目难点"></a>项目难点</h4><p><strong>富文本编辑器的应用</strong></p>
+<p>这是目前为止，没有解决的问题。文章管理那一部分，我本来是想通过一个富文本编辑器的插件来实现编辑和修改的。可用的富文本编辑器插件有很多，原理基本都是把编辑器的内容保存为html文件，存放到服务器上，访问文章的时候返回html文件。这里涉及到一个冲突，因为文章页我自己设计的是有一个导航栏+页头背景图的，所以已经需要有一个jade文件来渲染了，所以没有办法直接返回只有文章内容的html（学习了html之后，发现可能可以通过iframe实现html的嵌入）。另外文章图片的插入预想也比较麻烦，文章里面（或者说html里面）不可能直接放置照片，只能放置照片的url，所以照片的保存需要另外处理。文章的修改也比较麻烦，预想方案是文章纯文本和html各自保存一份，修改直接在纯文本上做，改完覆盖掉原来的html。</p>
+<h4 id="实践经验"><a href="#实践经验" class="headerlink" title="实践经验"></a>实践经验</h4><p>通过这次项目，上手练习了多项技术，有<strong>Express框架、bootstrap框架、MongoDB数据库、Node.js服务器、jade语言，还有git版本管理工具</strong>。</p>
+<p>以上列举的，都是第一次使用的框架和工具。</p>
+<p><strong>Express框架</strong>是通过另外一个教程接触的，但是在搭建本项目的过程中，才更深刻地了解到里面的一些原理，如它的路由机制是怎样一条链路（网页的链接url——router文件——Controller管理器的具体函数——[渲染的新页面]）。</p>
+<p>为了高效的管理页面样式，在编辑页面UI之前，特定花了一两天时间，阅读了一边<strong>bootstrap5</strong>的参考文档，在设计页面的时候尽量使用了bootstrap的元素和组件，比如所有的卡片、照片页的轮播图、表单、侧边导航栏。</p>
+<p>为了实现开发过程中的版本管理，花了半天的时间学习<strong>git如何使用</strong>，并记录了阅读笔记，在开发过程中，通过tag和分支保存并同步到github多个版本。</p>
+<p>页面采用<strong>jade语言</strong>写的（问为什么选jade，因为express默认采用了jade模板引擎），这个语言也是之前完全陌生的，所以写的时候遇到很多不知道解决的问题，尽管它确实有很多优势（语法糖、书写简洁、可以嵌套、可以复用等），但是配套的教程文档太少，有时一些特别的问题无从解决。</p>
+<p>在开发过程中，也深切感受到了Express的一些局限（也有可能是我还没有发掘出Express对应的用法）</p>
+<p>比如Express使用jade模板引擎，有一个好处就是每次可以传入不同的数据从而渲染出不同的页面。但是也有一个弊端，就是jade没有办法像html一样嵌入javasript代码或文件，所以想要实现涉及到数据方面的交互很困难（一般都交互还是可以的，把javasript文件放到public目录下就可以引用了）。当时想要在页面里面做一个分类管理的时候，发现没有办法通过js交互来改变显示的数据。</p>
+<h4 id="不足"><a href="#不足" class="headerlink" title="不足"></a>不足</h4><p>这个项目是在零星学了一些HTML和CSS的基础上开始的，在做这个项目之前没有比较体系化地接受到前端知识的培训，所以在实际做的过程中存在着挺多局限。在写此文的时候，笔者已经较为系统地学习了HTML和CSS的入门知识，就已经发现了一个很不规范的地方，就是页面书写的时候没有结构化的意识，大量使用了div这种无语义的元素（知识局限、不知道有那么多的语义元素），所以写出来的文件可读性较差。</p>
+
+            </div>
+            <hr>
+            <div>
+              <div class="post-metas mb-3">
+                
+                  <div class="post-meta mr-3">
+                    <i class="iconfont icon-category"></i>
+                    
+                      <a class="hover-with-bg" href="/categories/%E5%89%8D%E7%AB%AF/">前端</a>
+                    
+                  </div>
+                
+                
+                  <div class="post-meta">
+                    <i class="iconfont icon-tags"></i>
+                    
+                      <a class="hover-with-bg" href="/tags/%E9%A1%B9%E7%9B%AE%E5%AE%9E%E8%B7%B5/">项目实践</a>
+                    
+                  </div>
+                
+              </div>
+              
+                <p class="note note-warning">
+                  
+                    本博客所有文章除特别声明外，均采用 <a target="_blank" href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh" rel="nofollow noopener noopener">CC BY-SA 4.0 协议</a> ，转载请注明出处！
+                  
+                </p>
+              
+              
+                <div class="post-prevnext">
+                  <article class="post-prev col-6">
+                    
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2022/04/10/%E5%89%8D%E7%AB%AF/%E5%89%8D%E7%AB%AF%E5%BC%80%E5%8F%91%E2%80%94%E2%80%94JS%EF%BC%88%E4%B8%80%EF%BC%89/">
+                        <span class="hidden-mobile">前端开发——JS</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+              <!-- Comments -->
+              <article class="comments" id="comments" lazyload>
+                
+                  
+                
+                
+  <div class="disqus" style="width:100%">
+    <div id="disqus_thread"></div>
+    
+      <script>
+        Fluid.utils.loadComments('#disqus_thread', function() {
+          Fluid.utils.createCssLink('https://cdn.jsdelivr.net/npm/disqusjs@1/dist/disqusjs.css');
+          Fluid.utils.createScript('https://cdn.jsdelivr.net/npm/disqusjs@1/dist/disqus.js', function() {
+            new DisqusJS({
+              shortname: 'fluid',
+              apikey: '5MdHoHQa7CwzODFw6Sd9B4Mk9AeIE4Gf1VsH7iobV7ETqal8Dn6viYp0y7mm4yCn'
+            });
+          });
+        });
+      </script>
+    
+    <noscript>Please enable JavaScript to view the comments</noscript>
+  </div>
+
+
+              </article>
+            
+          </article>
+        </div>
+      </div>
+    </div>
+    
+      <div class="d-none d-lg-block col-lg-2 toc-container" id="toc-ctn">
+        <div id="toc">
+  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;目录</p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+      </div>
+    
+  </div>
+</div>
+
+<!-- Custom -->
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v"
+                 for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+
+    
+  </main>
+
+  <footer class="text-center mt-5 py-3">
+  <div class="footer-content">
+     <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+  </div>
+  
+
+  
+
+  
+</footer>
+
+
+  <!-- SCRIPTS -->
+  
+  <script  src="https://cdn.jsdelivr.net/npm/nprogress@0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/nprogress@0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js" ></script>
+<script  src="https://cdn.jsdelivr.net/npm/bootstrap@4/dist/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+<!-- Plugins -->
+
+
+  <script  src="/js/local-search.js" ></script>
+
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+  
+
+
+
+  
+    <script  src="https://cdn.jsdelivr.net/npm/tocbot@4/dist/tocbot.min.js" ></script>
+  
+  
+    <script  src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3/dist/jquery.fancybox.min.js" ></script>
+  
+  
+    <script  src="https://cdn.jsdelivr.net/npm/anchor-js@4/anchor.min.js" ></script>
+  
+  
+    <script defer src="https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js" ></script>
+  
+
+
+
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/typed.js@2/lib/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var title = document.getElementById('subtitle').title;
+      
+        typing(title);
+      
+    })(window, document);
+  </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- 主题的启动项 保持在最底部 -->
+<script  src="/js/boot.js" ></script>
+
+
+</body>
+</html>
