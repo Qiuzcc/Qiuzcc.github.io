@@ -1,0 +1,519 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/favicon.png">
+  <link rel="icon" href="/img/favicon.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="Time gogo">
+  <meta name="keywords" content="">
+  
+    <meta name="description" content="Express是node.js运行环境中，一款最受欢迎的后端开发框架">
+<meta property="og:type" content="article">
+<meta property="og:title" content="post">
+<meta property="og:url" content="https://qiuzcc.github.io/2022/04/11/%E5%89%8D%E7%AB%AF/%E4%BA%86%E8%A7%A3Express%E6%A1%86%E6%9E%B6/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="Express是node.js运行环境中，一款最受欢迎的后端开发框架">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://raw.githubusercontent.com/Qiuzcc/images/master/imgs/middleware.png">
+<meta property="og:image" content="https://static.powerformer.com/c/cd5b993/middleware-new.png">
+<meta property="article:published_time" content="2022-04-11T08:05:26.000Z">
+<meta property="article:modified_time" content="2022-04-11T11:57:21.854Z">
+<meta property="article:author" content="Time gogo">
+<meta property="article:tag" content="开发框架">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://raw.githubusercontent.com/Qiuzcc/images/master/imgs/middleware.png">
+  
+  
+  <title>post - Hexo</title>
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4/dist/css/bootstrap.min.css" />
+
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/github-markdown-css@4/github-markdown.min.css" />
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hint.css@2/hint.min.css" />
+
+  
+    
+    
+      
+      <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@10/styles/github-gist.min.css" />
+    
+  
+
+  
+    <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3/dist/jquery.fancybox.min.css" />
+  
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_ba1fz6golrf.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_lbnruvf0jn.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+<!-- 自定义样式保持在最底部 -->
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    var CONFIG = {"hostname":"qiuzcc.github.io","root":"/","version":"1.8.14","typing":{"enable":true,"typeSpeed":210,"cursorChar":" ","loop":false},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"copy_btn":true,"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml"};
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+<meta name="generator" content="Hexo 6.0.0"></head>
+
+
+<body>
+  <header style="height: 70vh;">
+    <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>time&#39;go&#39;go</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                首页
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                分类
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                关于
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              &nbsp;<i class="iconfont icon-search"></i>&nbsp;
+            </a>
+          </li>
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">&nbsp;<i
+                class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+    <div class="banner" id="banner" parallax=true
+         style="background: url('/img/bg/sky.jpg') no-repeat center center;
+           background-size: cover;">
+      <div class="full-bg-img">
+        <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+          <div class="page-header text-center fade-in-up">
+            <span class="h2" id="subtitle" title="post">
+              
+            </span>
+
+            
+              <div class="mt-3">
+  
+  
+    <span class="post-meta">
+      <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+      <time datetime="2022-04-11 16:05" pubdate>
+        2022年4月11日 下午
+      </time>
+    </span>
+  
+</div>
+
+<div class="mt-1">
+  
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-chart"></i>
+      3.7k 字
+    </span>
+  
+
+  
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-clock-fill"></i>
+      
+      
+      31 分钟
+    </span>
+  
+
+  
+  
+</div>
+
+            
+          </div>
+
+          
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="d-none d-lg-block col-lg-2"></div>
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div class="py-5" id="board">
+          <article class="post-content mx-auto">
+            <!-- SEO header -->
+            <h1 style="display: none">post</h1>
+            
+            <div class="markdown-body">
+              <p>Express是node.js运行环境中，一款最受欢迎的后端开发框架</p>
+<span id="more"></span>
+
+<h1 id="Express框架"><a href="#Express框架" class="headerlink" title="Express框架"></a>Express框架</h1><h3 id="一、前言"><a href="#一、前言" class="headerlink" title="一、前言"></a>一、前言</h3><p>Node.js 已经成为 Web 后台开发圈一股不容忽视的力量，凭借其良好的异步性能、丰富的 npm 库以及 JavaScript 语言方面的优势，已经成为了很多大公司开发其后台架构的重要技术之一，而 Express 框架则是其中知名度最高、也是最受欢迎的后端开发框架。</p>
+<p>接下来，我们将了解Express在Node内置的http模块上做了怎样的封装，并掌握<strong>路由</strong>和<strong>中间件</strong>这两个关键概念，学习如何使用 <strong>模板引擎</strong>、<strong>静态文件服务</strong>、<strong>错误处理</strong>和 <strong>JSON API</strong></p>
+<h3 id="二、用Express搭建服务器"><a href="#二、用Express搭建服务器" class="headerlink" title="二、用Express搭建服务器"></a>二、用Express搭建服务器</h3><h4 id="强大的Request和Respose对象"><a href="#强大的Request和Respose对象" class="headerlink" title="强大的Request和Respose对象"></a>强大的Request和Respose对象</h4><ul>
+<li><code>req.body</code>：客户端请求体的数据，可能是表单或 JSON 数据</li>
+<li><code>req.params</code>：请求 URI 中的路径参数</li>
+<li><code>req.query</code>：请求 URI 中的查询参数</li>
+<li><code>req.cookies</code>：客户端的 cookies</li>
+</ul>
+<h4 id="路由机制"><a href="#路由机制" class="headerlink" title="路由机制"></a>路由机制</h4><p>客户端向服务器发送请求包含两部分：路径（Url）和请求方法（POST、GET），合起来统称<strong>API端点</strong></p>
+<p>服务器根据客户端访问的端点选择对应的处理逻辑的机制就叫做<strong>路由</strong></p>
+<p>定义方式：</p>
+<figure class="highlight pgsql"><table><tr><td class="gutter"><div class="code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><pre><code class="hljs pgsql">app.<span class="hljs-keyword">METHOD</span>(<span class="hljs-type">PATH</span>, <span class="hljs-keyword">HANDLER</span>)<br></code></pre></td></tr></table></figure>
+
+<ul>
+<li><code>app</code> 就是一个 <code>express</code> 服务器对象</li>
+<li><code>METHOD</code> 可以是任何<strong>小写</strong>的 HTTP 请求方法，包括 <code>get</code>、<code>post</code>、<code>put</code>、<code>delete</code> 等等</li>
+<li><code>PATH</code> 是客户端访问的 URI，例如 <code>/</code> 或 <code>/about</code></li>
+<li><code>HANDLER</code> 是路由被触发时的回调函数，在函数中可以执行相应的业务逻辑</li>
+</ul>
+<h4 id="nodemon热加载"><a href="#nodemon热加载" class="headerlink" title="nodemon热加载"></a>nodemon热加载</h4><p>Nodemon 是一款颇受欢迎的开发服务器，能够<strong>检测工作区代码的变化，并自动重启</strong>。通过以下命令安装 nodemon：</p>
+<figure class="highlight q"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs q">npm install nodemon --<span class="hljs-built_in">save</span>-<span class="hljs-built_in">dev</span><br></code></pre></td></tr></table></figure>
+
+<p>这里我们将 nodemon 安装为开发依赖 <code>devDependencies</code>，因为仅仅只有在开发时才需要用到。同时我们在 package.json 中加入 <code>start</code> 命令，代码如下：</p>
+<figure class="highlight stata"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><code class="hljs stata">package.json查看完整代码<br>&#123;<br>  <span class="hljs-string">&quot;name&quot;</span>: <span class="hljs-string">&quot;express_resume&quot;</span>,<br>  <span class="hljs-string">&quot;version&quot;</span>: <span class="hljs-string">&quot;1.0.0&quot;</span>,<br>  <span class="hljs-string">&quot;description&quot;</span>: <span class="hljs-string">&quot;&quot;</span>,<br>  <span class="hljs-string">&quot;main&quot;</span>: <span class="hljs-string">&quot;index.js&quot;</span>,<br>  <span class="hljs-string">&quot;scripts&quot;</span>: &#123;<br>    <span class="hljs-string">&quot;start&quot;</span>: <span class="hljs-string">&quot;nodemon server.js&quot;</span>,<br>    <span class="hljs-string">&quot;test&quot;</span>: <span class="hljs-string">&quot;echo \&quot;</span><span class="hljs-keyword">Error</span>: <span class="hljs-keyword">no</span> <span class="hljs-keyword">test</span> specified\<span class="hljs-string">&quot; &amp;&amp; exit 1&quot;</span><br>  &#125;,<br>  <span class="hljs-string">&quot;author&quot;</span>: <span class="hljs-string">&quot;&quot;</span>,<br>  <span class="hljs-string">&quot;license&quot;</span>: <span class="hljs-string">&quot;ISC&quot;</span>,<br>  <span class="hljs-string">&quot;dependencies&quot;</span>: &#123;<br>    <span class="hljs-string">&quot;express&quot;</span>: <span class="hljs-string">&quot;^4.17.1&quot;</span><br>  &#125;,<br>  <span class="hljs-string">&quot;devDependencies&quot;</span>: &#123;<br>    <span class="hljs-string">&quot;nodemon&quot;</span>: <span class="hljs-string">&quot;^2.0.2&quot;</span><br>  &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+
+
+<h3 id="三、编写中间件"><a href="#三、编写中间件" class="headerlink" title="三、编写中间件"></a>三、编写中间件</h3><p><strong>理解中间件</strong>，不是Express独有的概念，是指<strong>将具体的业务逻辑和底层逻辑解耦的组件</strong>。换句话说，中间件就是能够适用多个应用场景、可复用性良好的代码。</p>
+<p><img src="https://raw.githubusercontent.com/Qiuzcc/images/master/imgs/middleware.png" srcset="/img/loading.gif" lazyload alt="img"></p>
+<p>例如博客网站项目里面，用于上传文件的multer中间件，添加在路由参数当中。</p>
+<p><strong>Express里的中间件</strong>，就是函数</p>
+<figure class="highlight reasonml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs reasonml"><span class="hljs-keyword">function</span> some<span class="hljs-constructor">Middleware(<span class="hljs-params">req</span>, <span class="hljs-params">res</span>, <span class="hljs-params">next</span>)</span> &#123;  <span class="hljs-comment">// 自定义逻辑  next();&#125;</span><br></code></pre></td></tr></table></figure>
+
+<p>三个参数中，<code>req</code> 和 <code>res</code> 就是前面提到的 Request 请求对象和 Response 响应对象；而 <code>next</code> 函数则用来触发下一个中间件的执行。</p>
+<p>在 Express 使用中间件有两种方式：<strong>全局中间件</strong>和<strong>路由中间件</strong>。</p>
+<p>通过 <code>app.use</code> 函数就可以注册中间件，并且此中间件会在用户发起<strong>任何请求</strong>都可能会执行，例如：</p>
+<figure class="highlight stata"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs stata"><span class="hljs-keyword">app</span>.<span class="hljs-keyword">use</span>(someMiddleware);<br></code></pre></td></tr></table></figure>
+
+<h4 id="路由中间件"><a href="#路由中间件" class="headerlink" title="路由中间件"></a>路由中间件</h4><p>通过在路由定义时注册中间件，此中间件只会在用户访问该路由对应的 URI 时执行，例如：</p>
+<figure class="highlight coffeescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs coffeescript">app.get(<span class="hljs-string">&#x27;/middleware&#x27;</span>, someMiddleware, <span class="hljs-function"><span class="hljs-params">(req, res)</span> =&gt;</span> &#123;<br>  res.send(<span class="hljs-string">&#x27;Hello World&#x27;</span>);<br>&#125;);<br></code></pre></td></tr></table></figure>
+
+
+
+<h3 id="四、模板引擎"><a href="#四、模板引擎" class="headerlink" title="四、模板引擎"></a>四、模板引擎</h3><p>设置模板引擎</p>
+<figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs routeros">app.<span class="hljs-built_in">set</span>(<span class="hljs-string">&#x27;views&#x27;</span>, <span class="hljs-string">&#x27;views&#x27;</span>);    指定模板文件的目录，即第二个参数<br>app.<span class="hljs-built_in">set</span>(<span class="hljs-string">&#x27;view engine&#x27;</span>, <span class="hljs-string">&#x27;hbs&#x27;</span>);指定模板引擎为hbs<br></code></pre></td></tr></table></figure>
+
+<p>在views文件夹下创建页面文件</p>
+<p>在路由函数中调用res.render即可进行渲染</p>
+<h3 id="五、静态文件服务"><a href="#五、静态文件服务" class="headerlink" title="五、静态文件服务"></a>五、静态文件服务</h3><p>通常网站需要提供静态文件服务，例如图片、CSS 文件、JS 文件等等，而 Express 已经自带了静态文件服务中间件 <code>express.static</code></p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs php">app.<span class="hljs-keyword">use</span>(express.<span class="hljs-built_in">static</span>(<span class="hljs-string">&#x27;public&#x27;</span>));<br></code></pre></td></tr></table></figure>
+
+<p>通过以上代码来添加静态文件目录</p>
+<p>可以通过url访问，<code>http://localhost:3000/css/style.css</code>，不必添加public</p>
+<p>也可以在&#x2F;views下的文件引用静态资源，src为<code>/css/style.css</code></p>
+<h3 id="六、处理404和服务器错误"><a href="#六、处理404和服务器错误" class="headerlink" title="六、处理404和服务器错误"></a>六、处理404和服务器错误</h3><ul>
+<li>客户端方面的错误（状态码 4xx），例如访问了不存在的页面（404）、权限不够（403）等等</li>
+<li>服务器方面的错误（状态码 5xx），例如服务器内部出现错误（500）或网关错误（503）等等</li>
+</ul>
+<p>完善一下 Express 中间件的运作流程，如下图所示：</p>
+<p><img src="https://static.powerformer.com/c/cd5b993/middleware-new.png" srcset="/img/loading.gif" lazyload></p>
+<p>从图中可以看到，中间件和路由是从前往后执行的，当路由匹配到对应的url时，直接返回响应；不匹配则继续检查下一个路由。</p>
+<p>中间件不仅可以调用next函数向下传递、还可以直接抛出异常</p>
+<ul>
+<li><p>404的处理，需要在所有路由后面再加一个中间件，用来接收所有路由均匹配失败的请求</p>
+<figure class="highlight coffeescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs coffeescript">app.use(<span class="hljs-string">&#x27;*&#x27;</span>, <span class="hljs-function"><span class="hljs-params">(req, res)</span> =&gt;</span> &#123;<br>  <span class="hljs-regexp">//</span> ...<br>&#125;);<br></code></pre></td></tr></table></figure>
+</li>
+<li><p>错误处理，前面所有中间件抛出异常时都会进入错误处理函数</p>
+</li>
+</ul>
+<p><strong>处理内部错误</strong></p>
+<p>Express 的默认错误处理机制可以通过设置 <code>NODE_ENV</code> 来进行切换。我们将其设置为生产环境 <code>production</code>，再开启服务器。</p>
+<figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs routeros"><span class="hljs-built_in">set</span> <span class="hljs-attribute">NODE_ENV</span>=production<br>node server.js<br></code></pre></td></tr></table></figure>
+
+<p>这样做的目的是，访问出错时，会直接返回 Internal Server Error（服务器内部错误），不会显示任何错误信息，这样避免了被攻击的风险！</p>
+<p><strong>自定义错误处理逻辑</strong></p>
+<figure class="highlight moonscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs moonscript">app.use(<span class="hljs-string">&#x27;/&#x27;</span>, indexRouter);  指定到一个正常处理路由的文件<br>app.use(<span class="hljs-string">&#x27;*&#x27;</span>,<span class="hljs-function"><span class="hljs-params">(req,res)</span>=&gt;</span>&#123;<br>	res.status(<span class="hljs-number">404</span>).reder(<span class="hljs-string">&#x27;404&#x27;</span>,&#123;<span class="hljs-name">url</span>:req.originalUrl&#125;)  设置状态码<span class="hljs-number">404</span>，显示输入的url<br>&#125;)<br>app.use(<span class="hljs-function"><span class="hljs-params">(err,req,res,<span class="hljs-built_in">next</span>)</span>=&gt;</span>&#123;<br>	console.<span class="hljs-built_in">error</span>(err.stack);<br>	res.status(<span class="hljs-number">500</span>).render(<span class="hljs-string">&#x27;500&#x27;</span>);<br>&#125;)<br></code></pre></td></tr></table></figure>
+
+
+
+<h3 id="七、子路由"><a href="#七、子路由" class="headerlink" title="七、子路由"></a>七、子路由</h3><p>使用子路由拆分逻辑，但项目越大时，全部路由写在server.js或者app.js里面会显得很臃肿。可以通过子路由 <code>Router</code> 来实现逻辑拆分</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs javascript"><span class="hljs-keyword">const</span> express = <span class="hljs-built_in">require</span>(<span class="hljs-string">&#x27;express&#x27;</span>);<br><span class="hljs-keyword">const</span> router = express.<span class="hljs-title class_">Router</span>();<br></code></pre></td></tr></table></figure>
+
+<p><code>express.Router</code> 可以理解为一个迷你版的 <code>app</code> 对象，但是它功能完备，同样支持注册中间件和路由：</p>
+<p><strong>使用方法</strong></p>
+<p>在app.js（或server.js）中</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs php"><span class="hljs-keyword">var</span> express = <span class="hljs-keyword">require</span>(<span class="hljs-string">&#x27;express&#x27;</span>);<br><span class="hljs-keyword">var</span> app = <span class="hljs-title function_ invoke__">express</span>();<br><span class="hljs-keyword">var</span> indexRouter = <span class="hljs-keyword">require</span>(<span class="hljs-string">&#x27;./routes/index&#x27;</span>);<br>app.<span class="hljs-keyword">use</span>(<span class="hljs-string">&#x27;/&#x27;</span>, indexRouter);<br></code></pre></td></tr></table></figure>
+
+<p>在index文件中，也可以正常添加中间件</p>
+<figure class="highlight maxima"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs maxima"><span class="hljs-built_in">var</span> <span class="hljs-built_in">express</span> = require(&#x27;<span class="hljs-built_in">express</span>&#x27;);<br><span class="hljs-built_in">var</span> router = <span class="hljs-built_in">express</span>.Router();<br>router.<span class="hljs-built_in">get</span>(&#x27;/&#x27;, home.home);<br></code></pre></td></tr></table></figure>
+
+
+            </div>
+            <hr>
+            <div>
+              <div class="post-metas mb-3">
+                
+                  <div class="post-meta mr-3">
+                    <i class="iconfont icon-category"></i>
+                    
+                      <a class="hover-with-bg" href="/categories/%E5%89%8D%E7%AB%AF/">前端</a>
+                    
+                  </div>
+                
+                
+                  <div class="post-meta">
+                    <i class="iconfont icon-tags"></i>
+                    
+                      <a class="hover-with-bg" href="/tags/%E5%BC%80%E5%8F%91%E6%A1%86%E6%9E%B6/">开发框架</a>
+                    
+                  </div>
+                
+              </div>
+              
+                <p class="note note-warning">
+                  
+                    本博客所有文章除特别声明外，均采用 <a target="_blank" href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh" rel="nofollow noopener noopener">CC BY-SA 4.0 协议</a> ，转载请注明出处！
+                  
+                </p>
+              
+              
+                <div class="post-prevnext">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/2022/04/11/Express%E9%A1%B9%E7%9B%AE%E9%83%A8%E7%BD%B2%E5%88%B0%E4%BA%91%E6%9C%8D%E5%8A%A1%E5%99%A8/">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">Express项目部署到云服务器</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2022/04/11/%E5%89%8D%E7%AB%AF/%E5%89%8D%E7%AB%AF%E5%BC%80%E5%8F%91%E2%80%94%E2%80%94%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96/">
+                        <span class="hidden-mobile">前端开发——性能优化</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+          </article>
+        </div>
+      </div>
+    </div>
+    
+      <div class="d-none d-lg-block col-lg-2 toc-container" id="toc-ctn">
+        <div id="toc">
+  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;目录</p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+      </div>
+    
+  </div>
+</div>
+
+<!-- Custom -->
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v"
+                 for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+
+    
+  </main>
+
+  <footer class="text-center mt-5 py-3">
+  <div class="footer-content">
+     <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+  </div>
+  
+
+  
+
+  
+</footer>
+
+
+  <!-- SCRIPTS -->
+  
+  <script  src="https://cdn.jsdelivr.net/npm/nprogress@0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/nprogress@0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js" ></script>
+<script  src="https://cdn.jsdelivr.net/npm/bootstrap@4/dist/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+<!-- Plugins -->
+
+
+  <script  src="/js/local-search.js" ></script>
+
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+  
+
+
+
+  
+    <script  src="https://cdn.jsdelivr.net/npm/tocbot@4/dist/tocbot.min.js" ></script>
+  
+  
+    <script  src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3/dist/jquery.fancybox.min.js" ></script>
+  
+  
+    <script  src="https://cdn.jsdelivr.net/npm/anchor-js@4/anchor.min.js" ></script>
+  
+  
+    <script defer src="https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js" ></script>
+  
+
+
+
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/typed.js@2/lib/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var title = document.getElementById('subtitle').title;
+      
+        typing(title);
+      
+    })(window, document);
+  </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- 主题的启动项 保持在最底部 -->
+<script  src="/js/boot.js" ></script>
+
+
+</body>
+</html>

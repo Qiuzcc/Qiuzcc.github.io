@@ -16,23 +16,21 @@
   <meta name="author" content="Time gogo">
   <meta name="keywords" content="">
   
-    <meta name="description" content="了解Web开发相关知识的意义在于">
+    <meta name="description" content="前端开发——性能优化性能优化的目的一在于为企业节省流量成本，二在于提高用户的使用体验 分模块论述 浏览器 减少HTTP请求，即减少html里面css&#x2F;js等资源的数量 使用HTTP2.0，建立在https的基础上（更安全），采用二进制个数传输数据（1.0是文本格式），消息头采用压缩传输可以节省流量 白屏时间作为加载动画，优化用户体验  资源 静态资源做CDN缓存 把css放在文件头部，j">
 <meta property="og:type" content="article">
-<meta property="og:title" content="前端开发——Web开发概述">
-<meta property="og:url" content="https://qiuzcc.github.io/2022/04/02/%E5%89%8D%E7%AB%AF/%E5%89%8D%E7%AB%AF%E5%BC%80%E5%8F%91%E2%80%94%E2%80%94Web%E5%BC%80%E5%8F%91%E5%9F%BA%E7%A1%80/index.html">
+<meta property="og:title" content="前端开发——性能优化">
+<meta property="og:url" content="https://qiuzcc.github.io/2022/04/11/%E5%89%8D%E7%AB%AF/%E5%89%8D%E7%AB%AF%E5%BC%80%E5%8F%91%E2%80%94%E2%80%94%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="了解Web开发相关知识的意义在于">
+<meta property="og:description" content="前端开发——性能优化性能优化的目的一在于为企业节省流量成本，二在于提高用户的使用体验 分模块论述 浏览器 减少HTTP请求，即减少html里面css&#x2F;js等资源的数量 使用HTTP2.0，建立在https的基础上（更安全），采用二进制个数传输数据（1.0是文本格式），消息头采用压缩传输可以节省流量 白屏时间作为加载动画，优化用户体验  资源 静态资源做CDN缓存 把css放在文件头部，j">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://raw.githubusercontent.com/Qiuzcc/images/master/imgs/1620.jpeg">
-<meta property="article:published_time" content="2022-04-02T08:34:06.000Z">
-<meta property="article:modified_time" content="2022-04-11T07:19:56.217Z">
+<meta property="article:published_time" content="2022-04-11T03:14:59.000Z">
+<meta property="article:modified_time" content="2022-04-11T08:01:28.106Z">
 <meta property="article:author" content="Time gogo">
-<meta property="article:tag" content="Web开发">
+<meta property="article:tag" content="性能优化">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="https://raw.githubusercontent.com/Qiuzcc/images/master/imgs/1620.jpeg">
   
   
-  <title>前端开发——Web开发概述 - Hexo</title>
+  <title>前端开发——性能优化 - Hexo</title>
 
   <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4/dist/css/bootstrap.min.css" />
 
@@ -154,7 +152,7 @@
       <div class="full-bg-img">
         <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
           <div class="page-header text-center fade-in-up">
-            <span class="h2" id="subtitle" title="前端开发——Web开发概述">
+            <span class="h2" id="subtitle" title="前端开发——性能优化">
               
             </span>
 
@@ -164,8 +162,8 @@
   
     <span class="post-meta">
       <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-      <time datetime="2022-04-02 16:34" pubdate>
-        2022年4月2日 下午
+      <time datetime="2022-04-11 11:14" pubdate>
+        2022年4月11日 上午
       </time>
     </span>
   
@@ -175,7 +173,7 @@
   
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      1.9k 字
+      622 字
     </span>
   
 
@@ -184,7 +182,7 @@
       <i class="iconfont icon-clock-fill"></i>
       
       
-      16 分钟
+      6 分钟
     </span>
   
 
@@ -213,68 +211,31 @@
         <div class="py-5" id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">前端开发——Web开发概述</h1>
+            <h1 style="display: none">前端开发——性能优化</h1>
             
             <div class="markdown-body">
-              <p>了解Web开发相关知识的意义在于</p>
-<span id="more"></span>
-
-<h2 id="Web开发概述"><a href="#Web开发概述" class="headerlink" title="Web开发概述"></a>Web开发概述</h2><p>了解Web开发相关知识的意义在于，Web拥有一套标准，“<strong>Web 标准</strong>是我们用来建立 Web 网站的技术。这些标准存在于名为规范的较长的技术文档中，该文档详细说明了技术应如何工作“。它规定了web如何工作，这对于从底层去理解、提升web应用的性能具有关键作用。</p>
-<p>而且标准是不断更新的，所以意味着该行业的从业人员也需要时刻保持学习，以适应最新的标准。</p>
-<h4 id="开发工具"><a href="#开发工具" class="headerlink" title="开发工具"></a>开发工具</h4><ul>
-<li>可用于运行测试以显示您的代码是否按预期运行的 <a target="_blank" rel="noopener" href="https://developer.mozilla.org/en-US/docs/Learn/Tools_and_testing/Cross_browser_testing">测试工具（ Testing tools ）</a>，<strong>跨浏览器测试</strong></li>
-<li>现代浏览器中的 <a target="_blank" rel="noopener" href="https://developer.mozilla.org/en-US/docs/Learn/Common_questions/What_are_browser_developer_tools">开发人员工具（ developer tools ）</a>可用于<strong>调试代码</strong></li>
-<li>所谓的 “ Linters” ，它包含了一组规则，检查您的代码之后，会突出显示您未正确遵循规则的地方</li>
-<li>Minifiers ，它将代码文件中的所有空格删除以使其更小，从而可以更快地从服务器下载</li>
+              <h2 id="前端开发——性能优化"><a href="#前端开发——性能优化" class="headerlink" title="前端开发——性能优化"></a>前端开发——性能优化</h2><p>性能优化的目的一在于为企业节省流量成本，二在于提高用户的使用体验</p>
+<p><strong>分模块论述</strong></p>
+<h4 id="浏览器"><a href="#浏览器" class="headerlink" title="浏览器"></a>浏览器</h4><ul>
+<li><strong>减少HTTP请求</strong>，即减少html里面css&#x2F;js等资源的数量</li>
+<li><strong>使用HTTP2.0</strong>，建立在https的基础上（更安全），采用二进制个数传输数据（1.0是文本格式），消息头采用压缩传输可以节省流量</li>
+<li><strong>白屏时间作为加载动画</strong>，优化用户体验</li>
 </ul>
-<h4 id="语言"><a href="#语言" class="headerlink" title="语言"></a>语言</h4><p>前端语言：HTML ， CSS 和 JavaScript</p>
-<p>后端语言，或者叫服务器端语言：ASP.NET ， Python ， PHP 和 NodeJS </p>
-<h4 id="考虑的问题"><a href="#考虑的问题" class="headerlink" title="考虑的问题"></a>考虑的问题</h4><p><strong>跨浏览器兼容性（ Cross-browser compatibility ）</strong>，确保能在尽可能多，包括老旧的设备浏览器上运行</p>
-<p><strong>响应式网页设计（ Responsive Web design ）</strong>，确保能在不同尺寸的浏览器界面中都有良好的浏览体验</p>
-<p><strong>性能（ Performance ）</strong>，尽可能快加载网站，简单易用</p>
-<p><strong>可访问性（ Accessibility ）</strong></p>
-<p><strong>隐私与安全（ Privacy &amp; Security ）</strong>，隐私是指允许人们私下从事其业务，而不是监视他们或收集您绝对不需要的更多数据。安全性是指以安全的方式构建您的网站，以使恶意用户无法从您或您的用户那里窃取信息。</p>
-<h4 id="Web是如何工作的"><a href="#Web是如何工作的" class="headerlink" title="Web是如何工作的"></a>Web是如何工作的</h4><p><strong>第一步</strong>，浏览器输入一个网址，向服务器端发送request，请求拷贝一份网页</p>
-<p><strong>第二步</strong>，服务器端收到请求后，返回一个同意信息，接着把网页文件以数据包的形式发送给浏览器</p>
-<p><strong>第三步</strong>，浏览器解析网页文件。<strong>首先</strong>，从HTML文件中识别出所有”link”和”script”，获取外部文件的链接，一边继续解析HTML文件，一边根据外部文件链接向服务器发送请求，获取再解析CSS和JavaSript文件；<strong>接着</strong>，给解析后的HTML生成一个<strong>DOM树</strong>，给CSS<strong>生成一个CSSOM树</strong>保存在内存中，编译执行解析度JavaScript文件；<strong>最后</strong>，网页界面展示出来。</p>
-<h4 id="网站架构"><a href="#网站架构" class="headerlink" title="网站架构"></a>网站架构</h4><p>也称<strong>信息架构</strong>，规划整个网站内容，需要哪些页面、如何排列组合这些页面、如何互相进行链接</p>
-<p><strong>第一步</strong>，头脑风暴所有需要实现的内容</p>
-<p><strong>第二步</strong>，将所有内容分组罗列出来</p>
-<p><strong>第三步</strong>，绘制站点草图，使用框框作为页面，连线表示页面之间的链接，有点像<strong>UML</strong></p>
-<p><strong>第四步</strong>，确定所有页面的通用部分，一般为导航栏、页脚</p>
-<p><strong>第五步</strong>，绘制网页布局草图</p>
-<h4 id="http完整请求过程"><a href="#http完整请求过程" class="headerlink" title="http完整请求过程"></a>http完整请求过程</h4><p>客户端浏览器一次完整的http请求过程</p>
-<p><img src="https://raw.githubusercontent.com/Qiuzcc/images/master/imgs/1620.jpeg" srcset="/img/loading.gif" lazyload alt="img"></p>
-<ol>
-<li>DNS解析域名得到IP地址</li>
-<li>TCP三次握手（客户端与服务器建立连接）</li>
-<li>客户端发起请求</li>
-<li>服务器根据收到的请求端口号、路径，找到对应的资源文件，发送给客户端</li>
-<li>客户端收到数据，解析页面和请求相关资源</li>
-<li>客户端渲染页面</li>
-<li>服务器断开连接（四次挥手）</li>
-</ol>
-<p>下面是部分详细介绍</p>
-<p><strong>浏览器渲染过程</strong></p>
-<ul>
-<li><p><strong>根据HTML解析出DOM树【遇到<code>&lt;img&gt;</code>标签加载图片】</strong></p>
-<p>解析顺序为从上往下、深度优先遍历；如果遇到link标签，会同时异步请求对应的资源文件；如果遇到script标签，会阻塞解析过程，直到js脚本执行完毕，而CSS文件影响JS代码的执行（不影响JS文件的加载），所以JS代码执行前，必须保证CSS文件已经加载完毕。</p>
-<p>所以script通常放在HTML的末尾声明，但是如果HTML中包含了大量的JS文件代码，而且这些代码不直接影响页面（比如提供交互事件），那么可以将script标签放到前面，并用<code>async</code>或<code>defer</code>关键字声明（详细用法可参见《前端开发——JS（一）》）</p>
-</li>
-<li><p><strong>根据CSS解析出CSS规则树【遇到背景图片链接不加载】</strong></p>
-<p>解析 CSS 规则树时 js 执行将暂停，直至 CSS 规则树就绪</p>
-<p>精简CSS可以加快CSS规则树的构建，从而加快页面响应速度</p>
-</li>
-<li><p><strong>结合DOM树和CSS规则树，生成渲染树【遍历DOM树时加载对应样式规则上的背景图片】</strong></p>
-</li>
-<li><p><strong>根据渲染树计算每个节点的信息，根据节点信息绘制页面</strong></p>
-<p><strong>布局</strong>：通过渲染树中渲染对象的信息，计算出每一个渲染对象的位置和尺寸</p>
-<p><strong>回流</strong>：在布局完成后，发现了某个部分发生了变化影响了布局，那就需要倒回去重新渲染</p>
-<p>根据计算好的信息绘制页面</p>
-<p><strong>重绘 &amp; 回流</strong></p>
-<p>重绘：某个元素的背景颜色，文字颜色等，不影响元素周围或内部布局的属性，将只会引起浏览器的重绘</p>
-<p>回流：某个元素的尺寸发生了变化，则需重新计算渲染树，重新渲染</p>
-</li>
+<h4 id="资源"><a href="#资源" class="headerlink" title="资源"></a>资源</h4><ul>
+<li><strong>静态资源做CDN缓存</strong></li>
+<li><strong>把css放在文件头部，js放在底部</strong>，css异步同时开始加载，js会阻塞html的解析</li>
+<li><strong>gzip压缩</strong>，服务器配置gzip压缩传输方式（如nginx可以配置），如果浏览器支持gzip解析，服务器就可以推送gzip资源</li>
+<li><strong>做服务端渲染（ssr）</strong>，在服务侧完成html的拼接，发送到浏览器，然后为其绑定状态和事件，成为一个可交互页面</li>
+</ul>
+<h4 id="图片"><a href="#图片" class="headerlink" title="图片"></a>图片</h4><ul>
+<li><strong>字体图标代替图片图标</strong>，可以减少对图片资源的请求</li>
+<li><strong>使用精灵图</strong>，把众多的较小的装饰图片合成到一张大图里面，减少加载图片的次数，缺点是精灵图维护比较麻烦</li>
+<li><strong>图片懒加载</strong>，浏览器优先加载可视范围内的图片，其它部分等进入可视区域再加载，实现原理：先给所有img的src赋予一个loading图，图片没有进入可视区域时，赋予真正的src</li>
+<li><strong>使用png格式</strong>，是web图像中最通用的无损压缩格式</li>
+</ul>
+<h4 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h4><ul>
+<li><strong>减少重绘回流</strong>，回流就是当元素尺寸布局发生变化时，DOM需要重新构建。元素更新外观样式时需要重绘</li>
+<li><strong>慎用全局变量</strong>，全局变量定义在全局执行上下文，是所有作用域链的顶端。局部找不到就会一直往上找，影响性能</li>
 </ul>
 
             </div>
@@ -293,7 +254,7 @@
                   <div class="post-meta">
                     <i class="iconfont icon-tags"></i>
                     
-                      <a class="hover-with-bg" href="/tags/Web%E5%BC%80%E5%8F%91/">Web开发</a>
+                      <a class="hover-with-bg" href="/tags/%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96/">性能优化</a>
                     
                   </div>
                 
@@ -310,9 +271,9 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2022/04/02/%E5%89%8D%E7%AB%AF/%E5%89%8D%E7%AB%AF%E5%BC%80%E5%8F%91%E2%80%94%E2%80%94HTML/">
+                      <a href="/2022/04/11/%E5%89%8D%E7%AB%AF/%E4%BA%86%E8%A7%A3Express%E6%A1%86%E6%9E%B6/">
                         <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">前端开发——HTML</span>
+                        <span class="hidden-mobile">post</span>
                         <span class="visible-mobile">上一篇</span>
                       </a>
                     
@@ -320,8 +281,8 @@
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2022/03/12/Hexo%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/">
-                        <span class="hidden-mobile">Hexo常用命令</span>
+                      <a href="/2022/04/10/%E5%8D%9A%E5%AE%A2%E7%BD%91%E7%AB%99demo/">
+                        <span class="hidden-mobile">博客网站demo</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
