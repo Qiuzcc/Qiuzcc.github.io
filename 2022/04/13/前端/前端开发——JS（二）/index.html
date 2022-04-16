@@ -18,7 +18,7 @@
   
     <meta name="description" content="介绍了JS对象的定义、Date对象、正则表达式RegExp、JSON对象，以及介绍了JS的面向对象编程，如何创建对象、原型链实现继承、ES6新增的class……">
 <meta property="og:type" content="article">
-<meta property="og:title" content="post">
+<meta property="og:title" content="前端开发——JS（二）">
 <meta property="og:url" content="https://qiuzcc.github.io/2022/04/13/%E5%89%8D%E7%AB%AF/%E5%89%8D%E7%AB%AF%E5%BC%80%E5%8F%91%E2%80%94%E2%80%94JS%EF%BC%88%E4%BA%8C%EF%BC%89/index.html">
 <meta property="og:site_name" content="Hexo">
 <meta property="og:description" content="介绍了JS对象的定义、Date对象、正则表达式RegExp、JSON对象，以及介绍了JS的面向对象编程，如何创建对象、原型链实现继承、ES6新增的class……">
@@ -26,14 +26,14 @@
 <meta property="og:image" content="https://qiuzcc.github.io/2022/04/13/%E5%89%8D%E7%AB%AF/%E5%89%8D%E7%AB%AF%E5%BC%80%E5%8F%91%E2%80%94%E2%80%94JS%EF%BC%88%E4%BA%8C%EF%BC%89/前端开发——JS（二）.assets/image-20220414163844325.png">
 <meta property="og:image" content="https://raw.githubusercontent.com/Qiuzcc/images/master/imgs/image-20220414164122219.png">
 <meta property="article:published_time" content="2022-04-13T12:40:03.000Z">
-<meta property="article:modified_time" content="2022-04-14T14:17:43.407Z">
+<meta property="article:modified_time" content="2022-04-16T04:21:40.403Z">
 <meta property="article:author" content="Time gogo">
 <meta property="article:tag" content="JavaScript">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:image" content="https://qiuzcc.github.io/2022/04/13/%E5%89%8D%E7%AB%AF/%E5%89%8D%E7%AB%AF%E5%BC%80%E5%8F%91%E2%80%94%E2%80%94JS%EF%BC%88%E4%BA%8C%EF%BC%89/前端开发——JS（二）.assets/image-20220414163844325.png">
   
   
-  <title>post - Hexo</title>
+  <title>前端开发——JS（二） - Hexo</title>
 
   <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4/dist/css/bootstrap.min.css" />
 
@@ -155,7 +155,7 @@
       <div class="full-bg-img">
         <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
           <div class="page-header text-center fade-in-up">
-            <span class="h2" id="subtitle" title="post">
+            <span class="h2" id="subtitle" title="前端开发——JS（二）">
               
             </span>
 
@@ -176,7 +176,7 @@
   
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      9k 字
+      9.1k 字
     </span>
   
 
@@ -214,7 +214,7 @@
         <div class="py-5" id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">post</h1>
+            <h1 style="display: none">前端开发——JS（二）</h1>
             
             <div class="markdown-body">
               <p>介绍了JS对象的定义、Date对象、正则表达式RegExp、JSON对象，以及介绍了JS的面向对象编程，如何创建对象、原型链实现继承、ES6新增的class……</p>
@@ -395,7 +395,7 @@
 <p><strong>创建方式</strong></p>
 <ul>
 <li><p>方式一：</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs javascript"><span class="hljs-keyword">var</span> re1 = <span class="hljs-regexp">/\d&#123;3&#125;\-\d&#123;3-8&#125;/</span> ;<br></code></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs javascript"><span class="hljs-keyword">var</span> re1 = <span class="hljs-regexp">/\d&#123;3&#125;\-\d&#123;3-8&#125;/</span> ;<br>re1.<span class="hljs-title function_">test</span>(<span class="hljs-number">010</span>-<span class="hljs-number">10086</span>)	<span class="hljs-comment">//true</span><br></code></pre></td></tr></table></figure>
 </li>
 <li><p>方式二：</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs javascript"><span class="hljs-keyword">var</span> re2 = <span class="hljs-keyword">new</span> <span class="hljs-title class_">RegExp</span>(<span class="hljs-string">&#x27;/\d&#123;3&#125;\-\d&#123;3-8&#125;/&#x27;</span>);<br></code></pre></td></tr></table></figure></li>
@@ -551,6 +551,12 @@
                 <div class="post-prevnext">
                   <article class="post-prev col-6">
                     
+                    
+                      <a href="/2022/04/14/%E5%89%8D%E7%AB%AF/%E5%89%8D%E7%AB%AF%E5%BC%80%E5%8F%91%E2%80%94%E2%80%94JS%EF%BC%88%E4%B8%89%EF%BC%89/">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">前端开发——JS（三）</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
                     
                   </article>
                   <article class="post-next col-6">

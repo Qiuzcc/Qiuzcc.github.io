@@ -16,21 +16,21 @@
   <meta name="author" content="Time gogo">
   <meta name="keywords" content="">
   
-    <meta name="description" content="FIFO，先进先出">
+    <meta name="description" content="AJAX、Promise、Canvas">
 <meta property="og:type" content="article">
-<meta property="og:title" content="数据结构——队列">
-<meta property="og:url" content="https://qiuzcc.github.io/2022/04/09/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E2%80%94%E2%80%94%E9%98%9F%E5%88%97/index.html">
+<meta property="og:title" content="前端开发——JS（四）">
+<meta property="og:url" content="https://qiuzcc.github.io/2022/04/16/%E5%89%8D%E7%AB%AF/%E5%89%8D%E7%AB%AF%E5%BC%80%E5%8F%91%E2%80%94%E2%80%94JS%EF%BC%88%E5%9B%9B%EF%BC%89/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="FIFO，先进先出">
+<meta property="og:description" content="AJAX、Promise、Canvas">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2022-04-09T02:29:37.000Z">
-<meta property="article:modified_time" content="2022-04-09T13:25:37.445Z">
+<meta property="article:published_time" content="2022-04-16T04:22:37.000Z">
+<meta property="article:modified_time" content="2022-04-16T04:25:17.787Z">
 <meta property="article:author" content="Time gogo">
-<meta property="article:tag" content="队列">
+<meta property="article:tag" content="JavaScript">
 <meta name="twitter:card" content="summary_large_image">
   
   
-  <title>数据结构——队列 - Hexo</title>
+  <title>前端开发——JS（四） - Hexo</title>
 
   <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4/dist/css/bootstrap.min.css" />
 
@@ -152,7 +152,7 @@
       <div class="full-bg-img">
         <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
           <div class="page-header text-center fade-in-up">
-            <span class="h2" id="subtitle" title="数据结构——队列">
+            <span class="h2" id="subtitle" title="前端开发——JS（四）">
               
             </span>
 
@@ -162,8 +162,8 @@
   
     <span class="post-meta">
       <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-      <time datetime="2022-04-09 10:29" pubdate>
-        2022年4月9日 上午
+      <time datetime="2022-04-16 12:22" pubdate>
+        2022年4月16日 中午
       </time>
     </span>
   
@@ -173,7 +173,7 @@
   
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      817 字
+      2.1k 字
     </span>
   
 
@@ -182,7 +182,7 @@
       <i class="iconfont icon-clock-fill"></i>
       
       
-      7 分钟
+      18 分钟
     </span>
   
 
@@ -211,113 +211,37 @@
         <div class="py-5" id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">数据结构——队列</h1>
+            <h1 style="display: none">前端开发——JS（四）</h1>
             
             <div class="markdown-body">
-              <p>FIFO，先进先出</p>
+              <p>AJAX、Promise、Canvas</p>
 <span id="more"></span>
 
 
 
-<h2 id="数据结构——队列"><a href="#数据结构——队列" class="headerlink" title="数据结构——队列"></a>数据结构——队列</h2><p><strong>语法：</strong><code>template&lt;class T, class Container = deque&lt;T&gt; &gt; class queue</code></p>
-<p><strong>特性：FIFO</strong>，先进先出，队尾插入、队头删除</p>
-<h4 id="函数"><a href="#函数" class="headerlink" title="函数"></a>函数</h4><table>
-<thead>
-<tr>
-<th>empty</th>
-<th>如果队列为空，则该函数返回true，否则返回false</th>
-</tr>
-</thead>
-<tbody><tr>
-<td><strong>size</strong></td>
-<td>返回队列中元素的个数</td>
-</tr>
-<tr>
-<td><strong>push</strong></td>
-<td>在末尾插入一个新元素，返回值为void</td>
-</tr>
-<tr>
-<td><strong>pop</strong></td>
-<td>删除第一个元素，返回值为void</td>
-</tr>
-<tr>
-<td><strong>front</strong></td>
-<td>返回第一个元素</td>
-</tr>
-<tr>
-<td><strong>back</strong></td>
-<td>返回最后一个元素</td>
-</tr>
-</tbody></table>
-<h4 id="leetcode题库"><a href="#leetcode题库" class="headerlink" title="leetcode题库"></a>leetcode题库</h4><table>
-<thead>
-<tr>
-<th>题目</th>
-<th>题解</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>225.用队列实现栈</td>
-<td>双队列，push时不断交换，让栈顶始终在队头</td>
-</tr>
-<tr>
-<td>232.用栈实现队列</td>
-<td>双栈，push时不断倒换，让队头始终在栈顶</td>
-</tr>
-<tr>
-<td>341.扁平化嵌套列表迭代器</td>
-<td>深度优先遍历 + 队列的应用 + 现学接口如何使用</td>
-</tr>
-<tr>
-<td>387.第一个唯一字符</td>
-<td>两次遍历字符串，用map或者int数组保存字符出现次数，简单题</td>
-</tr>
-<tr>
-<td>239.滑动窗口最大值</td>
-<td>双向队列deque，保存数组指针（而非数组值），队头到队尾单调递减。空间换时间，困难题<br />拓展：滑动窗口平均值</td>
-</tr>
-</tbody></table>
-<h2 id="双向队列，deque"><a href="#双向队列，deque" class="headerlink" title="双向队列，deque"></a>双向队列，deque</h2><h4 id="函数-1"><a href="#函数-1" class="headerlink" title="函数"></a>函数</h4><table>
-<thead>
-<tr>
-<th><strong>push_back</strong></th>
-<th>插入队尾</th>
-</tr>
-</thead>
-<tbody><tr>
-<td><strong>push_front</strong></td>
-<td>插入队头</td>
-</tr>
-<tr>
-<td><strong>pop_back</strong></td>
-<td>从队尾删除</td>
-</tr>
-<tr>
-<td><strong>pop_front</strong></td>
-<td>从队头删除</td>
-</tr>
-<tr>
-<td><strong>front</strong></td>
-<td>返回队头元素</td>
-</tr>
-<tr>
-<td><strong>back</strong></td>
-<td>返回队尾元素</td>
-</tr>
-<tr>
-<td><strong>insert</strong></td>
-<td>insert (iterator position, const value_type&amp; val)，指定位置插入值<br />void insert (iterator position, size_type n, const value_type&amp; val)，指定位置插入值，重复插入n个<br />void insert (iterator position, InputIterator first, InputIterator last)，指定位置插入另外一个容器的值列表</td>
-</tr>
-<tr>
-<td><strong>erase</strong></td>
-<td>两种参数，<br />erase (iterator position);<br />erase (iterator first, iterator last);</td>
-</tr>
-<tr>
-<td><strong>size</strong></td>
-<td></td>
-</tr>
-</tbody></table>
+<h2 id="前端开发——JS（四）"><a href="#前端开发——JS（四）" class="headerlink" title="前端开发——JS（四）"></a>前端开发——JS（四）</h2><h3 id="一、AJAX"><a href="#一、AJAX" class="headerlink" title="一、AJAX"></a>一、AJAX</h3><p>Asynchronous JavaScript and XML，意思就是用JavaScript执行异步网络请求</p>
+<p><strong>Web运行的原理是：一次HTTP请求对应一个页面</strong>，所以每次提交表单都会刷新一次页面。为了实现在不刷新页面的前提下，刷新局部数据，我们通过JS来请求数据，并更新数据。这就是AJAX。<strong>在现代浏览器上写AJAX主要依靠XMLHttpRequest对象，低版本的浏览器使用ActiveXObject对象</strong></p>
+<p>一个AJAX的例子：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><div class="code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></div></td><td class="code"><pre><code class="hljs javascript"><span class="hljs-keyword">function</span> <span class="hljs-title function_">success</span>(<span class="hljs-params">text</span>)&#123;	<span class="hljs-comment">//加载成功对应的数据显示功能</span><br>    <span class="hljs-keyword">let</span> textarea = <span class="hljs-variable language_">document</span>.<span class="hljs-title function_">getElementById</span>(<span class="hljs-string">&#x27;response-text&#x27;</span>);<br>    textarea.<span class="hljs-property">value</span> = text;<br>&#125;<br><span class="hljs-keyword">function</span> <span class="hljs-title function_">fail</span>(<span class="hljs-params">code</span>)&#123;	<span class="hljs-comment">//加载失败对应的显示</span><br>    <span class="hljs-keyword">let</span> textarea = <span class="hljs-variable language_">document</span>.<span class="hljs-title function_">getElementById</span>(<span class="hljs-string">&#x27;response-text&#x27;</span>);<br>    textarea.<span class="hljs-property">value</span> = <span class="hljs-string">&quot;Error code:&quot;</span>+code;<br>&#125;<br><span class="hljs-keyword">var</span> request;<br><span class="hljs-keyword">if</span>(<span class="hljs-variable language_">window</span>.<span class="hljs-property">XMLHttpRequest</span>)&#123;request = <span class="hljs-keyword">new</span> <span class="hljs-title class_">XMLHttpRequest</span>();&#125;<br><span class="hljs-keyword">else</span> &#123;request = <span class="hljs-keyword">new</span> <span class="hljs-title class_">ActiveXObject</span>(<span class="hljs-string">&#x27;Mircosoft.XMLHTTP&#x27;</span>);&#125;<br>request.<span class="hljs-property">onreadystatechange</span> = <span class="hljs-keyword">function</span>(<span class="hljs-params"></span>)&#123;	<span class="hljs-comment">//状态发生改变是，函数被回调</span><br>    <span class="hljs-keyword">if</span>(request.<span class="hljs-property">readyState</span> === <span class="hljs-number">4</span>)&#123;	<span class="hljs-comment">//请求成功完成</span><br>        <span class="hljs-comment">//判断响应结果</span><br>        <span class="hljs-keyword">if</span>(request.<span class="hljs-property">status</span> === <span class="hljs-number">200</span>)&#123;	<span class="hljs-comment">//响应成功，拿到响应文本</span><br>            <span class="hljs-keyword">return</span> <span class="hljs-title function_">success</span>(request.<span class="hljs-property">responseText</span>);<br>        &#125;<span class="hljs-keyword">else</span>&#123;	<br>            <span class="hljs-keyword">return</span> <span class="hljs-title function_">fail</span>(request.<span class="hljs-property">status</span>);	<span class="hljs-comment">//失败，根据响应码判断失败原因</span><br>        &#125;<br>    &#125;<span class="hljs-keyword">else</span>&#123;<br>        <span class="hljs-comment">// HTTP请求还在继续...</span><br>    &#125;<br>&#125;<br><span class="hljs-comment">//发送请求</span><br>request.<span class="hljs-title function_">open</span>(<span class="hljs-string">&#x27;GET&#x27;</span>,<span class="hljs-string">&#x27;/api/index&#x27;</span>);<br>request.<span class="hljs-title function_">send</span>();<br></code></pre></td></tr></table></figure>
 
+<ul>
+<li><strong>AJAX请求是异步执行的，要通过回调函数来获得响应</strong></li>
+<li><strong>XMLHttpRequest对象的open()函数有3个参数，第一个是GET&#x2F;POST，第二个是URL地址，第三个指定是否异步，默认为true</strong></li>
+<li><strong>调用send()方法之后才是真正发送请求</strong></li>
+<li><strong>open()参数中的URL使用的是相对路径，这是由于浏览器的同源策略导致的（JS在发送AJAX请求时，URL的域名必须和当前页面完全一致）</strong>，完全一致指：域名一致、协议一致、端口号一致（有些浏览器不要求）</li>
+</ul>
+<p><strong>AJAX访问外域URL的方法</strong></p>
+<ul>
+<li><p>在同源域名下架设一个代理服务器来进行转发（AJAX访问代理服务器的URL，代理服务器根据URL再跳转指定的外域URL，代理服务器再把结果返回，需要在服务器端设置代理，这样就遵守了浏览器的同源策略）</p>
+<figure class="highlight jboss-cli"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs jboss-cli">&#x27;<span class="hljs-string">/proxy</span>?url=http:<span class="hljs-string">//www.sina.com.cn</span>&#x27;<br></code></pre></td></tr></table></figure>
+</li>
+<li><p><strong>JSONP</strong>，它有个限制，只能用GET请求，并且要求返回JavaScript、实际上是利用了跨域引用JavaScript资源</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><code class="hljs javascript"><span class="hljs-keyword">function</span> <span class="hljs-title function_">refreshPrice</span>(<span class="hljs-params">data</span>) &#123;<br>    <span class="hljs-keyword">var</span> p = <span class="hljs-variable language_">document</span>.<span class="hljs-title function_">getElementById</span>(<span class="hljs-string">&#x27;test-jsonp&#x27;</span>);<br>    p.<span class="hljs-property">innerHTML</span> = <span class="hljs-string">&#x27;当前价格：&#x27;</span> +<br>        data[<span class="hljs-string">&#x27;0000001&#x27;</span>].<span class="hljs-property">name</span> +<span class="hljs-string">&#x27;: &#x27;</span> + <br>        data[<span class="hljs-string">&#x27;0000001&#x27;</span>].<span class="hljs-property">price</span> + <span class="hljs-string">&#x27;；&#x27;</span> +<br>        data[<span class="hljs-string">&#x27;1399001&#x27;</span>].<span class="hljs-property">name</span> + <span class="hljs-string">&#x27;: &#x27;</span> +<br>        data[<span class="hljs-string">&#x27;1399001&#x27;</span>].<span class="hljs-property">price</span>;<br>&#125;<br><span class="hljs-keyword">function</span> <span class="hljs-title function_">getPrice</span>(<span class="hljs-params"></span>)&#123;<br>	<span class="hljs-keyword">var</span> js = <span class="hljs-variable language_">document</span>.<span class="hljs-title function_">createElement</span>(<span class="hljs-string">&#x27;script&#x27;</span>);<br>    <span class="hljs-keyword">var</span> head = <span class="hljs-variable language_">document</span>.<span class="hljs-title function_">getElementsByTagName</span>(<span class="hljs-string">&#x27;head&#x27;</span>)[<span class="hljs-number">0</span>];<br>    js.<span class="hljs-property">src</span> =  <span class="hljs-string">&#x27;http://api.money.126.net/data/feed/0000001,1399001?callback=refreshPrice&#x27;</span>; <span class="hljs-comment">//指定了回调函数</span><br>    head.<span class="hljs-title function_">appendChild</span>(js);<br>&#125;<br></code></pre></td></tr></table></figure>
+</li>
+<li><p><strong>CORS，跨域资源请求</strong>，更详细的介绍，见另外一篇文章：<a href="">《浏览器的同源策略》</a></p>
+</li>
+</ul>
+<h3 id="二、Promise"><a href="#二、Promise" class="headerlink" title="二、Promise"></a>二、Promise</h3>
             </div>
             <hr>
             <div>
@@ -326,7 +250,7 @@
                   <div class="post-meta mr-3">
                     <i class="iconfont icon-category"></i>
                     
-                      <a class="hover-with-bg" href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/">数据结构</a>
+                      <a class="hover-with-bg" href="/categories/%E5%89%8D%E7%AB%AF/">前端</a>
                     
                   </div>
                 
@@ -334,7 +258,7 @@
                   <div class="post-meta">
                     <i class="iconfont icon-tags"></i>
                     
-                      <a class="hover-with-bg" href="/tags/%E9%98%9F%E5%88%97/">队列</a>
+                      <a class="hover-with-bg" href="/tags/JavaScript/">JavaScript</a>
                     
                   </div>
                 
@@ -351,18 +275,12 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2022/04/10/%E5%89%8D%E7%AB%AF/%E5%89%8D%E7%AB%AF%E5%BC%80%E5%8F%91%E2%80%94%E2%80%94JS%EF%BC%88%E4%B8%80%EF%BC%89/">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">前端开发——JS（一）</span>
-                        <span class="visible-mobile">上一篇</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2022/04/02/%E5%89%8D%E7%AB%AF/%E5%89%8D%E7%AB%AF%E5%BC%80%E5%8F%91%E2%80%94%E2%80%94JavaScript/">
-                        <span class="hidden-mobile">前端开发——JavaScript</span>
+                      <a href="/2022/04/15/%E5%89%8D%E7%AB%AF/%E6%B5%8F%E8%A7%88%E5%99%A8%E7%9A%84%E5%90%8C%E6%BA%90%E7%AD%96%E7%95%A5/">
+                        <span class="hidden-mobile">浏览器的同源策略</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
