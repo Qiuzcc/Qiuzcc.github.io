@@ -16,15 +16,15 @@
   <meta name="author" content="Time gogo">
   <meta name="keywords" content="">
   
-    <meta name="description" content="浏览器的同源策略一、同源的定义 相同的协议（protocol），http与https不同 相同的域名，www.baidu.com 与 baidu.com不同 相同的端口号（有些浏览器不要求，IE&lt;9），80与8080不同  二、为什么要有为了防止恶意网站窃取用户在浏览器上的数据（比如：通过AJAX请求用户在另一个网站，如淘宝、支付宝等，的Cookie，而Cookie里面不仅保存了用户的基">
+    <meta name="description" content="同源的定义、浏览器的同源策略的存在意义、作用机制，以及在浏览器同源策略的前提下如何进行跨域资源请求">
 <meta property="og:type" content="article">
 <meta property="og:title" content="浏览器的同源策略">
 <meta property="og:url" content="https://qiuzcc.github.io/2022/04/15/%E5%89%8D%E7%AB%AF/%E6%B5%8F%E8%A7%88%E5%99%A8%E7%9A%84%E5%90%8C%E6%BA%90%E7%AD%96%E7%95%A5/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="浏览器的同源策略一、同源的定义 相同的协议（protocol），http与https不同 相同的域名，www.baidu.com 与 baidu.com不同 相同的端口号（有些浏览器不要求，IE&lt;9），80与8080不同  二、为什么要有为了防止恶意网站窃取用户在浏览器上的数据（比如：通过AJAX请求用户在另一个网站，如淘宝、支付宝等，的Cookie，而Cookie里面不仅保存了用户的基">
+<meta property="og:description" content="同源的定义、浏览器的同源策略的存在意义、作用机制，以及在浏览器同源策略的前提下如何进行跨域资源请求">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2022-04-15T14:46:59.000Z">
-<meta property="article:modified_time" content="2022-04-16T04:25:25.853Z">
+<meta property="article:modified_time" content="2022-04-17T02:29:31.180Z">
 <meta property="article:author" content="Time gogo">
 <meta property="article:tag" content="同源策略">
 <meta property="article:tag" content="web安全">
@@ -174,7 +174,7 @@
   
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      2.3k 字
+      2.5k 字
     </span>
   
 
@@ -183,7 +183,7 @@
       <i class="iconfont icon-clock-fill"></i>
       
       
-      20 分钟
+      22 分钟
     </span>
   
 
@@ -215,7 +215,10 @@
             <h1 style="display: none">浏览器的同源策略</h1>
             
             <div class="markdown-body">
-              <span id="more"></span>
+              <p>同源的定义、浏览器的同源策略的存在意义、作用机制，以及在浏览器同源策略的前提下如何进行跨域资源请求</p>
+<span id="more"></span>
+
+
 
 <h2 id="浏览器的同源策略"><a href="#浏览器的同源策略" class="headerlink" title="浏览器的同源策略"></a>浏览器的同源策略</h2><h4 id="一、同源的定义"><a href="#一、同源的定义" class="headerlink" title="一、同源的定义"></a>一、同源的定义</h4><ul>
 <li><strong>相同的协议（protocol）</strong>，http与https不同</li>
@@ -268,7 +271,8 @@
 </ul>
 <h5 id="JSONP跨域"><a href="#JSONP跨域" class="headerlink" title="JSONP跨域"></a>JSONP跨域</h5><p>原理是：<code>&lt;script&gt;</code>标签<code>src</code>属性中的链接却可以访问跨域的js脚本，利用这个属性，服务端不直接返回JSON格式的数据，而是返回一段调用某个函数的js代码，在<code>src</code>中进行调用，从而实现跨域。</p>
 <p>实现过程：在前端，动态添加一个src&#x3D;指定url的<code>&lt;script&gt;</code>标签。在后端（指定url部分），声明一个请求数据并返回的函数。JSONP需要前后端一起配合实现。</p>
-<h4 id="CORS跨域资源共享"><a href="#CORS跨域资源共享" class="headerlink" title="CORS跨域资源共享"></a>CORS跨域资源共享</h4><p>Cross-Origin-Resource-Share，跨域资源共享。它是HTPP的一部分，允许服务端来指定哪些主机可以从这个服务端加载资源。</p>
+<h4 id="CORS跨域资源共享"><a href="#CORS跨域资源共享" class="headerlink" title="CORS跨域资源共享"></a>CORS跨域资源共享</h4><p>Cross-Origin-Resource-Share，跨域资源共享。它是基于HTPP的一种机制，该机制允许服务器标识除了它自己以外的origin，使得浏览器允许这些origin访问加载自己（服务器）的资源。</p>
+<p><strong>预检请求</strong>，CORS还要求，对于那些可能会对服务器数据产生副作用的HTTP请求方法（特别是除了GET以外的方法），浏览器必须首先使用一个 <strong>OPTION方法</strong>发送一个<strong>预检请求</strong>，从而获知服务端是否允许该跨源请求。服务端确认允许后才发起真正的HTTP请求。在服务端的返回中，还可以通知客户端是否需要携带身份凭证（Cookie）。</p>
 
             </div>
             <hr>
