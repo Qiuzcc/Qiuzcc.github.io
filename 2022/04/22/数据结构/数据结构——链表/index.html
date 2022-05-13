@@ -16,21 +16,21 @@
   <meta name="author" content="Time gogo">
   <meta name="keywords" content="">
   
-    <meta name="description" content="FIFO，先进先出">
+    <meta name="description" content="数据结构——链表leetcode题库   题目 描述    2.两数相加（中等） 模拟，一个链表节点存一位数，两个链表相加   19.删除链表的倒数第N个节点（中等） 双指针，l和r指针保持n的距离，r指向链尾时，l就是要删除的前一位或者用两遍扫描也可以。最好有delete操作   21.合并两个有序列表（简单） 迭代，“哨兵”结点preHead，简化链表的维护（只需要维护一个pre指针）">
 <meta property="og:type" content="article">
-<meta property="og:title" content="数据结构——队列">
-<meta property="og:url" content="https://qiuzcc.github.io/2022/04/09/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E2%80%94%E2%80%94%E9%98%9F%E5%88%97/index.html">
+<meta property="og:title" content="数据结构——链表">
+<meta property="og:url" content="https://qiuzcc.github.io/2022/04/22/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E2%80%94%E2%80%94%E9%93%BE%E8%A1%A8/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="FIFO，先进先出">
+<meta property="og:description" content="数据结构——链表leetcode题库   题目 描述    2.两数相加（中等） 模拟，一个链表节点存一位数，两个链表相加   19.删除链表的倒数第N个节点（中等） 双指针，l和r指针保持n的距离，r指向链尾时，l就是要删除的前一位或者用两遍扫描也可以。最好有delete操作   21.合并两个有序列表（简单） 迭代，“哨兵”结点preHead，简化链表的维护（只需要维护一个pre指针）">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2022-04-09T02:29:37.000Z">
-<meta property="article:modified_time" content="2022-04-24T09:28:11.486Z">
+<meta property="article:published_time" content="2022-04-22T03:46:26.000Z">
+<meta property="article:modified_time" content="2022-05-03T11:42:00.607Z">
 <meta property="article:author" content="Time gogo">
-<meta property="article:tag" content="队列">
+<meta property="article:tag" content="链表">
 <meta name="twitter:card" content="summary_large_image">
   
   
-  <title>数据结构——队列 - Hexo</title>
+  <title>数据结构——链表 - Hexo</title>
 
   <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4/dist/css/bootstrap.min.css" />
 
@@ -152,7 +152,7 @@
       <div class="full-bg-img">
         <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
           <div class="page-header text-center fade-in-up">
-            <span class="h2" id="subtitle" title="数据结构——队列">
+            <span class="h2" id="subtitle" title="数据结构——链表">
               
             </span>
 
@@ -162,8 +162,8 @@
   
     <span class="post-meta">
       <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-      <time datetime="2022-04-09 10:29" pubdate>
-        2022年4月9日 上午
+      <time datetime="2022-04-22 11:46" pubdate>
+        2022年4月22日 中午
       </time>
     </span>
   
@@ -173,7 +173,7 @@
   
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      1.8k 字
+      1.9k 字
     </span>
   
 
@@ -182,7 +182,7 @@
       <i class="iconfont icon-clock-fill"></i>
       
       
-      15 分钟
+      17 分钟
     </span>
   
 
@@ -211,155 +211,123 @@
         <div class="py-5" id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">数据结构——队列</h1>
+            <h1 style="display: none">数据结构——链表</h1>
             
             <div class="markdown-body">
-              <p>FIFO，先进先出</p>
-<span id="more"></span>
+              <span id="more"></span>
 
-
-
-<h2 id="数据结构——队列"><a href="#数据结构——队列" class="headerlink" title="数据结构——队列"></a>数据结构——队列</h2><p><strong>语法：</strong><code>template&lt;class T, class Container = deque&lt;T&gt; &gt; class queue</code></p>
-<p><strong>特性：FIFO</strong>，先进先出，队尾插入、队头删除</p>
-<p><strong>引用：</strong><code>include&lt;queue&gt;</code></p>
-<h4 id="函数"><a href="#函数" class="headerlink" title="函数"></a>函数</h4><table>
-<thead>
-<tr>
-<th>empty</th>
-<th>如果队列为空，则该函数返回true，否则返回false</th>
-</tr>
-</thead>
-<tbody><tr>
-<td><strong>size</strong></td>
-<td>返回队列中元素的个数</td>
-</tr>
-<tr>
-<td><strong>push</strong></td>
-<td>在末尾插入一个新元素，返回值为void</td>
-</tr>
-<tr>
-<td><strong>pop</strong></td>
-<td>删除第一个元素，返回值为void</td>
-</tr>
-<tr>
-<td><strong>front</strong></td>
-<td>返回第一个元素</td>
-</tr>
-<tr>
-<td><strong>back</strong></td>
-<td>返回最后一个元素</td>
-</tr>
-</tbody></table>
-<h4 id="leetcode题库"><a href="#leetcode题库" class="headerlink" title="leetcode题库"></a>leetcode题库</h4><table>
+<h2 id="数据结构——链表"><a href="#数据结构——链表" class="headerlink" title="数据结构——链表"></a>数据结构——链表</h2><h4 id="leetcode题库"><a href="#leetcode题库" class="headerlink" title="leetcode题库"></a>leetcode题库</h4><table>
 <thead>
 <tr>
 <th>题目</th>
-<th>题解</th>
+<th>描述</th>
 </tr>
 </thead>
 <tbody><tr>
-<td>225.用队列实现栈</td>
-<td>双队列，push时不断交换，让栈顶始终在队头</td>
+<td>2.两数相加（中等）</td>
+<td>模拟，一个链表节点存一位数，两个链表相加</td>
 </tr>
 <tr>
-<td>232.用栈实现队列</td>
-<td>双栈，push时不断倒换，让队头始终在栈顶</td>
+<td>19.删除链表的倒数第N个节点（中等）</td>
+<td>双指针，l和r指针保持n的距离，r指向链尾时，l就是要删除的前一位<br />或者用两遍扫描也可以。最好有delete操作</td>
 </tr>
 <tr>
-<td>341.扁平化嵌套列表迭代器</td>
-<td>深度优先遍历 + 队列的应用 + 现学接口如何使用</td>
+<td>21.合并两个有序列表（简单）</td>
+<td>迭代，“哨兵”结点preHead，简化链表的维护（只需要维护一个pre指针）</td>
 </tr>
 <tr>
-<td>387.第一个唯一字符</td>
-<td>两次遍历字符串，用map或者int数组保存字符出现次数，简单题</td>
+<td>23.合并k个升序链表（困难）</td>
+<td>方案一：顺序执行，不断调用【合并两个有序列表】，时间复杂度O(nm<sup>2</sup>)，其中n为lists长度，m为每个list的平均长度。顺序执行就是先合并1、2个list然后又成为第1个list，之后又不断合并第1、2个，直到所有合并完毕，访问list元素的次数是一个等差数列<br />方案二：分治，两两链表合并为一个链表，不断重复这个过程，直到最后只剩一个链表。时间复杂度O(nmlog<sub>n</sub>)，分治一共log<sub>n</sub>层，每层都要将所有list的元素访问一次，也就是nm。<br />方案三：优先队列，利用优先队列自动排序的特点（相当于堆），时间复杂度O(nmlog<sub>n</sub>)，优先队列每次插入删除的复杂度为O(log<sub>n</sub>)，一共要插入删除nm次。</td>
 </tr>
 <tr>
-<td>239.滑动窗口最大值</td>
-<td>双向队列deque，保存数组指针（而非数组值），队头到队尾单调递减。空间换时间，困难题<br />拓展：滑动窗口平均值</td>
-</tr>
-</tbody></table>
-<h2 id="双向队列，deque"><a href="#双向队列，deque" class="headerlink" title="双向队列，deque"></a>双向队列，deque</h2><p><strong>引用：</strong><code>include&lt;deque&gt;</code></p>
-<h4 id="函数-1"><a href="#函数-1" class="headerlink" title="函数"></a>函数</h4><table>
-<thead>
-<tr>
-<th><strong>push_back</strong></th>
-<th>插入队尾</th>
-</tr>
-</thead>
-<tbody><tr>
-<td><strong>push_front</strong></td>
-<td>插入队头</td>
+<td>24.两两交换链表中的节点（中等）</td>
+<td>考验对链表操作的熟悉程度，滑动改变链表的指针指向</td>
 </tr>
 <tr>
-<td><strong>pop_back</strong></td>
-<td>从队尾删除</td>
-</tr>
-<tr>
-<td><strong>pop_front</strong></td>
-<td>从队头删除</td>
-</tr>
-<tr>
-<td><strong>front</strong></td>
-<td>返回队头元素</td>
-</tr>
-<tr>
-<td><strong>back</strong></td>
-<td>返回队尾元素</td>
-</tr>
-<tr>
-<td><strong>insert</strong></td>
-<td>insert (iterator position, const value_type&amp; val)，指定位置插入值<br />void insert (iterator position, size_type n, const value_type&amp; val)，指定位置插入值，重复插入n个<br />void insert (iterator position, InputIterator first, InputIterator last)，指定位置插入另外一个容器的值列表</td>
-</tr>
-<tr>
-<td><strong>erase</strong></td>
-<td>两种参数，<br />erase (iterator position);<br />erase (iterator first, iterator last);</td>
-</tr>
-<tr>
-<td><strong>size</strong></td>
+<td></td>
 <td></td>
 </tr>
 </tbody></table>
-<h3 id="优先队列，priority-queue"><a href="#优先队列，priority-queue" class="headerlink" title="优先队列，priority_queue"></a>优先队列，priority_queue</h3><p><strong>引用：</strong><code>include&lt;queue&gt;</code></p>
-<p><strong>特性：</strong>优先队列类似于堆，其中优先级最高的元素会被最先pop()弹出，或者用top()访问优先级最高的元素。</p>
-<p><strong>语法：priority_queue&lt;Type, Container, Functional&gt;</strong></p>
-<ul>
-<li><p>其中type为数据类型，Container为容器类型，Functional是比较方式</p>
-</li>
-<li><p>示例：</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><div class="code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></div></td><td class="code"><pre><code class="hljs c++"><span class="hljs-comment">//升序队列</span><br>priority_queue &lt;<span class="hljs-type">int</span>,vector&lt;<span class="hljs-type">int</span>&gt;,greater&lt;<span class="hljs-type">int</span>&gt; &gt; q;<br><span class="hljs-comment">//降序队列</span><br>priority_queue &lt;<span class="hljs-type">int</span>,vector&lt;<span class="hljs-type">int</span>&gt;,less&lt;<span class="hljs-type">int</span>&gt; &gt;q;<br><span class="hljs-comment">//greater和less是std实现的两个仿函数（就是使一个类的使用看上去像一个函数。其实现就是类中实现一个operator()，这个类就有了类似函数的行为，就是一个仿函数类了）</span><br><br><span class="hljs-comment">//对于基础类型 默认是大顶堆</span><br>priority_queue&lt;<span class="hljs-type">int</span>&gt; a; <br><span class="hljs-comment">//等同于 priority_queue&lt;int, vector&lt;int&gt;, less&lt;int&gt; &gt; a;</span><br><br><span class="hljs-comment">//结构体自定义排序方法</span><br><span class="hljs-keyword">struct</span> <span class="hljs-title class_">tmp1</span> <span class="hljs-comment">//运算符重载&lt;</span><br>&#123;<br>    <span class="hljs-type">int</span> x;<br>    <span class="hljs-built_in">tmp1</span>(<span class="hljs-type">int</span> a) &#123;x = a;&#125;<br>    <span class="hljs-type">bool</span> <span class="hljs-keyword">operator</span>&lt;(<span class="hljs-type">const</span> tmp1&amp; a) <span class="hljs-type">const</span><br>    &#123;<br>        <span class="hljs-keyword">return</span> x &lt; a.x; <span class="hljs-comment">//大顶堆</span><br>    &#125;<br>&#125;;<br>priority_queue&lt;tmp1&gt; pq;<br></code></pre></td></tr></table></figure></li>
-</ul>
-<h4 id="函数-2"><a href="#函数-2" class="headerlink" title="函数"></a>函数</h4><table>
+<h4 id="牛客网"><a href="#牛客网" class="headerlink" title="牛客网"></a>牛客网</h4><p><strong>题单：</strong>模板速刷TOP101</p>
+<table>
 <thead>
 <tr>
-<th><strong>push()</strong></th>
-<th>它将新元素插入优先队列。</th>
+<th>题目</th>
+<th>描述</th>
 </tr>
 </thead>
 <tbody><tr>
-<td><strong>pop()</strong></td>
-<td>它将优先级最高的元素从队列中删除。</td>
+<td><strong>BM1</strong> <strong>反转链表</strong></td>
+<td>反转整个链表，错误教训：当链头变为链尾时，一定要将链头的next指向NULL</td>
 </tr>
 <tr>
-<td><strong>top()</strong></td>
-<td>此函数用于寻址优先队列的最顶层元素。</td>
+<td><strong>BM2</strong> <strong>链表内指定区间反转</strong></td>
+<td>巧妙利用“前哨”节点，让链头永远不变，避免分情况讨论的麻烦。巧妙利用一个temp指针，在区间内转换指针方向</td>
 </tr>
 <tr>
-<td><strong>swap()</strong></td>
-<td>它将优先队列的元素与具有相同类型和大小的另一个队列交换。</td>
+<td><strong>BM3</strong> <strong>链表中的节点每k个一组翻转</strong></td>
+<td>BM2的反转方法巧妙高效，但不适用于这题，因为它的使用建立在反转区间在链表长度范围内的条件上。但是这题要求，最后长度不足k的区间，保持原样。所以这就要求需要先遍历链表，获取到长度为k的区间进行反转，长度不足k的区间不做改动。</td>
 </tr>
 <tr>
-<td><strong>size()</strong></td>
-<td>返回优先队列的大小。</td>
+<td><strong>合并两个排序的链表</strong></td>
+<td>“前哨”，递归做法和迭代做法</td>
 </tr>
 <tr>
-<td><strong>empty()</strong></td>
-<td>它验证队列是否为空。基于验证，它返回队列的状态。</td>
+<td><strong>合并k个已排序的链表</strong></td>
+<td>递归分治，优先队列两种做法</td>
 </tr>
 <tr>
-<td><strong>emplace()</strong></td>
-<td>它在优先队列的顶部插入一个新元素。</td>
+<td><strong>BM6</strong> <strong>判断链表中是否有环</strong></td>
+<td>快慢指针，如果链表有环，那么环一定出现在链尾，也就意味着链表没有NULL，只要设置一快一满两个指针，就一定会相遇（快的每次走两步，满的每次走一步）</td>
+</tr>
+<tr>
+<td><strong>BM7</strong> <strong>链表中环的入口结点</strong></td>
+<td>BM6的进阶，首先判断链表是否有环。如果有环，首先了解一个特点，快指针走的步数是慢指针的两倍。<br />假设链头到环入口的距离为x，环入口距离相遇点的距离为y，相遇点向后到环入口的距离为z，<br />且假设快指针在环里转了a圈，慢指针在环里转了b圈。那么就有 x+y+a(y+z) &#x3D; 2[x+y+b(y+z)]，<br />整理一下得到：(a-2b)(y+z)&#x3D;x+y，代表的含义是：从相遇点出发，一个指针在环里转若干圈，<br />另一个指针从头开始，最终会在原来的相遇点再次相遇；那么在相遇之前，从环入口到相遇点这段路程两个指针是重叠的，由此可以得出两个指针第一个重叠的地方就是环入口。</td>
+</tr>
+<tr>
+<td><strong>BM8</strong> <strong>链表中倒数最后k个结点</strong></td>
+<td>双指针，前后指针，间隔k步</td>
+</tr>
+<tr>
+<td><strong>BM9</strong> <strong>删除链表的倒数第n个节点</strong></td>
+<td>双指针，前后指针，“前哨”结点是处理很多链表问题的很好的技巧</td>
+</tr>
+<tr>
+<td><strong>BM10</strong> <strong>两个链表的第一个公共结点</strong></td>
+<td>双指针，获取链表长度，长的先走，让两条链距离公共点的起点相同</td>
+</tr>
+<tr>
+<td><strong>BM11</strong> <strong>链表相加(二)</strong></td>
+<td>反转链表 + 模拟加法 + 反转链表</td>
+</tr>
+<tr>
+<td><strong>BM12</strong> <strong>单链表的排序</strong></td>
+<td>BM4合并两个有序链表，链表的归并排序，左边界是链表起点，右边界是NULL<br /><strong>递归三要素：终止条件、返回值、本级任务</strong></td>
+</tr>
+<tr>
+<td><strong>BM13</strong> <strong>判断一个链表是否为回文结构</strong></td>
+<td>抓住关键：前序和后序一致即为回文，可以用头插法new一个逆序链表，可以用栈，可以保存到数组中用前后对撞指针</td>
+</tr>
+<tr>
+<td><strong>BM14</strong> <strong>链表的奇偶重排</strong></td>
+<td>一共就两种情况，奇数个节点或者偶数个节点，只要把两种情况的处理方式综合考虑进来，理清逻辑，就很容易解决了。</td>
+</tr>
+<tr>
+<td><strong>BM15</strong> <strong>删除有序链表中重复的元素-I</strong></td>
+<td>前后指针pre和cur</td>
+</tr>
+<tr>
+<td><strong>BM16</strong> <strong>删除有序链表中重复的元素-II</strong></td>
+<td>与BM15相比，难度提升在于，BM15保留了一个重复元素，而这里要把所有都删除，所以需要增加一个指针记录重复元素前一位的元素，用了三个指针pre、cur和nex，函数体里面分为两部分，一个是删除部分，与之对立的是指针前进部分<br />拓展：如果链表是无序的，则使用哈希表map，统计每个节点值出现的次数</td>
 </tr>
 </tbody></table>
+<p><strong>小结</strong></p>
+<ul>
+<li>链表主要考察点有：一、对链表指针的修改，如反转、删除、合并、分离等等。二、对链表性质的考察，如判断链表是否有环、寻找链表环入口、寻找链表之间的公共节点等等。</li>
+<li>链表题中常用的技巧有：双指针、前哨节点</li>
+<li>双指针，又可以分为：快慢指针、前后指针、两条链各一个指针。指针的方向可以是同向间隔k步，同向速度不同、反向</li>
+<li>前哨节点，涉及到链头可能变动时，增加前哨节点可以减少讨论的情况</li>
+</ul>
 
             </div>
             <hr>
@@ -377,7 +345,7 @@
                   <div class="post-meta">
                     <i class="iconfont icon-tags"></i>
                     
-                      <a class="hover-with-bg" href="/tags/%E9%98%9F%E5%88%97/">队列</a>
+                      <a class="hover-with-bg" href="/tags/%E9%93%BE%E8%A1%A8/">链表</a>
                     
                   </div>
                 
@@ -394,9 +362,9 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2022/04/10/%E5%89%8D%E7%AB%AF/%E5%89%8D%E7%AB%AF%E5%BC%80%E5%8F%91%E2%80%94%E2%80%94JS%EF%BC%88%E4%B8%80%EF%BC%89/">
+                      <a href="/2022/05/13/%E5%89%8D%E7%AB%AF/JavaScript%E5%8F%98%E9%87%8F%E5%92%8C%E8%AF%AD%E5%8F%A5/">
                         <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">前端开发——JS（一）</span>
+                        <span class="hidden-mobile">JavaScript 变量和语句</span>
                         <span class="visible-mobile">上一篇</span>
                       </a>
                     
@@ -404,8 +372,8 @@
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2022/04/02/%E5%89%8D%E7%AB%AF/%E5%89%8D%E7%AB%AF%E5%BC%80%E5%8F%91%E2%80%94%E2%80%94JavaScript/">
-                        <span class="hidden-mobile">前端开发——JavaScript</span>
+                      <a href="/2022/04/18/%E5%89%8D%E7%AB%AF/JavaScript%20%E5%BC%82%E6%AD%A5%E7%BC%96%E7%A8%8B/">
+                        <span class="hidden-mobile">了解Promise对象</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
