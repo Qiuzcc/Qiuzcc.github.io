@@ -19,7 +19,7 @@
     <meta name="description" content="将Window10本地开发的Express项目迁移至阿里云服务器的过程记录与总结">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Express项目部署到云服务器">
-<meta property="og:url" content="https://qiuzcc.github.io/2022/04/11/Express%E9%A1%B9%E7%9B%AE%E9%83%A8%E7%BD%B2%E5%88%B0%E4%BA%91%E6%9C%8D%E5%8A%A1%E5%99%A8/index.html">
+<meta property="og:url" content="http://timegogo.top/2022/04/11/Express%E9%A1%B9%E7%9B%AE%E9%83%A8%E7%BD%B2%E5%88%B0%E4%BA%91%E6%9C%8D%E5%8A%A1%E5%99%A8/index.html">
 <meta property="og:site_name" content="timegogo">
 <meta property="og:description" content="将Window10本地开发的Express项目迁移至阿里云服务器的过程记录与总结">
 <meta property="og:locale" content="zh_CN">
@@ -77,7 +77,7 @@
   <script id="fluid-configs">
     var Fluid = window.Fluid || {};
     Fluid.ctx = Object.assign({}, Fluid.ctx)
-    var CONFIG = {"hostname":"qiuzcc.github.io","root":"/","version":"1.9.0","typing":{"enable":true,"typeSpeed":210,"cursorChar":"","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml"};
+    var CONFIG = {"hostname":"timegogo.top","root":"/","version":"1.9.0","typing":{"enable":true,"typeSpeed":210,"cursorChar":"","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml"};
 
     if (CONFIG.web_analytics.follow_dnt) {
       var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
@@ -382,7 +382,7 @@
 
 
 <h3 id="三、设置HTTP代理"><a href="#三、设置HTTP代理" class="headerlink" title="三、设置HTTP代理"></a>三、设置HTTP代理</h3><p>何为代理？可以参见我另外一篇文章：了解HTTP代理</p>
-<p>由于上一次已经安装过Apache（见这篇文章：[阿里云发布网页Apache](<a href="https://qiuzcc.github.io/2022/03/12/%E9%98%BF%E9%87%8C%E4%BA%91%E5%8F%91%E5%B8%83%E7%BD%91%E9%A1%B5Apache/">阿里云发布网页Apache - Hexo (qiuzcc.github.io)</a>)），所以直接使用Apache的代理</p>
+<p>由于上一次已经安装过Apache（见这篇文章：[阿里云发布网页Apache](<a target="_blank" rel="noopener" href="https://qiuzcc.github.io/2022/03/12/%E9%98%BF%E9%87%8C%E4%BA%91%E5%8F%91%E5%B8%83%E7%BD%91%E9%A1%B5Apache/">阿里云发布网页Apache - Hexo (qiuzcc.github.io)</a>)），所以直接使用Apache的代理</p>
 <p>网上关于Apache设置http代理的文章质量参差不齐，解释不清楚。</p>
 <p>最后发现其实只需要在<strong>httpd.conf</strong>末尾加上两句就可以了。<strong>在CentOS 7中，Apache有另外一个名称，叫httpd</strong></p>
 <p>httpd的配置文件所在目录：<code>/etc/httpd/</code></p>
@@ -490,7 +490,7 @@
   <div class="license-box my-3">
     <div class="license-title">
       <div>Express项目部署到云服务器</div>
-      <div>https://qiuzcc.github.io/2022/04/11/Express项目部署到云服务器/</div>
+      <div>http://timegogo.top/2022/04/11/Express项目部署到云服务器/</div>
     </div>
     <div class="license-meta">
       
