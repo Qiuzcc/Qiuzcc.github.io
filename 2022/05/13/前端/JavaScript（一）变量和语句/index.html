@@ -18,22 +18,22 @@
   
     <meta name="description" content="基本数据类型、变量、语句、执行上下文与作用域">
 <meta property="og:type" content="article">
-<meta property="og:title" content="JavaScript 变量和语句">
-<meta property="og:url" content="http://timegogo.top/2022/05/13/%E5%89%8D%E7%AB%AF/JavaScript%E5%8F%98%E9%87%8F%E5%92%8C%E8%AF%AD%E5%8F%A5/index.html">
+<meta property="og:title" content="JavaScript（一）变量和语句">
+<meta property="og:url" content="http://timegogo.top/2022/05/13/%E5%89%8D%E7%AB%AF/JavaScript%EF%BC%88%E4%B8%80%EF%BC%89%E5%8F%98%E9%87%8F%E5%92%8C%E8%AF%AD%E5%8F%A5/index.html">
 <meta property="og:site_name" content="timegogo">
 <meta property="og:description" content="基本数据类型、变量、语句、执行上下文与作用域">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="http://timegogo.top/JavaScript%E5%8F%98%E9%87%8F%E5%92%8C%E8%AF%AD%E5%8F%A5.assets/image-20220510164738557.png">
+<meta property="og:image" content="https://qiuzcc-typora-images.oss-cn-shenzhen.aliyuncs.com/images/2022/202205281136238.png">
 <meta property="article:published_time" content="2022-05-13T08:41:18.000Z">
-<meta property="article:modified_time" content="2022-05-28T02:59:52.605Z">
+<meta property="article:modified_time" content="2022-05-30T14:22:12.874Z">
 <meta property="article:author" content="丘智聪">
 <meta property="article:tag" content="JavaScript">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="http://timegogo.top/JavaScript%E5%8F%98%E9%87%8F%E5%92%8C%E8%AF%AD%E5%8F%A5.assets/image-20220510164738557.png">
+<meta name="twitter:image" content="https://qiuzcc-typora-images.oss-cn-shenzhen.aliyuncs.com/images/2022/202205281136238.png">
   
   
   
-  <title>JavaScript 变量和语句 - timegogo</title>
+  <title>JavaScript（一）变量和语句 - timegogo</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -196,7 +196,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="JavaScript 变量和语句"></span>
+            <span id="subtitle" data-typed-text="JavaScript（一）变量和语句"></span>
           
         </div>
 
@@ -219,7 +219,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          4.7k 字
+          6.5k 字
         
       </span>
     
@@ -230,7 +230,7 @@
         
         
         
-          12 分钟
+          16 分钟
         
       </span>
     
@@ -288,7 +288,7 @@
         aria-expanded="true"
       >
         前端
-        <span class="list-group-count">(19)</span>
+        <span class="list-group-count">(18)</span>
         <i class="iconfont icon-arrowright"></i>
       </a>
       
@@ -302,55 +302,73 @@
     
       
       
-        <a href="/2022/05/13/%E5%89%8D%E7%AB%AF/JavaScript%E5%87%BD%E6%95%B0/" title="JavaScript 函数"
-           class="list-group-item list-group-item-action
-           ">
-          <span class="category-post">JavaScript 函数</span>
-        </a>
-      
-    
-      
-      
-        <a href="/2022/05/13/%E5%89%8D%E7%AB%AF/JavaScript%E5%8F%98%E9%87%8F%E5%92%8C%E8%AF%AD%E5%8F%A5/" title="JavaScript 变量和语句"
+        <a href="/2022/05/13/%E5%89%8D%E7%AB%AF/JavaScript%EF%BC%88%E4%B8%80%EF%BC%89%E5%8F%98%E9%87%8F%E5%92%8C%E8%AF%AD%E5%8F%A5/" title="JavaScript（一）变量和语句"
            class="list-group-item list-group-item-action
            active">
-          <span class="category-post">JavaScript 变量和语句</span>
+          <span class="category-post">JavaScript（一）变量和语句</span>
         </a>
       
     
       
       
-        <a href="/2022/05/13/%E5%89%8D%E7%AB%AF/JavaScript%E5%BC%95%E7%94%A8%E7%B1%BB%E5%9E%8B/" title="JavaScript 引用类型"
+        <a href="/2022/04/18/%E5%89%8D%E7%AB%AF/JavaScript%EF%BC%88%E4%B8%83%EF%BC%89Promise%E5%AF%B9%E8%B1%A1/" title="JavaScript（七）Promise对象"
            class="list-group-item list-group-item-action
            ">
-          <span class="category-post">JavaScript 引用类型</span>
+          <span class="category-post">JavaScript（七）Promise对象</span>
         </a>
       
     
       
       
-        <a href="/2022/05/13/%E5%89%8D%E7%AB%AF/JavaScript%E8%BF%AD%E4%BB%A3%E5%99%A8%E4%B8%8E%E7%94%9F%E6%88%90%E5%99%A8/" title="JavaScript 迭代器&amp;生成器"
+        <a href="/2022/05/13/%E5%89%8D%E7%AB%AF/JavaScript%EF%BC%88%E4%B8%89%EF%BC%89%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/" title="JavaScript（三）面向对象"
            class="list-group-item list-group-item-action
            ">
-          <span class="category-post">JavaScript 迭代器&amp;生成器</span>
+          <span class="category-post">JavaScript（三）面向对象</span>
         </a>
       
     
       
       
-        <a href="/2022/05/13/%E5%89%8D%E7%AB%AF/JavaScript%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/" title="JavaScript 面向对象"
+        <a href="/2022/05/13/%E5%89%8D%E7%AB%AF/JavaScript%EF%BC%88%E4%BA%8C%EF%BC%89%E5%BC%95%E7%94%A8%E7%B1%BB%E5%9E%8B/" title="JavaScript（二）引用类型"
            class="list-group-item list-group-item-action
            ">
-          <span class="category-post">JavaScript 面向对象</span>
+          <span class="category-post">JavaScript（二）引用类型</span>
         </a>
       
     
       
       
-        <a href="/2022/04/18/%E5%89%8D%E7%AB%AF/JavaScript%20%E5%BC%82%E6%AD%A5%E7%BC%96%E7%A8%8B/" title="JavaScript异步编程"
+        <a href="/2022/05/13/%E5%89%8D%E7%AB%AF/JavaScript%EF%BC%88%E4%BA%94%EF%BC%89%E8%BF%AD%E4%BB%A3%E5%99%A8%E4%B8%8E%E7%94%9F%E6%88%90%E5%99%A8/" title="JavaScript（五）迭代器&amp;生成器"
            class="list-group-item list-group-item-action
            ">
-          <span class="category-post">JavaScript异步编程</span>
+          <span class="category-post">JavaScript（五）迭代器&amp;生成器</span>
+        </a>
+      
+    
+      
+      
+        <a href="/2022/04/14/%E5%89%8D%E7%AB%AF/JavaScript%EF%BC%88%E5%85%AB%EF%BC%89DOM%E6%93%8D%E4%BD%9C/" title="JavaScript（八）DOM操作"
+           class="list-group-item list-group-item-action
+           ">
+          <span class="category-post">JavaScript（八）DOM操作</span>
+        </a>
+      
+    
+      
+      
+        <a href="/2022/04/16/%E5%89%8D%E7%AB%AF/JavaScript%EF%BC%88%E5%85%AD%EF%BC%89%E5%BC%82%E6%AD%A5%E7%BC%96%E7%A8%8B/" title="JavaScript（六）异步编程"
+           class="list-group-item list-group-item-action
+           ">
+          <span class="category-post">JavaScript（六）异步编程</span>
+        </a>
+      
+    
+      
+      
+        <a href="/2022/05/13/%E5%89%8D%E7%AB%AF/JavaScript%EF%BC%88%E5%9B%9B%EF%BC%89%E5%87%BD%E6%95%B0/" title="JavaScript（四）函数"
+           class="list-group-item list-group-item-action
+           ">
+          <span class="category-post">JavaScript（四）函数</span>
         </a>
       
     
@@ -383,42 +401,6 @@
     
       
       
-        <a href="/2022/04/10/%E5%89%8D%E7%AB%AF/%E5%89%8D%E7%AB%AF%E5%BC%80%E5%8F%91%E2%80%94%E2%80%94JS%EF%BC%88%E4%B8%80%EF%BC%89/" title="前端开发——JS（一）"
-           class="list-group-item list-group-item-action
-           ">
-          <span class="category-post">前端开发——JS（一）</span>
-        </a>
-      
-    
-      
-      
-        <a href="/2022/04/14/%E5%89%8D%E7%AB%AF/%E5%89%8D%E7%AB%AF%E5%BC%80%E5%8F%91%E2%80%94%E2%80%94JS%EF%BC%88%E4%B8%89%EF%BC%89/" title="前端开发——JS（三）"
-           class="list-group-item list-group-item-action
-           ">
-          <span class="category-post">前端开发——JS（三）</span>
-        </a>
-      
-    
-      
-      
-        <a href="/2022/04/16/%E5%89%8D%E7%AB%AF/%E5%89%8D%E7%AB%AF%E5%BC%80%E5%8F%91%E2%80%94%E2%80%94JS%EF%BC%88%E5%9B%9B%EF%BC%89/" title="前端开发——JS（四）"
-           class="list-group-item list-group-item-action
-           ">
-          <span class="category-post">前端开发——JS（四）</span>
-        </a>
-      
-    
-      
-      
-        <a href="/2022/04/02/%E5%89%8D%E7%AB%AF/%E5%89%8D%E7%AB%AF%E5%BC%80%E5%8F%91%E2%80%94%E2%80%94JavaScript/" title="前端开发——JavaScript"
-           class="list-group-item list-group-item-action
-           ">
-          <span class="category-post">前端开发——JavaScript</span>
-        </a>
-      
-    
-      
-      
         <a href="/2022/04/02/%E5%89%8D%E7%AB%AF/%E5%89%8D%E7%AB%AF%E5%BC%80%E5%8F%91%E2%80%94%E2%80%94Web%E5%BC%80%E5%8F%91%E5%9F%BA%E7%A1%80/" title="前端开发——Web开发概述"
            class="list-group-item list-group-item-action
            ">
@@ -432,6 +414,15 @@
            class="list-group-item list-group-item-action
            ">
           <span class="category-post">前端开发——性能优化</span>
+        </a>
+      
+    
+      
+      
+        <a href="/2022/05/28/%E5%89%8D%E7%AB%AF/%E5%89%8D%E7%AB%AF%E7%BB%83%E4%B9%A0%E7%AC%94%E8%AE%B0%EF%BC%88%E7%89%9B%E5%AE%A2%EF%BC%89/" title="前端练习笔记（牛客）"
+           class="list-group-item list-group-item-action
+           ">
+          <span class="category-post">前端练习笔记（牛客）</span>
         </a>
       
     
@@ -490,12 +481,12 @@
         <div id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">JavaScript 变量和语句</h1>
+            <h1 style="display: none">JavaScript（一）变量和语句</h1>
             
               <p class="note note-info">
                 
                   
-                    本文最后更新于：12 分钟前
+                    本文最后更新于：4 分钟前
                   
                 
               </p>
@@ -557,7 +548,7 @@
 </tr>
 <tr>
 <td>s.indexOf(字符)、s.lastIndexOf(字符)</td>
-<td>分别从字符串开头寻找字符、从字符串末尾开始寻找字符。它们都可以接受一个或者两个参数，第一个参数是寻找的字符，第二个参数是开始寻找的起点</td>
+<td>分别从字符串开头寻找字符、从字符串末尾开始寻找字符。它们都可以接受一个或者两个参数，第一个参数是寻找的字符，第二个参数是开始寻找的起点。若没找到，返回-1</td>
 </tr>
 <tr>
 <td>startsWith(字符串)、endsWith((字符串)、includes((字符串)</td>
@@ -581,7 +572,7 @@
 </tr>
 <tr>
 <td>s.search()</td>
-<td>接受正则表达式，返回第一个匹配的下标</td>
+<td>接受正则表达式，返回第一个匹配的下标。若没找到，返回-1</td>
 </tr>
 <tr>
 <td>s.replace(字符串,字符串)</td>
@@ -651,6 +642,32 @@
 <li>typeof操作符，用来区分各种原始类型（string、number、boolean、undefined）</li>
 <li>instanceof操作符，用来区分各种引用类型</li>
 </ul>
+<h4 id="4、解构赋值"><a href="#4、解构赋值" class="headerlink" title="4、解构赋值"></a>4、解构赋值</h4><p><strong>从ES6开始</strong>，JavaScript引入了解构赋值，可以同时对一组变量进行赋值</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs javascript"><span class="hljs-keyword">var</span> [x,y,z] = [<span class="hljs-number">1</span>,<span class="hljs-number">2</span>,<span class="hljs-number">3</span>];  同时给x、y、z赋值，变量要用[..]括起来<br><span class="hljs-keyword">var</span> [x,[y,z]] = [<span class="hljs-number">1</span>,[<span class="hljs-number">2</span>,<span class="hljs-number">3</span>]];  结构对应即可<br><span class="hljs-keyword">var</span> [,,z] = [<span class="hljs-number">1</span>,<span class="hljs-number">2</span>,<span class="hljs-number">3</span>];    可以忽略一些元素<br></code></pre></td></tr></table></figure>
+
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><code class="hljs javascript"><span class="hljs-keyword">var</span> person = &#123;<br>    <span class="hljs-attr">name</span>: <span class="hljs-string">&#x27;小明&#x27;</span>,<br>    <span class="hljs-attr">age</span>: <span class="hljs-number">20</span>,<br>    <span class="hljs-attr">gender</span>: <span class="hljs-string">&#x27;male&#x27;</span>,<br>    <span class="hljs-attr">passport</span>: <span class="hljs-string">&#x27;G-12345678&#x27;</span>,<br>    <span class="hljs-attr">school</span>: <span class="hljs-string">&#x27;No.4 middle school&#x27;</span>,<br>    <span class="hljs-attr">address</span>: &#123;<br>        <span class="hljs-attr">city</span>: <span class="hljs-string">&#x27;Beijing&#x27;</span>,<br>        <span class="hljs-attr">street</span>: <span class="hljs-string">&#x27;No.1 Road&#x27;</span>,<br>        <span class="hljs-attr">zipcode</span>: <span class="hljs-string">&#x27;100001&#x27;</span><br>    &#125;<br>&#125;;<br><span class="hljs-keyword">var</span> &#123;name,<span class="hljs-attr">address</span>:&#123;city,zip&#125;&#125; = person;  可以直接获取对应的属性，要保证名字和结构对应，zip为<span class="hljs-literal">undefined</span>，因为名字对不上<br></code></pre></td></tr></table></figure>
+
+<p>如果要使用不一样的变量名字，可以使用下面这种方式</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs javascript"><span class="hljs-keyword">var</span> &#123;name,<span class="hljs-attr">passport</span>:id&#125; = person;<br>id  <span class="hljs-comment">//&#x27;G-12345678&#x27;</span><br></code></pre></td></tr></table></figure>
+
+<p>解构赋值还可以定义默认值，这样可以避免undefined</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs javascript"><span class="hljs-keyword">var</span> &#123;name,single=<span class="hljs-literal">true</span>&#125; = person;<br>single  <span class="hljs-comment">//true</span><br></code></pre></td></tr></table></figure>
+
+<p>注意写法</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs javascript"><span class="hljs-keyword">var</span> &#123;x,y&#125; = &#123;<span class="hljs-attr">x</span>:<span class="hljs-number">1</span>,<span class="hljs-attr">y</span>:<span class="hljs-number">2</span>&#125; 正确<br></code></pre></td></tr></table></figure>
+
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs javascript"><span class="hljs-keyword">var</span> x,y;<br>&#123;x,y&#125; = &#123;<span class="hljs-attr">x</span>:<span class="hljs-number">1</span>,<span class="hljs-attr">y</span>:<span class="hljs-number">2</span>&#125;;   报错！<br></code></pre></td></tr></table></figure>
+
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs javascript"><span class="hljs-keyword">var</span> x,y;<br>(&#123;x,y&#125; = &#123;<span class="hljs-attr">x</span>:<span class="hljs-number">1</span>,<span class="hljs-attr">y</span>:<span class="hljs-number">2</span>&#125;;)  正确<br></code></pre></td></tr></table></figure>
+
+<p><strong>使用场景</strong></p>
+<p>如果函数接受一个对象作为参数，那么可以直接用解构赋值的方式把对象的属性写在参数里面</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs javascript"><span class="hljs-keyword">function</span> <span class="hljs-title function_">buildDate</span>(<span class="hljs-params">&#123;year,month,day,hour=<span class="hljs-number">0</span>,minute=<span class="hljs-number">0</span>,second=<span class="hljs-number">0</span>&#125;</span>)&#123;<br>	<span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">Date</span>(year + <span class="hljs-string">&#x27; -&#x27;</span> + month + <span class="hljs-string">&#x27;-&#x27;</span> + day + <span class="hljs-string">&#x27; &#x27;</span> + hour + <span class="hljs-string">&#x27;:&#x27;</span> + minute + <span class="hljs-string">&#x27;:&#x27;</span> + second);<br>&#125;<br><span class="hljs-keyword">var</span> <span class="hljs-title class_">Date</span> = &#123;<span class="hljs-attr">year</span>:<span class="hljs-number">2022</span>,<span class="hljs-attr">month</span>:<span class="hljs-number">4</span>,<span class="hljs-attr">day</span>:<span class="hljs-number">13</span>&#125;;<br><span class="hljs-title function_">buildDate</span>(<span class="hljs-title class_">Date</span>);<br></code></pre></td></tr></table></figure>
+
+
+
+
+
 <h3 id="三、语句"><a href="#三、语句" class="headerlink" title="三、语句"></a>三、语句</h3><blockquote> JavaScript的语句包括：if语句、while语句、do-while语句、for语句、for-in语句、for-of语句、标签语句、break和continue语句、with语句、switch语句，其中大多数语句与C++中的语法和使用一致。下面详细介绍一下for-in语句、for-of语句和with语句</blockquote>
 
 <h4 id="1、for-in语句"><a href="#1、for-in语句" class="headerlink" title="1、for-in语句"></a>1、for-in语句</h4><p>for-in语句是一种严格的迭代语句，用于<strong>枚举对象中的非符号键属性</strong>，语法如下：</p>
@@ -682,9 +699,28 @@
 
 <h3 id="四、执行上下文与作用域"><a href="#四、执行上下文与作用域" class="headerlink" title="四、执行上下文与作用域"></a>四、执行上下文与作用域</h3><blockquote>变量或函数的上下文决定了它们可以访问哪些数据，以及它们的行为。每个上下文都有一个关联的变量对象（variableobject），而这个上下文中定义的所有变量和函数都存在于这个对象上。虽然无法通过代码访问变量对象，但后台处理数据会用到它</blockquote>
 
-<p>执行上下文主要有<strong>全局上下文</strong>和<strong>函数上下文</strong>两种</p>
+<h4 id="1、执行上下文"><a href="#1、执行上下文" class="headerlink" title="1、执行上下文"></a>1、执行上下文</h4><p>执行上下文主要有<strong>全局上下文</strong>和<strong>函数上下文</strong>两种</p>
 <p>上下文中的代码在执行的时候，会创建变量对象的一个<strong>作用域链</strong>，它决定了各级上下文中的代码在访问变量和函数时的顺序。作用域链是按照”栈“LIFO的特性添加的，如下图是一个形象的作用域链表示</p>
-<p><img src="/JavaScript%E5%8F%98%E9%87%8F%E5%92%8C%E8%AF%AD%E5%8F%A5.assets/image-20220510164738557.png" srcset="/img/loading.gif" lazyload alt="image-20220510164738557"></p>
+<p><img src="https://qiuzcc-typora-images.oss-cn-shenzhen.aliyuncs.com/images/2022/202205281136238.png" srcset="/img/loading.gif" lazyload alt="image-20220510164738557"></p>
+<h4 id="2、变量作用域"><a href="#2、变量作用域" class="headerlink" title="2、变量作用域"></a>2、变量作用域</h4><ul>
+<li><p>变量在函数内部用<code>var</code>声明，作用域为整个函数体</p>
+</li>
+<li><p>由于函数可以嵌套，所以内部函数可以使用外部函数的变量。如果同名变量，内部变量覆盖外部变量</p>
+</li>
+<li><p>一种特殊情况</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs javascript"><span class="hljs-keyword">function</span> <span class="hljs-title function_">foo</span>(<span class="hljs-params"></span>)&#123;<br>	<span class="hljs-keyword">for</span>(<span class="hljs-keyword">var</span> i=<span class="hljs-number">0</span>;i&lt;<span class="hljs-number">10</span>;i++)&#123;...&#125;<br>	i++;	<span class="hljs-comment">//i=12</span><br>&#125;<br></code></pre></td></tr></table></figure>
+
+<p>因为var声明的变量范围为整个函数体，避免这种情况可以使用<code>let</code>来声明变量 <strong>（ES6新增加，let是定义的变量是块级作用域）</strong></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs javascript"><span class="hljs-keyword">function</span> <span class="hljs-title function_">foo</span>(<span class="hljs-params"></span>)&#123;<br>	<span class="hljs-keyword">for</span>(<span class="hljs-keyword">let</span> i=<span class="hljs-number">0</span>;i&lt;<span class="hljs-number">10</span>;i++)&#123;...&#125;<br>	i++;   <span class="hljs-comment">//报错</span><br>&#125;<br></code></pre></td></tr></table></figure>
+</li>
+<li><p><strong>“变量提升”</strong>，JS有一个特性，它会先扫描整个函数体的语句，把变量的声明提升到函数顶部（但是定义并没有提升）</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs javascript"><span class="hljs-keyword">function</span> <span class="hljs-title function_">foo</span>(<span class="hljs-params"></span>)&#123;<br>	<span class="hljs-keyword">var</span> x = <span class="hljs-number">1</span> + y;<br>	<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(x);		<span class="hljs-comment">//结果为NaN</span><br>	<span class="hljs-keyword">var</span> y=<span class="hljs-number">2</span>;			<span class="hljs-comment">//如果没有这句，将报错</span><br>&#125;<br></code></pre></td></tr></table></figure>
+</li>
+<li><p><strong>全局作用域</strong>，JS有一个默认的全局对象<code>window</code>，所有全局变量绑定为它的一个属性。</p>
+</li>
+<li><p><strong>命名空间</strong>，不同的JavaScript文件如果使用了相同的全局变量，或者定义了相同名字的顶层函数，都会造成命名冲突。为了解决这个问题，可以把所有全局变量和顶层函数绑定到一个全局变量中</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs javascript"><span class="hljs-keyword">var</span> <span class="hljs-variable constant_">MYAPP</span> = &#123;&#125;;<br><span class="hljs-variable constant_">MYAPP</span>.<span class="hljs-property">name</span> = <span class="hljs-string">&quot;app&quot;</span>;<br><span class="hljs-variable constant_">MYAPP</span>.<span class="hljs-property">foo</span> = <span class="hljs-keyword">function</span>(<span class="hljs-params"></span>)&#123;...&#125;;<br></code></pre></td></tr></table></figure></li>
+</ul>
 
               
             </div>
@@ -729,8 +765,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>JavaScript 变量和语句</div>
-      <div>http://timegogo.top/2022/05/13/前端/JavaScript变量和语句/</div>
+      <div>JavaScript（一）变量和语句</div>
+      <div>http://timegogo.top/2022/05/13/前端/JavaScript（一）变量和语句/</div>
     </div>
     <div class="license-meta">
       
@@ -748,7 +784,7 @@
       
         <div class="license-meta-item license-meta-date">
           <div>更新于</div>
-          <div>2022年5月28日</div>
+          <div>2022年5月30日</div>
         </div>
       
       <div class="license-meta-item">
@@ -777,9 +813,9 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2022/05/13/%E5%89%8D%E7%AB%AF/JavaScript%E8%BF%AD%E4%BB%A3%E5%99%A8%E4%B8%8E%E7%94%9F%E6%88%90%E5%99%A8/" title="JavaScript 迭代器&amp;生成器">
+                      <a href="/2022/05/13/%E5%89%8D%E7%AB%AF/JavaScript%EF%BC%88%E4%BA%94%EF%BC%89%E8%BF%AD%E4%BB%A3%E5%99%A8%E4%B8%8E%E7%94%9F%E6%88%90%E5%99%A8/" title="JavaScript（五）迭代器&amp;生成器">
                         <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">JavaScript 迭代器&amp;生成器</span>
+                        <span class="hidden-mobile">JavaScript（五）迭代器&amp;生成器</span>
                         <span class="visible-mobile">上一篇</span>
                       </a>
                     
